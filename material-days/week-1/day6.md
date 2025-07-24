@@ -14,25 +14,25 @@ You use loops when you want to **repeat something automatically** (instead of wr
 
 Use when you know **how many times** you want to repeat.
 
-```jsx
+```js
 for (let i = 1; i <= 5; i++) {
   console.log("Count:", i);
 }
 ```
 
-#### 🔹 Explanation:
+***Explanation:***
 
-* `let i = 1` → Start from 1
-* `i <= 5` → Repeat while `i` is less than or equal to 5
-* `i++` → Increase `i` by 1 after each loop
+- `let i = 1` → Start from 1
+- `i <= 5` → Repeat while `i` is less than or equal to 5
+- `i++` → Increase `i` by 1 after each loop
 
 ```jsx
 // Output:
-Count: 1
-Count: 2
-Count: 3
-Count: 4
-Count: 5
+Count: 1;
+Count: 2;
+Count: 3;
+Count: 4;
+Count: 5;
 ```
 
 <div class="section-break"></div>
@@ -41,7 +41,7 @@ Count: 5
 
 Use when you **don’t know exactly** how many times to repeat, but you want to keep going **while** a condition is true.
 
-```jsx
+```js
 let i = 1;
 
 while (i <= 3) {
@@ -50,7 +50,7 @@ while (i <= 3) {
 }
 ```
 
-* Keeps running **until** `i` becomes more than 3
+- Keeps running **until** `i` becomes more than 3
 
 <div class="section-break"></div>
 
@@ -58,7 +58,7 @@ while (i <= 3) {
 
 Like `while`, but runs the code **at least once**, even if the condition is false.
 
-```jsx
+```js
 let x = 1;
 
 do {
@@ -67,7 +67,7 @@ do {
 } while (x <= 2);
 ```
 
-* The code block runs **first**, then checks the condition
+- The code block runs **first**, then checks the condition
 
 <div class="section-break"></div>
 
@@ -75,7 +75,7 @@ do {
 
 You can use loops to go through a list (array) of items.
 
-```jsx
+```js
 let colors = ["red", "green", "blue"];
 
 for (let i = 0; i < colors.length; i++) {
@@ -83,8 +83,8 @@ for (let i = 0; i < colors.length; i++) {
 }
 ```
 
-* `colors.length` gives the number of items
-* `colors[i]` gets each item by its index
+- `colors.length` gives the number of items
+- `colors[i]` gets each item by its index
 
 <div class="section-break"></div>
 
@@ -92,31 +92,32 @@ for (let i = 0; i < colors.length; i++) {
 
 #### `break`: Stops the loop completely
 
-```jsx
+```js
 for (let i = 1; i <= 10; i++) {
   if (i === 4) break;
   console.log(i);
 }
 ```
 
-```jsx
+```js
 // Output: 1 2 3
 ```
 
 #### `continue`: Skips that round, moves to the next one
 
-```jsx
+```js
 for (let i = 1; i <= 5; i++) {
   if (i === 3) continue;
   console.log(i);
 }
 ```
 
-```jsx
+```js
 // Output: 1 2 4 5
 ```
 
 <div class="section-break"></div>
+
 
 <div class="practice">
 
@@ -137,8 +138,8 @@ for (let i = 1; i <= 5; i++) {
 
 Now you can:
 
-* Use `for`, `while`, and `do-while` to repeat actions
-* Loop through arrays
-* Control loops using `break` and `continue`
+- Use `for`, `while`, and `do-while` to repeat actions
+- Loop through arrays
+- Control loops using `break` and `continue`
 
 </article>

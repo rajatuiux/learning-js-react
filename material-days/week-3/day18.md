@@ -1,4 +1,4 @@
-<article class="day-block">
+<!-- <article class="day-block">
 
 ## Day 18: Loops – Doing Things Again and Again
 
@@ -158,4 +158,4 @@ for (let i = 1; i <= 5; i++) {
 * When to use `for`, `while`, `do...while`, `for...of`
 * How to break and continue loops
 
-</article>
+</article> -->

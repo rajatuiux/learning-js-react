@@ -333,7 +333,7 @@ table tr:hover {
 /* ===================== Lists ===================== */
 ul,
 ol {
-  margin-bottom: 1em;
+  margin-bottom: 2em;
   padding-left: 25px;
 }
 

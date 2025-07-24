@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS and React for UX Developer Bootcamp</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-okaidia.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <h1>Beginner to Advanced - JS and React for UX Developer Bootcamp</h1>
+    </header>
+    <div class="container">
+      <aside class="toc-sidebar">
+        <nav id="toc">
+          <h2>Table of Contents</h2>
+          <ul></ul>
+        </nav>
+      </aside>
+      <main class="content">
+        <section id="introduction">
+          <h2>Day 1: What is JavaScript + Variables</h2>
+          <p>
+            Welcome to the bootcamp! In this section, we'll cover the
+            fundamental concepts of JavaScript.
+          </p>
+          <p>
+            This is a <b>bold</b> paragraph and this is an <i>italic</i> one.
+          </p>
+          <p>
+            You can also combine <b><i>bold and italic</i></b> text.
+          </p>
+
+          <h3>Variables and Data Types</h3>
+          <p>
+            JavaScript has several data types, including numbers, strings,
+            booleans, objects, and more.
+          </p>
+          <h4>Example: Declaring Variables</h4>
+          <pre><code class="language-javascript">
+const message = "Hello, world!";
+let count = 10;
+var isActive = true; // Avoid using var in modern JS
+console.log(message, count, isActive);
+                </code></pre>
+        </section>
+
+        <section id="functions">
+          <h2>Working with Functions</h2>
+          <p>
+            Functions are blocks of code designed to perform a particular task.
+          </p>
+
+          <h3>Function Declaration vs. Expression</h3>
+          <ul>
+            <li>
+              Function Declaration: Defined using the
+              <code>function</code> keyword.
+            </li>
+            <li>
+              Function Expression: Defined as part of an expression, often
+              assigned to a variable.
+            </li>
+            <li>
+              Arrow Functions: A concise way to write functions, introduced in
+              ES6.
+            </li>
+          </ul>
+
+          <h4>Example: Arrow Function</h4>
+          <pre><code class="language-javascript">
+const greet = (name) => {
+    return `Hello, ${name}!`;
+};
+console.log(greet("Alice"));
+
+const add = (a, b) => a + b;
+console.log(add(5, 3));
+                </code></pre>
+
+          <h3>Advanced Function Concepts</h3>
+          <ol>
+            <li>Closures</li>
+            <li>Higher-Order Functions</li>
+            <li>Callbacks and Promises</li>
+          </ol>
+        </section>
+
+        <section id="dom-manipulation">
+          <h2>DOM Manipulation</h2>
+          <p>
+            The Document Object Model (DOM) is a programming interface for web
+            documents.
+          </p>
+
+          <h3>Selecting Elements</h3>
+          <pre><code class="language-javascript">
+const myDiv = document.getElementById('myId');
+const paragraphs = document.querySelectorAll('p');
+const firstHeading = document.querySelector('h1');
+                </code></pre>
+
+          <h3>Modifying Content</h3>
+          <p>You can change the text or HTML content of elements.</p>
+          <pre><code class="language-javascript">
+myDiv.textContent = "New text content";
+firstHeading.innerHTML = "<em>Updated</em> Heading";
+                </code></pre>
+        </section>
+
+        <section id="react-basics">
+          <h2>React Basics</h2>
+          <p>React is a JavaScript library for building user interfaces.</p>
+
+          <div class="column-container two-columns">
+            <div class="column-item">
+              <h3>Components</h3>
+              <p>
+                React applications are built from components, which are
+                independent and reusable pieces of UI.
+              </p>
+              <p>Here's a simple functional component:</p>
+              <pre><code class="language-jsx">
+import React from 'react';
+
+function Welcome(props) {
+  return &lt;h1&gt;Hello, {props.name}&lt;/h1&gt;;
+}
+
+export default Welcome;
+                        </code></pre>
+            </div>
+            <div class="column-item">
+              <h3>JSX</h3>
+              <p>
+                JSX is a syntax extension for JavaScript. It looks like HTML and
+                allows you to write React elements.
+              </p>
+              <p>
+                JSX expressions are compiled to regular JavaScript function
+                calls.
+              </p>
+              <pre><code class="language-jsx">
+const element = &lt;h1&gt;Hello, world!&lt;/h1&gt;;
+// This is equivalent to:
+// const element = React.createElement('h1', null, 'Hello, world!');
+                        </code></pre>
+            </div>
+          </div>
+        </section>
+
+        <section id="tables-example">
+          <h2>Data Tables</h2>
+          <p>Organizing data in tables can be very effective.</p>
+          <table>
+            <thead>
+              <tr>
+                <th>Concept</th>
+                <th>Description</th>
+                <th>Key Benefit</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Variables</td>
+                <td>Store data values.</td>
+                <td>Data persistence.</td>
+              </tr>
+              <tr>
+                <td>Functions</td>
+                <td>Reusable blocks of code.</td>
+                <td>Modularity, reusability.</td>
+              </tr>
+              <tr>
+                <td>Components</td>
+                <td>Independent UI pieces (React).</td>
+                <td>Encapsulation, reusability.</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3>Three Column Layout Example</h3>
+          <div class="column-container three-columns">
+            <div class="column-item">
+              <h4>Column 1</h4>
+              <p>
+                This is content for the first column. It demonstrates how text
+                flows in a multi-column layout.
+              </p>
+              <ul>
+                <li>Item A</li>
+                <li>Item B</li>
+              </ul>
+            </div>
+            <div class="column-item">
+              <h4>Column 2</h4>
+              <p>
+                More text for the second column. This can be useful for
+                comparing concepts side-by-side or for breaking up long
+                paragraphs.
+              </p>
+              <p>Another paragraph in column 2.</p>
+            </div>
+            <div class="column-item">
+              <h4>Column 3</h4>
+              <p>
+                The final column in this three-column layout. Imagine using this
+                for a glossary, side notes, or short summaries.
+              </p>
+              <pre><code class="language-html">
+&lt;div class="my-block"&gt;
+    &lt;p&gt;Hello&lt;/p&gt;
+&lt;/div&gt;
+                        </code></pre>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-jsx.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/4.0.0/marked.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

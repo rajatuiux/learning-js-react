@@ -8,6 +8,7 @@ const courseModules = [
     weekName: "Week 1: Introduction to JavaScript",
     folderPath: "material-days/week-1/",
     files: [
+      "day0.md",
       "day1.md",
       "day2.md",
       "day3.md",

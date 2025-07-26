@@ -12,7 +12,7 @@ Example:
 
 Instead of:
 
-```js
+```jsx
 console.log("Hello");
 console.log("Hello");
 console.log("Hello");
@@ -28,7 +28,7 @@ for (let i = 0; i < 5; i++) {
 }
 ```
 
----
+<div class="section-break"></div>
 
 ### ✅ Types of Loops in JavaScript
 
@@ -40,7 +40,7 @@ for (let i = 0; i < 5; i++) {
 | `for...of`   | Loop through values in an array or string            |
 | `for...in`   | Loop through keys in an object (to be covered later) |
 
----
+<div class="section-break"></div>
 
 ### ✅ `for` Loop
 
@@ -56,7 +56,7 @@ for (let i = 1; i <= 5; i++) {
 - `i <= 5` → condition to continue
 - `i++` → step (increase by 1)
 
----
+<div class="section-break"></div>
 
 ### ✅ `while` Loop
 
@@ -71,7 +71,7 @@ while (i <= 5) {
 }
 ```
 
----
+<div class="section-break"></div>
 
 ### ✅ `do...while` Loop
 
@@ -86,7 +86,7 @@ do {
 } while (i <= 3);
 ```
 
----
+<div class="section-break"></div>
 
 ### ✅ `for...of` Loop
 
@@ -108,7 +108,7 @@ for (let letter of name) {
 }
 ```
 
----
+<div class="section-break"></div>
 
 ### 🔹 Looping Through Arrays with `for`
 
@@ -120,7 +120,7 @@ for (let i = 0; i < colors.length; i++) {
 }
 ```
 
----
+<div class="section-break"></div>
 
 ### 🔹 Break and Continue
 
@@ -132,8 +132,9 @@ for (let i = 1; i <= 10; i++) {
   console.log(i);
 }
 ```
-
+```jsx
 // Output: 1 2 3 4
+```
 
 #### `continue`: Skips current loop iteration
 
@@ -143,10 +144,11 @@ for (let i = 1; i <= 5; i++) {
   console.log(i);
 }
 ```
-
+```jsx
 // Output: 1 2 4 5
+```
 
----
+<div class="practice">
 
 ### 🔸 Practice Time
 
@@ -160,7 +162,7 @@ Try these:
 6. Use `break` when number is 7 in a loop of 1 to 10
 7. Use `continue` to skip printing number 5
 
----
+</div>
 
 ✅ **You’ve completed this topic!**
 

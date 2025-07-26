@@ -27,7 +27,7 @@ Use:
 let fruits = ["Apple", "Banana"];
 ```
 
----
+<div class="section-break"></div>
 
 ### ✅ Accessing and Modifying Array Items
 
@@ -38,7 +38,7 @@ console.log(fruits[0]); // Apple
 fruits[1] = "Orange"; // Replaces Banana with Orange
 ```
 
----
+<div class="section-break"></div>
 
 ### ✅ Adding and Removing Items
 
@@ -49,7 +49,7 @@ fruits.pop(); // Removes last
 fruits.shift(); // Removes first
 ```
 
----
+<div class="section-break"></div>
 
 ### 🔹 Array Length
 
@@ -58,7 +58,7 @@ let count = fruits.length;
 console.log(count); // Total number of items
 ```
 
----
+<div class="section-break"></div>
 
 ### 🔹 Looping Through Arrays
 
@@ -86,7 +86,7 @@ fruits.forEach(function (fruit, index) {
 });
 ```
 
----
+<div class="section-break"></div>
 
 ### 🔹 Common Array Methods
 
@@ -101,7 +101,7 @@ fruits.forEach(function (fruit, index) {
 | `slice(start, end)`    | Gets a portion of the array | `fruits.slice(0, 2)`       |
 | `splice(index, count)` | Remove/replace at index     | `fruits.splice(1, 1)`      |
 
----
+<div class="section-break"></div>
 
 ### 🔹 Nested Arrays
 
@@ -116,7 +116,7 @@ let matrix = [
 console.log(matrix[0][1]); // 2
 ```
 
----
+<div class="section-break"></div>
 
 ### 🔹 Modern Looping Options
 
@@ -136,7 +136,7 @@ fruits.forEach(function (fruit, index) {
 });
 ```
 
----
+<div class="practice">
 
 ### 🔸 Practice Time
 
@@ -149,7 +149,9 @@ fruits.forEach(function (fruit, index) {
 7. Use `.splice()` to remove the third movie
 8. Use `.forEach()` to print movies with position
 
----
+</div>
+
+<div class="section-break"></div>
 
 ✅ **You’ve completed this topic!**
 

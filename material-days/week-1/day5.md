@@ -13,7 +13,7 @@ You tell JavaScript:
 
 “If **this** is true, do **this**. Otherwise, do something else.”
 
----
+<div class="section-break"></div>
 
 ### ✅ `if` Statement
 
@@ -35,7 +35,7 @@ if (age >= 18) {
 }
 ```
 
----
+<div class="section-break"></div>
 
 ### ✅ `else` Statement
 
@@ -51,7 +51,7 @@ if (age >= 18) {
 }
 ```
 
----
+<div class="section-break"></div>
 
 ### ✅ `else if` – Multiple Conditions
 
@@ -74,7 +74,7 @@ if (score >= 90) {
 * Checks each condition in order.
 * As soon as one is true, it runs that block and stops checking.
 
----
+<div class="section-break"></div>
 
 ### ✅ `switch` Statement
 
@@ -104,7 +104,7 @@ switch (day) {
 * `break` → stops checking further
 * `default` → runs if no match found
 
----
+<div class="section-break"></div>
 
 ### ✅ Comparison Operators
 
@@ -123,7 +123,7 @@ Used to **compare values** inside `if` conditions.
 
 > Always prefer `===` over `==` in modern JavaScript. `===` checks both **value and type** (more accurate).
 
----
+<div class="section-break"></div>
 
 ### ✅ Logical Operators
 
@@ -132,10 +132,10 @@ Used to **combine multiple conditions**.
 | Operator | Name | Example                | Result                |          |   |          |                        |
 | -------- | ---- | ---------------------- | --------------------- | -------- | - | -------- | ---------------------- |
 | `&&`     | AND  | `age > 18 && age < 60` | true if both are true |          |   |          |                        |
-| \`       |      | \`                     | OR                    | \`a > 10 |   | b < 20\` | true if either is true |
+| `\|\|`                     | OR                    | `a > 10 \|\| b < 20\` | true if either is true |
 | `!`      | NOT  | `!isLoggedIn`          | true if false         |          |   |          |                        |
 
----
+<div class="section-break"></div>
 
 ### ✅ Example with Logical Operators
 
@@ -155,7 +155,7 @@ if (!isLoggedIn) {
 }
 ```
 
----
+<div class="section-break"></div>
 
 ### 🟡 Truthy and Falsy
 
@@ -185,7 +185,7 @@ if ("hello") {
 }
 ```
 
----
+<div class="practice">
 
 ### 🔸 Practice Time
 
@@ -206,7 +206,9 @@ Try these:
    * Else → show "Please login"
 7. Try checking `if (""), if (1), if (null)` and see which one runs.
 
----
+</div>
+
+<div class="section-break"></div>
 
 ✅ **You’ve completed this topic!**
 

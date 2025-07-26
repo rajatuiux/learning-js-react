@@ -125,7 +125,7 @@ document.querySelector("h1").textContent = "Welcome!";
 | Concept   | Meaning                                    |
 | --------- | ------------------------------------------ |
 | **DOM**       | Page structure as a tree for JS to control |
-| **Object**    | A container of data and methods            |
+| **Object    | A container of data and methods            |
 | Function  | Independent block of code                  |
 | Method    | Function inside an object                  |
 | Dot (`.`) | Used to access parts of an object          |

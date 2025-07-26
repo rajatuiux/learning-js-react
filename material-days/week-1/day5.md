@@ -1,39 +1,63 @@
-<article class="day-block">
-
 ## Day 5: Conditionals – if/else, else if, switch
 
 ### 🟡 What Are Conditionals?
 
-Conditionals allow your program to **make decisions**.
+Conditionals allow your program to **make decisions** based on whether something is true or false.
+
+Example:
+
+> If it’s raining → take an umbrella
+> Else → go without it
 
 You tell JavaScript:
 
 “If **this** is true, do **this**. Otherwise, do something else.”
 
-<div class="section-break"></div>
+---
 
-### ✅ `if` and `else`
+### ✅ `if` Statement
 
-```jsx
-let age = 20;
+Basic syntax:
 
-if (age >= 18) {
-  console.log("You are an adult.");
-} else {
-  console.log("You are a minor.");
+```js
+if (condition) {
+  // run this code if condition is true
 }
 ```
 
-#### 🔹 Explanation:
+**Example:**
 
-* If the condition in `()` is **true**, the first block runs.
-* If it's **false**, the `else` block runs.
+```js
+let age = 20;
 
-<div class="section-break"></div>
+if (age >= 18) {
+  console.log("You can vote.");
+}
+```
+
+---
+
+### ✅ `else` Statement
+
+Use `else` to run something **if the condition is false**.
+
+```js
+let age = 16;
+
+if (age >= 18) {
+  console.log("You can vote.");
+} else {
+  console.log("You are too young to vote.");
+}
+```
+
+---
 
 ### ✅ `else if` – Multiple Conditions
 
-```jsx
+Used to check **multiple conditions** in sequence.
+
+```js
 let score = 70;
 
 if (score >= 90) {
@@ -50,13 +74,13 @@ if (score >= 90) {
 * Checks each condition in order.
 * As soon as one is true, it runs that block and stops checking.
 
-<div class="section-break"></div>
+---
 
 ### ✅ `switch` Statement
 
 An alternative to `if/else if` when checking **one value** with **many possible matches**.
 
-```jsx
+```js
 let day = "Monday";
 
 switch (day) {
@@ -74,28 +98,64 @@ switch (day) {
 }
 ```
 
-#### 🔹 Explanation:
+**Explanation:**
 
 * `case` → compares with the given value
 * `break` → stops checking further
 * `default` → runs if no match found
 
-<div class="section-break"></div>
+---
 
-### ✅ Comparison Review
+### ✅ Comparison Operators
 
-| Operator | Meaning              | Example              |
-| -------- | -------------------- | -------------------- |
-| `==`     | Equal (value only)   | `5 == "5"` → true    |
-| `===`    | Equal (value + type) | `5 === "5"` → false  |
-| `!=`     | Not equal            | `10 != 8` → true     |
-| `!==`    | Not equal (strict)   | `10 !== "10"` → true |
-| `>`      | Greater than         | `7 > 3` → true       |
-| `<`      | Less than            | `2 < 5` → true       |
-| `>=`     | Greater or equal     | `6 >= 6` → true      |
-| `<=`     | Less or equal        | `4 <= 3` → false     |
+Used to **compare values** inside `if` conditions.
 
-<div class="section-break"></div>
+| Operator | Meaning               | Example (`a = 5`, `b = 10`) | Result |
+| -------- | --------------------- | --------------------------- | ------ |
+| `==`     | Equal (loose check)   | `a == '5'`                  | true   |
+| `===`    | Equal (strict check)  | `a === '5'`                 | false  |
+| `!=`     | Not equal             | `a != b`                    | true   |
+| `!==`    | Not equal (strict)    | `a !== '5'`                 | true   |
+| `>`      | Greater than          | `b > a`                     | true   |
+| `<`      | Less than             | `a < b`                     | true   |
+| `>=`     | Greater than or equal | `a >= 5`                    | true   |
+| `<=`     | Less than or equal    | `a <= 5`                    | true   |
+
+> Always prefer `===` over `==` in modern JavaScript. `===` checks both **value and type** (more accurate).
+
+---
+
+### ✅ Logical Operators
+
+Used to **combine multiple conditions**.
+
+| Operator | Name | Example                | Result                |          |   |          |                        |
+| -------- | ---- | ---------------------- | --------------------- | -------- | - | -------- | ---------------------- |
+| `&&`     | AND  | `age > 18 && age < 60` | true if both are true |          |   |          |                        |
+| \`       |      | \`                     | OR                    | \`a > 10 |   | b < 20\` | true if either is true |
+| `!`      | NOT  | `!isLoggedIn`          | true if false         |          |   |          |                        |
+
+---
+
+### ✅ Example with Logical Operators
+
+```js
+let age = 25;
+
+if (age > 18 && age < 60) {
+  console.log("You can work.");
+}
+```
+
+```js
+let isLoggedIn = false;
+
+if (!isLoggedIn) {
+  console.log("Please log in.");
+}
+```
+
+---
 
 ### 🟡 Truthy and Falsy
 
@@ -115,7 +175,7 @@ When using `if`, the condition can be:
 
 Everything else is **truthy**.
 
-```jsx
+```js
 if (0) {
   console.log("This won't run");
 }
@@ -125,27 +185,33 @@ if ("hello") {
 }
 ```
 
-<div class="section-break"></div>
-
-<div class="practice">
+---
 
 ### 🔸 Practice Time
+
+Try these:
 
 1. Create a variable `marks`. Use `if/else` to check if it's a pass (above 40).
 2. Use `if/else if` to assign grades (A, B, C, F).
 3. Write a `switch` statement to show the name of a weekday from number (1 to 7).
-4. Try checking `if (""), if (1), if (null)` and see which one runs.
+4. Create a variable `temperature`. Use `if/else` to log:
 
-</div>
+   * "Hot" if temp > 30
+   * "Warm" if 20–30
+   * "Cold" otherwise
+5. Write an `if` statement using `&&` and `||` to check age ranges.
+6. Create a login check:
 
-<div class="section-break"></div>
+   * If user is logged in → show "Welcome"
+   * Else → show "Please login"
+7. Try checking `if (""), if (1), if (null)` and see which one runs.
 
-✅ **You’ve completed Day 5!**
+---
+
+✅ **You’ve completed this topic!**
 
 You now understand how to:
 
 * Make decisions in your code using `if/else`, `else if`, and `switch`
 * Use comparison and logical checks
 * Know which values are treated as true or false
-
-</article>

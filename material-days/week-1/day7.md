@@ -1,138 +1,161 @@
-<article class="day-block">
-
 ## Day 7: Arrays in JavaScript
 
 ### 🟡 What Is an Array?
 
-An **array** is a special variable that can hold **multiple values** at once.
+An **array** is a special variable that holds **multiple values** in a single place. Think of it like a list:
 
-Think of it like a list:
-
-```jsx
+```js
 let colors = ["red", "green", "blue"];
 ```
 
-You can store numbers, strings, or even mix types:
+You can mix different types:
 
-```jsx
+```js
 let mixed = [10, "hello", true];
 ```
 
-<div class="section-break"></div>
+Instead of multiple variables:
 
-### ✅ Accessing Array Items
-
-You access items using **index numbers** (starting from 0):
-
-```jsx
-let fruits = ["apple", "banana", "mango"];
-
-console.log(fruits[0]);  // apple
-console.log(fruits[1]);  // banana
+```js
+let fruit1 = "Apple";
+let fruit2 = "Banana";
 ```
 
-* `fruits[0]` means the **first item**
-* `fruits[2]` would be the **third item**
+Use:
 
-<div class="section-break"></div>
-
-### ✅ Modifying Arrays
-
-You can change an item by using its index:
-
-```jsx
-fruits[1] = "orange";  // Replaces "banana" with "orange"
+```js
+let fruits = ["Apple", "Banana"];
 ```
 
-You can also add new items:
+---
 
-```jsx
-fruits.push("grape");     // adds at the end
-fruits.unshift("kiwi");   // adds at the beginning
+### ✅ Accessing and Modifying Array Items
+
+Use **index numbers** (starting from 0):
+
+```js
+console.log(fruits[0]); // Apple
+fruits[1] = "Orange"; // Replaces Banana with Orange
 ```
 
-And remove items:
+---
 
-```jsx
-fruits.pop();     // removes last item
-fruits.shift();   // removes first item
+### ✅ Adding and Removing Items
+
+```js
+fruits.push("Grape"); // Adds to end
+fruits.unshift("Kiwi"); // Adds to beginning
+fruits.pop(); // Removes last
+fruits.shift(); // Removes first
 ```
 
-<div class="section-break"></div>
+---
 
 ### 🔹 Array Length
 
-To know how many items are in an array:
-
-```jsx
+```js
 let count = fruits.length;
-console.log(count);  // 3 or 4, etc.
+console.log(count); // Total number of items
 ```
 
-<div class="section-break"></div>
+---
 
 ### 🔹 Looping Through Arrays
 
-You can use a loop to go through each item:
+#### Using `for` loop:
 
-```jsx
+```js
 for (let i = 0; i < fruits.length; i++) {
   console.log(fruits[i]);
 }
 ```
 
-Or use the newer `for...of` loop:
+#### Using `for...of` loop:
 
-```jsx
+```js
 for (let fruit of fruits) {
   console.log(fruit);
 }
 ```
 
-<div class="section-break"></div>
+#### Using `.forEach()`:
 
-### 🔹 Array Methods
-
-| Method             | What It Does           |
-| ------------------ | ---------------------- |
-| `push()`           | Adds to end            |
-| `pop()`            | Removes from end       |
-| `unshift()`        | Adds to beginning      |
-| `shift()`          | Removes from beginning |
-| `length`           | Number of items        |
-| `indexOf("item")`  | Finds position of item |
-| `includes("item")` | Checks if item exists  |
-
-```jsx
-let tools = ["pen", "pencil", "eraser"];
-
-console.log(tools.includes("pen"));     // true
-console.log(tools.indexOf("eraser"));    // 2
+```js
+fruits.forEach(function (fruit, index) {
+  console.log(`Fruit ${index + 1}: ${fruit}`);
+});
 ```
 
-<div class="section-break"></div>
+---
 
-<div class="practice">
+### 🔹 Common Array Methods
+
+| Method                 | What It Does                | Example                    |
+| ---------------------- | --------------------------- | -------------------------- |
+| `push()`               | Add to end                  | `fruits.push("Grapes")`    |
+| `pop()`                | Remove last element         | `fruits.pop()`             |
+| `unshift()`            | Add to beginning            | `fruits.unshift("Orange")` |
+| `shift()`              | Remove first element        | `fruits.shift()`           |
+| `indexOf(value)`       | Finds index of a value      | `fruits.indexOf("Banana")` |
+| `includes(value)`      | Checks if value exists      | `fruits.includes("Apple")` |
+| `slice(start, end)`    | Gets a portion of the array | `fruits.slice(0, 2)`       |
+| `splice(index, count)` | Remove/replace at index     | `fruits.splice(1, 1)`      |
+
+---
+
+### 🔹 Nested Arrays
+
+An array inside another array:
+
+```js
+let matrix = [
+  [1, 2, 3],
+  [4, 5, 6],
+];
+
+console.log(matrix[0][1]); // 2
+```
+
+---
+
+### 🔹 Modern Looping Options
+
+#### `for...of` – Simple value loop
+
+```js
+for (let fruit of fruits) {
+  console.log(fruit);
+}
+```
+
+#### `.forEach()` – Value with index
+
+```js
+fruits.forEach(function (fruit, index) {
+  console.log(`Fruit ${index + 1}: ${fruit}`);
+});
+```
+
+---
 
 ### 🔸 Practice Time
 
 1. Create an array of your 5 favorite movies
-2. Add one more movie to the end
-3. Remove the first movie
-4. Print each movie one by one using a loop
-5. Check if a certain movie exists using `includes()`
+2. Add one more using `.push()`
+3. Remove the first movie using `.shift()`
+4. Print each movie with a `for...of` loop
+5. Check if a certain movie exists using `.includes()`
+6. Replace the second movie with something else
+7. Use `.splice()` to remove the third movie
+8. Use `.forEach()` to print movies with position
 
-</div>
+---
 
-<div class="section-break"></div>
+✅ **You’ve completed this topic!**
 
-✅ **You’ve completed Day 7!**
+You can now:
 
-Now you can:
-
-* Create and use arrays
-* Add, remove, and modify items
-* Loop through lists
-* Use helpful array methods like `push()`, `pop()`, `includes()`
-
-</article>
+- Create and modify arrays
+- Use key array methods (`push`, `pop`, `splice`, etc.)
+- Loop using `for`, `for...of`, and `.forEach()`
+- Work with nested arrays and index positions

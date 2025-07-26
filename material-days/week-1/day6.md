@@ -1,81 +1,118 @@
-<article class="day-block">
-
-## Day 6: Loops – for, while, do-while
+## Day 6: Loops – for, while, do-while, for...of
 
 ### 🟡 What Is a Loop?
 
 A **loop** lets you run the same block of code **multiple times**.
 
-You use loops when you want to **repeat something automatically** (instead of writing the same code again and again).
+Use loops when you want to **repeat something automatically** (instead of writing the same code again and again).
 
-<div class="section-break"></div>
+Example:
+
+> Print "Hello" 5 times:
+
+Instead of:
+
+```js
+console.log("Hello");
+console.log("Hello");
+console.log("Hello");
+console.log("Hello");
+console.log("Hello");
+```
+
+Use:
+
+```js
+for (let i = 0; i < 5; i++) {
+  console.log("Hello");
+}
+```
+
+---
+
+### ✅ Types of Loops in JavaScript
+
+| Loop Type    | When to use                                          |
+| ------------ | ---------------------------------------------------- |
+| `for` loop   | Know how many times to repeat                        |
+| `while` loop | Repeat **while** a condition is true                 |
+| `do...while` | Like `while`, but runs at least **once**             |
+| `for...of`   | Loop through values in an array or string            |
+| `for...in`   | Loop through keys in an object (to be covered later) |
+
+---
 
 ### ✅ `for` Loop
 
-Use when you know **how many times** you want to repeat.
+Use when you know **how many times** to repeat.
 
-```jsx
+```js
 for (let i = 1; i <= 5; i++) {
   console.log("Count:", i);
 }
 ```
 
-#### 🔹 Explanation:
+- `let i = 1` → start point
+- `i <= 5` → condition to continue
+- `i++` → step (increase by 1)
 
-* `let i = 1` → Start from 1
-* `i <= 5` → Repeat while `i` is less than or equal to 5
-* `i++` → Increase `i` by 1 after each loop
-
-```jsx
-// Output:
-Count: 1
-Count: 2
-Count: 3
-Count: 4
-Count: 5
-```
-
-<div class="section-break"></div>
+---
 
 ### ✅ `while` Loop
 
-Use when you **don’t know exactly** how many times to repeat, but you want to keep going **while** a condition is true.
+Use when you **don’t know exactly** how many times to repeat.
 
-```jsx
+```js
 let i = 1;
 
-while (i <= 3) {
+while (i <= 5) {
   console.log("Number:", i);
   i++;
 }
 ```
 
-* Keeps running **until** `i` becomes more than 3
-
-<div class="section-break"></div>
+---
 
 ### ✅ `do...while` Loop
 
-Like `while`, but runs the code **at least once**, even if the condition is false.
+Runs the code **at least once**, then checks the condition.
 
-```jsx
-let x = 1;
+```js
+let i = 1;
 
 do {
-  console.log("Value is:", x);
-  x++;
-} while (x <= 2);
+  console.log("Running:", i);
+  i++;
+} while (i <= 3);
 ```
 
-* The code block runs **first**, then checks the condition
+---
 
-<div class="section-break"></div>
+### ✅ `for...of` Loop
 
-### 🔹 Looping Through Arrays
+Used to loop through **arrays** or **strings**.
 
-You can use loops to go through a list (array) of items.
+```js
+let fruits = ["apple", "banana", "mango"];
 
-```jsx
+for (let fruit of fruits) {
+  console.log(fruit);
+}
+```
+
+```js
+let name = "Rajat";
+
+for (let letter of name) {
+  console.log(letter);
+}
+```
+
+---
+
+### 🔹 Looping Through Arrays with `for`
+
+```js
 let colors = ["red", "green", "blue"];
 
 for (let i = 0; i < colors.length; i++) {
@@ -83,62 +120,52 @@ for (let i = 0; i < colors.length; i++) {
 }
 ```
 
-* `colors.length` gives the number of items
-* `colors[i]` gets each item by its index
-
-<div class="section-break"></div>
+---
 
 ### 🔹 Break and Continue
 
 #### `break`: Stops the loop completely
 
-```jsx
+```js
 for (let i = 1; i <= 10; i++) {
-  if (i === 4) break;
+  if (i === 5) break;
   console.log(i);
 }
 ```
 
-```jsx
-// Output: 1 2 3
-```
+// Output: 1 2 3 4
 
-#### `continue`: Skips that round, moves to the next one
+#### `continue`: Skips current loop iteration
 
-```jsx
+```js
 for (let i = 1; i <= 5; i++) {
   if (i === 3) continue;
   console.log(i);
 }
 ```
 
-```jsx
 // Output: 1 2 4 5
-```
 
-<div class="section-break"></div>
-
-<div class="practice">
+---
 
 ### 🔸 Practice Time
 
-1. Print numbers from 1 to 5 using `for` loop
-2. Count down from 5 to 1 using `while` loop
-3. Print only even numbers from 1 to 10
-4. Print the letters of your name using a loop
-5. Use `break` when number is 7 in a loop of 1 to 10
-6. Use `continue` to skip printing number 5
+Try these:
 
-</div>
+1. Print numbers from 1 to 10 using a `for` loop
+2. Count down from 10 to 1 using a `while` loop
+3. Print only even numbers from 1 to 20
+4. Print the letters of your name using a `for...of` loop
+5. Loop through an array of your 5 favorite movies and print each
+6. Use `break` when number is 7 in a loop of 1 to 10
+7. Use `continue` to skip printing number 5
 
-<div class="section-break"></div>
+---
 
-✅ **You’ve completed Day 6!**
+✅ **You’ve completed this topic!**
 
-Now you can:
+You can now:
 
-* Use `for`, `while`, and `do-while` to repeat actions
-* Loop through arrays
-* Control loops using `break` and `continue`
-
-</article>
+- Use `for`, `while`, `do-while`, and `for...of` loops
+- Loop through arrays and strings
+- Control loops using `break` and `continue`

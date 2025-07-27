@@ -1,4 +1,4 @@
-<article class="day-block">
+<!-- <article class="day-block">
 
 ## Day 17: Conditions in JavaScript – if, else, else if, Comparisons
 
@@ -163,4 +163,4 @@ Try these:
 
 ➡️ Up Next: Arrays – storing and working with lists of data
 
-</article>
+</article> -->

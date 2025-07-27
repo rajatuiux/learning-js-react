@@ -1,4 +1,4 @@
-<article class="day-content">
+<!-- <article class="day-content">
 
 ## Day 19: Arrays – Storing Multiple Values in One Place
 
@@ -142,4 +142,4 @@ console.log(matrix[0][1]); // 2
 * Useful methods like `push`, `pop`, `includes`, `splice`, etc.
 * Looping through arrays using `for` and `for...of`
 
-</article>
+</article> -->

@@ -1,4 +1,4 @@
-<article class="day-block">
+<!-- <article class="day-block">
 
 ## Day 28: DOM Events – Making Webpages Interactive
 
@@ -155,4 +155,4 @@ It’s easier to read, reuse, and remove later.
 * How to update DOM content based on user actions
 
 
-</article>
+</article> -->

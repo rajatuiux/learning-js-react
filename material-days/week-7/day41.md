@@ -1,4 +1,4 @@
-## Day 41 – Intro to Arrays
+<!-- ## Day 41 – Intro to Arrays
 
 #### What is an Array?
 
@@ -130,4 +130,4 @@ for (let i = 0; i < users.length; i++) {
 - Arrays = ordered list of values
 - Use index to access/update
 - Use `.length`, `.push()`, `.pop()`, etc. to manipulate them
-- Loop through arrays with `for` loop
+- Loop through arrays with `for` loop -->

@@ -6,16 +6,16 @@
 
 You’ve already learned the basics:
 
-* How to define a function
-* How to call it
-* How to use parameters and return values
+- How to define a function
+- How to call it
+- How to use parameters and return values
 
 Now we’ll focus on:
 
-* **Reusability**
-* **Function expressions vs declarations**
-* **Arrow functions vs regular functions**
-* **Best practices**
+- **Reusability**
+- **Function expressions vs declarations**
+- **Arrow functions vs regular functions**
+- **Best practices**
 
 ### Function Declarations vs Expressions
 
@@ -27,7 +27,7 @@ function greet(name) {
 }
 ```
 
-* Can be **called before it's defined** in the code (because of hoisting)
+- Can be **called before it's defined** in the code (because of hoisting)
 
 #### Function Expression
 
@@ -37,9 +37,9 @@ const greet = function (name) {
 };
 ```
 
-* Stored in a variable
-* Cannot be called before the line it’s written on
-* Useful when passing functions as arguments
+- Stored in a variable
+- Cannot be called before the line it’s written on
+- Useful when passing functions as arguments
 
 ### Arrow Functions Recap
 
@@ -98,8 +98,8 @@ Many beginners confuse `console.log()` with `return`.
 
 #### Return:
 
-* **Sends back a value**
-* Can be stored in variables or passed into other functions
+- **Sends back a value**
+- Can be stored in variables or passed into other functions
 
 ```jsx
 function getSum(a, b) {
@@ -111,34 +111,148 @@ let total = getSum(5, 10); // total is 15
 
 #### Console.log:
 
-* **Just displays something on screen**
-* Doesn’t store or pass values
+- **Just displays something on screen**
+- Doesn’t store or pass values
 
 ```jsx
 console.log(getSum(5, 10)); // prints 15
 ```
 
-### Callback Functions (Preview)
+## 🧠 Callback Functions in JavaScript – Made Simple
 
-You can **pass a function into another function**. This is called a **callback**.
+### ✅ What is a Callback Function?
 
-```jsx
-function greet(name, callback) {
-  let message = "Hello, " + name;
-  callback(message);
+A **callback function** is:
+
+> A **function passed as an argument** to another function, so it can be **called later**.
+
+Think of it like this:
+
+> "Hey, do this task. When you're done, call this other function."
+
+---
+
+### 📦 Real-Life Example (Analogy)
+
+Imagine ordering food:
+
+- You: "I want a pizza. When it's ready, **call me**."
+- The restaurant makes pizza (takes time)
+- Later, they call you (callback)
+
+In code, that **"call me later"** part is a callback function.
+
+---
+
+### 🧪 Simple Example
+
+```js
+function greet(name) {
+  console.log("Hello, " + name);
 }
 
-greet("Rajat", function (msg) {
-  console.log(msg); // Hello, Rajat
+function processUser(callback) {
+  let userName = "Rajat";
+  callback(userName); // 👈 calling the callback
+}
+
+processUser(greet); // Output: Hello, Rajat
+```
+
+### 💡 What's Happening?
+
+- `greet` is passed **as an argument** to `processUser`
+- Inside `processUser`, it **calls** `greet` with the user's name
+
+---
+
+### 🧰 Another Example: Math Operation
+
+```js
+function add(a, b) {
+  console.log("Sum:", a + b);
+}
+
+function calculate(a, b, callback) {
+  callback(a, b); // calls the passed function
+}
+
+calculate(5, 3, add); // Output: Sum: 8
+```
+
+✅ You can pass **any function** as a callback!
+
+---
+
+### 🕒 Why Use Callback Functions?
+
+- **Control** when something runs (not immediately)
+- Handle **async tasks** like fetching data, reading files
+- Run a function **after another finishes**
+
+---
+
+### ⚠️ Confusion Alert: Don’t Use `()` When Passing
+
+```js
+// Wrong ❌ (this calls it immediately)
+processUser(greet());
+
+// Right ✅ (just passing the function, not calling it)
+processUser(greet);
+```
+
+---
+
+### 🧵 Example with setTimeout (Delays)
+
+```js
+function sayHi() {
+  console.log("Hi there!");
+}
+
+setTimeout(sayHi, 2000); // sayHi will run after 2 seconds
+```
+
+Here, `sayHi` is a callback used by `setTimeout`
+
+---
+
+### 🔁 Array Methods Use Callbacks Too!
+
+```js
+let fruits = ["apple", "banana", "mango"];
+
+fruits.forEach(function (fruit) {
+  console.log(fruit);
 });
 ```
 
+- `.forEach()` uses a **callback function** to run for each item
+
+---
+
+### 🔐 Tip: Callback Naming
+
+Name your callback clearly based on what it does.
+
+```js
+function onComplete() {
+  console.log("Task done");
+}
+function onSuccess(result) {
+  console.log(result);
+}
+```
+
+---
+
 This is **very important** for working with:
 
-* Events
-* Timers
-* APIs
-* React (later!)
+- Events
+- Timers
+- APIs
+- React (later!)
 
 ### Best Practices for Functions
 
@@ -182,14 +296,21 @@ This is **very important** for working with:
 
    and returns a string: `"Rajat is 25 years old."`
 
+6. Create a function that takes two numbers and a callback to do an operation
+7. Write a `setTimeout` with a named function as callback
+8. Use `.forEach()` on an array to print items in uppercase
+
 </div>
 
 #### Summary: You Now Know
 
-* The difference between function declarations and expressions
-* Arrow function syntax and when to use it
-* How to write clean, reusable functions
-* How to use `return` vs `console.log`
-* A preview of **callback functions**
+- The difference between function declarations and expressions
+- Arrow function syntax and when to use it
+- How to write clean, reusable functions
+- How to use `return` vs `console.log`
+- A preview of **callback functions**
+- A function passed to another function
+- Called **after** some action or task
+- Used for things like waiting, loops, async code
 
 </article>

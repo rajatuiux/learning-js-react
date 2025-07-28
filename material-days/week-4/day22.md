@@ -118,8 +118,6 @@ let total = getSum(5, 10); // total is 15
 console.log(getSum(5, 10)); // prints 15
 ```
 
-## 🧠 Callback Functions in JavaScript – Made Simple
-
 ### ✅ What is a Callback Function?
 
 A **callback function** is:

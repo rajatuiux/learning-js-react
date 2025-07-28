@@ -28,7 +28,7 @@ Here are the most common and useful ones:
 <p id="myPara">Hello!</p>
 ```
 
-```jsx
+```js
 let para = document.getElementById("myPara");
 console.log(para.textContent); // Output: Hello!
 ```
@@ -44,7 +44,7 @@ This finds the element with `id="myPara"` and stores it in a variable `para`.
 <p class="note">Note 2</p>
 ```
 
-```jsx
+```js
 let notes = document.getElementsByClassName("note");
 console.log(notes[0].textContent); // Output: Note 1
 ```
@@ -60,7 +60,7 @@ Returns a list of elements. You access them like an array using `[0]`, `[1]`, et
 <p>Second</p>
 ```
 
-```jsx
+```js
 let paragraphs = document.getElementsByTagName("p");
 console.log(paragraphs.length); // 2
 ```
@@ -73,7 +73,7 @@ console.log(paragraphs.length); // 2
 <p class="greeting">Hi</p>
 ```
 
-```jsx
+```js
 let firstGreeting = document.querySelector(".greeting");
 console.log(firstGreeting.textContent); // Hi
 ```
@@ -82,9 +82,9 @@ Selects the **first element** that matches the CSS selector `.greeting`
 
 You can use:
 
-* `#id` → selects by id
-* `.class` → selects by class
-* `tag` → selects by tag
+- `#id` → selects by id
+- `.class` → selects by class
+- `tag` → selects by tag
 
 <div class="section-break"></div>
 
@@ -95,7 +95,7 @@ You can use:
 <p class="greeting">Hi 2</p>
 ```
 
-```jsx
+```js
 let allGreetings = document.querySelectorAll(".greeting");
 console.log(allGreetings.length); // 2
 console.log(allGreetings[1].textContent); // Hi 2
@@ -123,14 +123,15 @@ Try these:
 
 1. Create an HTML page with:
 
-   * A heading (`<h1>`)
-   * A paragraph with a class
-   * A div with an ID
+   - A heading (`<h1>`)
+   - A paragraph with a class
+   - A div with an ID
+
 2. Use JavaScript to:
 
-   * Select the heading and change its text
-   * Select the paragraph using class name and change its color
-   * Select the div using `querySelector()` and add a border
+   - Select the heading and change its text
+   - Select the paragraph using class name and change its color
+   - Select the div using `querySelector()` and add a border
 
 </div>
 
@@ -140,8 +141,8 @@ Try these:
 
 Now you understand how to:
 
-* Select elements by ID, class, tag, or CSS selector
-* Choose the best method depending on your use case
-* Start interacting with parts of the web page dynamically
+- Select elements by ID, class, tag, or CSS selector
+- Choose the best method depending on your use case
+- Start interacting with parts of the web page dynamically
 
 </article>

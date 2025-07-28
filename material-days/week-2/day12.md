@@ -8,17 +8,17 @@
 
 Forms are HTML elements that **collect user input**, like:
 
-* Names
-* Emails
-* Passwords
-* Feedback
+- Names
+- Emails
+- Passwords
+- Feedback
 
 JavaScript lets us:
 
-* **Read** what the user typed
-* **Validate** it
-* **Prevent the page from reloading**
-* **Do something** with that data (like show a message or send it to a server)
+- **Read** what the user typed
+- **Validate** it
+- **Prevent the page from reloading**
+- **Do something** with that data (like show a message or send it to a server)
 
 <div class="section-break"></div>
 
@@ -29,7 +29,6 @@ JavaScript lets us:
   <input type="text" id="nameInput" placeholder="Enter your name" />
   <button type="submit">Submit</button>
 </form>
-
 ```
 
 <div class="section-break"></div>
@@ -38,7 +37,7 @@ JavaScript lets us:
 
 To **get what the user typed**, use `.value`
 
-```jsx
+```js
 let input = document.getElementById("nameInput");
 console.log(input.value); // gives the current value
 ```
@@ -53,7 +52,7 @@ If you don’t prevent it, submitting a form **refreshes the page** (which we do
 
 Use `event.preventDefault()` to stop that:
 
-```jsx
+```js
 let form = document.getElementById("myForm");
 
 form.addEventListener("submit", function (e) {
@@ -74,7 +73,7 @@ Add a message using JavaScript:
 <p id="output"></p>
 ```
 
-```jsx
+```js
 let output = document.getElementById("output");
 output.textContent = "Hello, " + name + "!";
 ```
@@ -85,25 +84,25 @@ output.textContent = "Hello, " + name + "!";
 
 ##### 🔹 Text input
 
-```jsx
+```js
 document.querySelector("input").value;
 ```
 
 ##### 🔹 Checkbox
 
-```jsx
+```js
 document.querySelector("input[type='checkbox']").checked;
 ```
 
 ##### 🔹 Radio button
 
-```jsx
+```js
 document.querySelector("input[name='gender']:checked").value;
 ```
 
 ##### 🔹 Dropdown (select)
 
-```jsx
+```js
 document.querySelector("select").value;
 ```
 
@@ -120,7 +119,7 @@ document.querySelector("select").value;
 <p id="message"></p>
 ```
 
-```jsx
+```js
 let form = document.getElementById("signupForm");
 let message = document.getElementById("message");
 
@@ -155,8 +154,8 @@ Try this:
 
 Now you understand how to:
 
-* Get user input with `.value`
-* Handle and prevent form submission
-* Work with different types of inputs
+- Get user input with `.value`
+- Handle and prevent form submission
+- Work with different types of inputs
 
 </article>

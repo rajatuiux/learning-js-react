@@ -34,7 +34,7 @@ Functions in JavaScript work the same way:
 
 ### ✅ How to Define a Function
 
-```jsx
+```js
 function functionName() {
   // code to run
 }
@@ -42,7 +42,7 @@ function functionName() {
 
 **Example:**
 
-```jsx
+```js
 function greetUser() {
   console.log("Hello, user!");
 }
@@ -56,7 +56,7 @@ This **defines** a function but doesn’t run it yet.
 
 You **call** a function using its name with parentheses `()`:
 
-```jsx
+```js
 greetUser(); // Output: Hello, user!
 ```
 
@@ -68,7 +68,7 @@ You can call it **anywhere** after it's defined.
 
 You can pass **values** into a function using **parameters**.
 
-```jsx
+```js
 function greet(name) {
   console.log("Hello, " + name);
 }
@@ -86,7 +86,7 @@ greet("Anita"); // Output: Hello, Anita
 
 Functions can **return a value** using `return`.
 
-```jsx
+```js
 function add(a, b) {
   return a + b;
 }
@@ -118,7 +118,7 @@ Arrow functions are a **shorter way** to write functions.
 
 **Regular function:**
 
-```jsx
+```js
 function sayHi(name) {
   return "Hi " + name;
 }
@@ -126,7 +126,7 @@ function sayHi(name) {
 
 **Arrow function:**
 
-```jsx
+```js
 const sayHi = (name) => {
   return "Hi " + name;
 };
@@ -134,7 +134,7 @@ const sayHi = (name) => {
 
 **Shorter version:**
 
-```jsx
+```js
 const sayHi = (name) => "Hi " + name;
 ```
 

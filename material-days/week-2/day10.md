@@ -26,15 +26,15 @@ You use `.textContent` to change the **plain text** inside an element.
 
 **JavaScript:**
 
-```jsx
+```js
 let para = document.getElementById("greet");
 para.textContent = "Hi there!";
 ```
 
 #### What happens?
 
-* The text inside `<p>` changes from "Hello!" to "Hi there!"
-* `.textContent` only handles **plain text** — no formatting (like bold or italics)
+- The text inside `<p>` changes from "Hello!" to "Hi there!"
+- `.textContent` only handles **plain text** — no formatting (like bold or italics)
 
 <div class="section-break"></div>
 
@@ -44,7 +44,7 @@ You use `.innerHTML` to change the **HTML inside an element**. This allows you t
 
 #### Example:
 
-```jsx
+```js
 para.innerHTML = "<b>Hi there!</b>";
 ```
 
@@ -60,22 +60,22 @@ You can use `.style` to change **CSS directly from JavaScript**.
 
 #### Syntax:
 
-```jsx
+```js
 element.style.property = "value";
 ```
 
 #### Example:
 
-```jsx
-para.style.color = "blue";              // changes text color
-para.style.fontSize = "24px";           // makes the text bigger
+```js
+para.style.color = "blue"; // changes text color
+para.style.fontSize = "24px"; // makes the text bigger
 para.style.backgroundColor = "lightyellow"; // background color
 ```
 
 > Note: Use **camelCase** instead of dashes (`-`) for CSS properties in JavaScript.
 >
-> * CSS → `font-size`
-> * JS → `fontSize`
+> - CSS → `font-size`
+> - JS → `fontSize`
 
 <div class="section-break"></div>
 
@@ -102,10 +102,10 @@ You can use `.classList` in JavaScript to add or remove those classes.
 
 #### JavaScript:
 
-```jsx
+```js
 let para = document.getElementById("greet");
 
-para.classList.add("big");    // Adds the 'big' class
+para.classList.add("big"); // Adds the 'big' class
 para.classList.remove("big"); // Removes the 'big' class
 ```
 
@@ -113,19 +113,19 @@ para.classList.remove("big"); // Removes the 'big' class
 
 It’s better than using `.style` when you want to:
 
-* Add multiple styles at once
-* Keep your code cleaner and separate styles in CSS files
+- Add multiple styles at once
+- Keep your code cleaner and separate styles in CSS files
 
 <div class="section-break"></div>
 
 ### 🔹 Bonus: Toggle Class
 
-```jsx
+```js
 para.classList.toggle("big");
 ```
 
-* If the class exists, it removes it
-* If it doesn’t, it adds it
+- If the class exists, it removes it
+- If it doesn’t, it adds it
 
 <div class="section-break"></div>
 
@@ -138,10 +138,10 @@ Try this:
 1. Create an HTML page with a heading, paragraph, and a button.
 2. Use JavaScript to:
 
-   * Change the heading text to "JavaScript is fun!"
-   * Make the paragraph text bold using `.innerHTML`
-   * Change the background color of the body
-   * Add a class to the button that changes its color and size
+   - Change the heading text to "JavaScript is fun!"
+   - Make the paragraph text bold using `.innerHTML`
+   - Change the background color of the body
+   - Add a class to the button that changes its color and size
 
 </div>
 
@@ -149,8 +149,8 @@ Try this:
 
 ✅ You’ve now learned how to:
 
-* Update text and HTML inside elements
-* Change styles using JavaScript
-* Add and remove CSS classes
+- Update text and HTML inside elements
+- Change styles using JavaScript
+- Add and remove CSS classes
 
 </article>

@@ -6,10 +6,10 @@
 
 Operators are **symbols or keywords** that let you do things with values:
 
-* Do **math**
-* **Compare** values
-* **Assign** values
-* Use **logic** (like AND/OR)
+- Do **math**
+- **Compare** values
+- **Assign** values
+- Use **logic** (like AND/OR)
 
 We'll look at 4 common types of operators today.
 
@@ -19,7 +19,7 @@ We'll look at 4 common types of operators today.
 
 Used to **do math**.
 
-```jsx
+```js
 let x = 10;
 let y = 3;
 ```
@@ -38,13 +38,13 @@ let y = 3;
 
 Used to **store a value** in a variable.
 
-```jsx
-let a = 5;     // assign 5 to a
+```js
+let a = 5; // assign 5 to a
 
-a += 2;        // same as a = a + 2 → 7
-a -= 1;        // a = a - 1 → 6
-a *= 3;        // a = a * 3 → 18
-a /= 6;        // a = a / 6 → 3
+a += 2; // same as a = a + 2 → 7
+a -= 1; // a = a - 1 → 6
+a *= 3; // a = a * 3 → 18
+a /= 6; // a = a / 6 → 3
 ```
 
 <div class="section-break"></div>
@@ -53,7 +53,7 @@ a /= 6;        // a = a / 6 → 3
 
 Used to **compare two values** and return `true` or `false`.
 
-```jsx
+```js
 let num1 = 10;
 let num2 = "10";
 ```
@@ -71,9 +71,9 @@ let num2 = "10";
 
 #### 🔹 `==` vs `===`
 
-```jsx
-10 == "10"   // true → only compares value
-10 === "10"  // false → compares value and type
+```js
+10 == "10"; // true → only compares value
+10 === "10"; // false → compares value and type
 ```
 
 <div class="section-break"></div>
@@ -82,23 +82,23 @@ let num2 = "10";
 
 Used when checking **multiple conditions**.
 
-```jsx
+```js
 let age = 20;
 let isStudent = true;
 ```
 
-| Operator | Name | Description                               |    |                                            |
-| -------- | ---- | ----------------------------------------- | -- | ------------------------------------------ |
-| `&&`     | AND  | True only if **both** conditions are true |    |                                            |
-| `\|\|`   | OR | True if **at least one** condition is true |
-| `!`      | NOT  | Reverses true to false and false to true  |    |                                            |
+| Operator | Name | Description                                |     |     |
+| -------- | ---- | ------------------------------------------ | --- | --- |
+| `&&`     | AND  | True only if **both** conditions are true  |     |     |
+| `\|\|`   | OR   | True if **at least one** condition is true |
+| `!`      | NOT  | Reverses true to false and false to true   |     |     |
 
 #### 🔹 Examples:
 
-```jsx
-age > 18 && isStudent    // true
-age < 18 || isStudent    // true
-!isStudent               // false
+```js
+age > 18 && isStudent; // true
+age < 18 || isStudent; // true
+!isStudent; // false
 ```
 
 <div class="section-break"></div>
@@ -113,7 +113,7 @@ Try these in your browser console or VS Code:
 2. Compare a number and a string using `==` and `===`
 3. Use `&&` and `||` in an if condition
 
-```jsx
+```js
 let age = 16;
 let hasID = true;
 
@@ -132,9 +132,9 @@ if (age >= 18 && hasID) {
 
 You now understand how to:
 
-* Do math with values
-* Compare values
-* Store and update values
-* Use logic in decisions
+- Do math with values
+- Compare values
+- Store and update values
+- Use logic in decisions
 
 </article>

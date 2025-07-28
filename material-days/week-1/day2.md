@@ -4,12 +4,12 @@
 
 ### 🟡 What are Data Types?
 
-* A **data type** means the kind of value a variable is holding.
-* JavaScript uses **dynamic typing** — it figures out the type automatically.
-* Two main categories:
+- A **data type** means the kind of value a variable is holding.
+- JavaScript uses **dynamic typing** — it figures out the type automatically.
+- Two main categories:
 
-  * **Primitive types** (basic values)
-  * **Non-primitive types** (objects, arrays — covered later)
+  - **Primitive types** (basic values)
+  - **Non-primitive types** (objects, arrays — covered later)
 
 <div class="section-break"></div>
 
@@ -27,14 +27,14 @@
 
 #### 🔹 String
 
-```jsx
+```js
 let name = "Rajat";
 ```
 
-* Text wrapped in quotes
-* Strings can be combined using `+`
+- Text wrapped in quotes
+- Strings can be combined using `+`
 
-```jsx
+```js
 let greeting = "Hello, " + name;
 console.log(greeting); // Hello, Rajat
 ```
@@ -45,12 +45,12 @@ console.log(greeting); // Hello, Rajat
 
 #### 🔹 Number
 
-```jsx
+```js
 let age = 25;
 let price = 9.99;
 ```
 
-* You can do math: `+`, `-`, `*`, `/`
+- You can do math: `+`, `-`, `*`, `/`
 
 </div>
 
@@ -58,13 +58,13 @@ let price = 9.99;
 
 #### 🔹 Boolean
 
-```jsx
+```js
 let isOnline = true;
 let isLoggedIn = false;
 ```
 
-* Only `true` or `false`
-* Useful in conditions
+- Only `true` or `false`
+- Useful in conditions
 
 </div>
 
@@ -72,23 +72,24 @@ let isLoggedIn = false;
 
 #### 🔹 Undefined
 
-```jsx
+```js
 let score;
 console.log(score); // undefined
 ```
-* Variable declared but not assigned a value
+
+- Variable declared but not assigned a value
 
 </div>
 <div class="small-grey-block">
 
 #### 🔹 Null
 
-```jsx
+```js
 let selectedItem = null;
 ```
 
-* Assigned as intentionally empty
-* Different from `undefined`
+- Assigned as intentionally empty
+- Different from `undefined`
 
 </div>
 
@@ -98,12 +99,12 @@ let selectedItem = null;
 
 Use `typeof` keyword:
 
-```jsx
-typeof "hello";     // "string"
-typeof 99;          // "number"
-typeof true;        // "boolean"
-typeof undefined;   // "undefined"
-typeof null;        // "object" (weird bug)
+```js
+typeof "hello"; // "string"
+typeof 99; // "number"
+typeof true; // "boolean"
+typeof undefined; // "undefined"
+typeof null; // "object" (weird bug)
 ```
 
 <div class="section-break"></div>
@@ -114,7 +115,7 @@ typeof null;        // "object" (weird bug)
 
 ##### 🔹 String to Number
 
-```jsx
+```js
 let str = "123";
 let num = Number(str);
 console.log(num); // 123
@@ -125,7 +126,7 @@ console.log(num); // 123
 
 ##### 🔹 Number to String
 
-```jsx
+```js
 let age = 25;
 let strAge = String(age);
 console.log(strAge); // "25"
@@ -136,11 +137,11 @@ console.log(strAge); // "25"
 
 ##### 🔹 Anything to Boolean
 
-```jsx
-Boolean(1);      // true
-Boolean(0);      // false
-Boolean("");     // false
-Boolean("abc");  // true
+```js
+Boolean(1); // true
+Boolean(0); // false
+Boolean(""); // false
+Boolean("abc"); // true
 ```
 
 > ✅ Rule: `0`, `""`, `null`, `undefined`, `NaN` → **false**

@@ -12,7 +12,7 @@ Example:
 
 Instead of:
 
-```jsx
+```js
 console.log("Hello");
 console.log("Hello");
 console.log("Hello");
@@ -132,7 +132,8 @@ for (let i = 1; i <= 10; i++) {
   console.log(i);
 }
 ```
-```jsx
+
+```js
 // Output: 1 2 3 4
 ```
 
@@ -144,7 +145,8 @@ for (let i = 1; i <= 5; i++) {
   console.log(i);
 }
 ```
-```jsx
+
+```js
 // Output: 1 2 4 5
 ```
 

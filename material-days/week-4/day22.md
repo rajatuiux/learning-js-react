@@ -21,7 +21,7 @@ Now we’ll focus on:
 
 #### Function Declaration
 
-```jsx
+```js
 function greet(name) {
   return "Hello, " + name;
 }
@@ -31,7 +31,7 @@ function greet(name) {
 
 #### Function Expression
 
-```jsx
+```js
 const greet = function (name) {
   return "Hello, " + name;
 };
@@ -45,7 +45,7 @@ const greet = function (name) {
 
 Modern and shorter syntax:
 
-```jsx
+```js
 const greet = (name) => {
   return "Hello, " + name;
 };
@@ -53,7 +53,7 @@ const greet = (name) => {
 
 If there is **only one statement**, and it's a return, you can write:
 
-```jsx
+```js
 const greet = (name) => "Hello, " + name;
 ```
 
@@ -69,7 +69,7 @@ Let’s say we want to show a formatted user profile.
 
 We might write:
 
-```jsx
+```js
 let name1 = "Rajat";
 let age1 = 25;
 console.log("Name: " + name1 + ", Age: " + age1);
@@ -81,7 +81,7 @@ console.log("Name: " + name2 + ", Age: " + age2);
 
 #### Better Way – Use a function:
 
-```jsx
+```js
 function showProfile(name, age) {
   console.log("Name: " + name + ", Age: " + age);
 }
@@ -101,7 +101,7 @@ Many beginners confuse `console.log()` with `return`.
 - **Sends back a value**
 - Can be stored in variables or passed into other functions
 
-```jsx
+```js
 function getSum(a, b) {
   return a + b;
 }
@@ -114,7 +114,7 @@ let total = getSum(5, 10); // total is 15
 - **Just displays something on screen**
 - Doesn’t store or pass values
 
-```jsx
+```js
 console.log(getSum(5, 10)); // prints 15
 ```
 
@@ -270,7 +270,7 @@ This is **very important** for working with:
 
 4. **Use default values** (optional):
 
-   ```jsx
+   ```js
    function greet(name = "Guest") {
      console.log("Hello " + name);
    }
@@ -290,7 +290,7 @@ This is **very important** for working with:
 4. Try converting all above functions into **arrow functions**.
 5. BONUS: Create a function `formatUser(userObj)` that takes an object:
 
-   ```jsx
+   ```js
    let user = { name: "Rajat", age: 25 };
    ```
 

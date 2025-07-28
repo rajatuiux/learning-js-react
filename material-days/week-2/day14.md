@@ -6,10 +6,10 @@
 
 Build a To-Do List where the user can:
 
-* Type a task
-* Click “Add Task”
-* See the task appear below
-* Click on a task to remove it
+- Type a task
+- Click “Add Task”
+- See the task appear below
+- Click on a task to remove it
 
 <div class="section-break"></div>
 
@@ -28,16 +28,16 @@ Create a simple layout with:
 
 This includes:
 
-* A heading
-* An input field for entering tasks
-* A button to add tasks
-* An unordered list (`<ul>`) to hold the task items
+- A heading
+- An input field for entering tasks
+- A button to add tasks
+- An unordered list (`<ul>`) to hold the task items
 
 <div class="section-break"></div>
 
 ### ✅ JavaScript Functionality
 
-```jsx
+```js
 // Select elements
 let addBtn = document.getElementById("addBtn");
 let taskInput = document.getElementById("taskInput");
@@ -76,51 +76,50 @@ addBtn.addEventListener("click", function () {
 2. Gets the value from the input box
 3. If not empty, it:
 
-   * Creates a new `<li>`
-   * Adds the text
-   * Adds a **click** listener to the new `<li>` (for removing it)
-   * Adds it to the `<ul>`
-   * Clears the input field
+   - Creates a new `<li>`
+   - Adds the text
+   - Adds a **click** listener to the new `<li>` (for removing it)
+   - Adds it to the `<ul>`
+   - Clears the input field
 
 <div class="section-break"></div>
 
 ### ✅ Optional CSS Styling (for better looks)
 
 ```css
-  body {
-    font-family: sans-serif;
-    max-width: 400px;
-    margin: 20px auto;
-    padding: 10px;
-  }
+body {
+  font-family: sans-serif;
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 10px;
+}
 
-  input {
-    padding: 8px;
-    width: 70%;
-  }
+input {
+  padding: 8px;
+  width: 70%;
+}
 
-  button {
-    padding: 8px 12px;
-    margin-left: 10px;
-  }
+button {
+  padding: 8px 12px;
+  margin-left: 10px;
+}
 
-  ul {
-    margin-top: 20px;
-    padding: 0;
-    list-style-type: none;
-  }
+ul {
+  margin-top: 20px;
+  padding: 0;
+  list-style-type: none;
+}
 
-  li {
-    background-color: #f0f0f0;
-    padding: 10px;
-    margin-top: 5px;
-    cursor: pointer;
-  }
+li {
+  background-color: #f0f0f0;
+  padding: 10px;
+  margin-top: 5px;
+  cursor: pointer;
+}
 
-  li:hover {
-    background-color: #ffe0e0;
-  }
-
+li:hover {
+  background-color: #ffe0e0;
+}
 ```
 
 <div class="section-break"></div>
@@ -131,9 +130,9 @@ addBtn.addEventListener("click", function () {
 
 If you’re feeling confident, try adding these:
 
-* Add a **"Clear All"** button to remove all tasks at once
-* Save tasks to **localStorage** so they stay after page refresh (we’ll learn this later)
-* Add a checkbox to mark tasks as “done” instead of deleting
+- Add a **"Clear All"** button to remove all tasks at once
+- Save tasks to **localStorage** so they stay after page refresh (we’ll learn this later)
+- Add a checkbox to mark tasks as “done” instead of deleting
 
 </div>
 
@@ -141,12 +140,12 @@ If you’re feeling confident, try adding these:
 
 ### ✅ What You Practiced
 
-* Reading input values
-* Creating and appending elements dynamically
-* Event listeners (click)
-* Removing elements
-* DOM manipulation basics
-* Writing real code and combining everything you’ve learned so far
+- Reading input values
+- Creating and appending elements dynamically
+- Event listeners (click)
+- Removing elements
+- DOM manipulation basics
+- Writing real code and combining everything you’ve learned so far
 
 <div class="section-break"></div>
 

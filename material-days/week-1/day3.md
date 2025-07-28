@@ -1,140 +1,239 @@
 <article class="day-block">
 
-## Day 3: Operators in JavaScript
-
-### 🟡 What are Operators?
-
-Operators are **symbols or keywords** that let you do things with values:
-
-- Do **math**
-- **Compare** values
-- **Assign** values
-- Use **logic** (like AND/OR)
-
-We'll look at 4 common types of operators today.
+## Day 22: Functions Deep Dive – Reusability, Clean Code & Callbacks
 
 <div class="section-break"></div>
 
-### ✅ Arithmetic Operators (Math)
+### 🔁 Recap: What You Already Know
 
-Used to **do math**.
+- How to define a function
+- How to call a function
+- Using parameters and return values
 
-```js
-let x = 10;
-let y = 3;
-```
+Now, let’s go beyond basics to learn:
 
-| Operator | Meaning   | Example | Result |
-| -------- | --------- | ------- | ------ |
-| `+`      | Add       | `x + y` | `13`   |
-| `-`      | Subtract  | `x - y` | `7`    |
-| `*`      | Multiply  | `x * y` | `30`   |
-| `/`      | Divide    | `x / y` | `3.33` |
-| `%`      | Remainder | `x % y` | `1`    |
+- Function expressions vs declarations
+- Arrow functions vs regular functions
+- Clean, reusable function design
+- Callback functions (a powerful concept in JS)
 
 <div class="section-break"></div>
 
-### ✅ Assignment Operators (Store Value)
+### 🔧 Function Declarations vs Expressions
 
-Used to **store a value** in a variable.
+#### Function Declaration (Hoisted)
 
 ```js
-let a = 5; // assign 5 to a
+function greet(name) {
+  return "Hello, " + name;
+}
+```
 
-a += 2; // same as a = a + 2 → 7
-a -= 1; // a = a - 1 → 6
-a *= 3; // a = a * 3 → 18
-a /= 6; // a = a / 6 → 3
+✅ Can be called before its definition
+
+#### Function Expression (Not Hoisted)
+
+```js
+const greet = function (name) {
+  return "Hello, " + name;
+};
+```
+
+✅ Useful when passing functions as arguments
+
+<div class="section-break"></div>
+
+### 🏹 Arrow Functions
+
+A shorter way to write functions:
+
+```js
+const greet = (name) => "Hello, " + name;
+```
+
+- Ideal for one-liners
+- Great for event handlers, array methods, etc.
+
+<div class="section-break"></div>
+
+### ✅ Writing Reusable Functions
+
+#### Before:
+
+```js
+let name1 = "Rajat";
+let age1 = 25;
+console.log("Name: " + name1 + ", Age: " + age1);
+
+let name2 = "Anita";
+let age2 = 30;
+console.log("Name: " + name2 + ", Age: " + age2);
+```
+
+#### Better:
+
+```js
+function showProfile(name, age) {
+  console.log("Name: " + name + ", Age: " + age);
+}
+
+showProfile("Rajat", 25);
+showProfile("Anita", 30);
+```
+
+✅ Cleaner, reusable, readable
+
+<div class="section-break"></div>
+
+### 🔄 Return vs Console.log
+
+#### Return = Send Value
+
+```js
+function getSum(a, b) {
+  return a + b;
+}
+let total = getSum(5, 10);
+```
+
+#### Console.log = Just Print
+
+```js
+console.log(getSum(5, 10)); // prints 15
+```
+
+✅ Use `return` when you need to **use** the result elsewhere
+
+<div class="section-break"></div>
+
+### 🧠 What Are Callback Functions?
+
+A **callback** is a function **passed to another function** to run later.
+
+#### Basic Example:
+
+```js
+function sayHello() {
+  console.log("Hello!");
+}
+function greet(callback) {
+  callback();
+}
+
+greet(sayHello); // Output: Hello!
+```
+
+🧠 You passed `sayHello` **as a value** (not `sayHello()`)
+
+<div class="section-break"></div>
+
+### 🍎 Kid-Friendly Example:
+
+```js
+function calculate(a, b, callback) {
+  callback(a, b);
+}
+function add(x, y) {
+  console.log("The sum is:", x + y);
+}
+calculate(5, 3, add);
+```
+
+✅ Think of it like a magic calculator — you give it numbers and a recipe (callback)
+
+<div class="section-break"></div>
+
+### 💡 Why Use Callbacks?
+
+- Run something **after a task finishes**
+- Make code **flexible and reusable**
+- Essential in **async programming** (like APIs)
+
+<div class="section-break"></div>
+
+### 🧪 More Examples
+
+#### Arrow Callback
+
+```js
+doMath(10, 2, (x, y) => console.log("Multiply:", x * y));
+```
+
+#### With setTimeout
+
+```js
+function sayHi() {
+  console.log("Hi there!");
+}
+setTimeout(sayHi, 2000); // After 2 sec
+```
+
+#### .forEach() Callback
+
+```js
+let fruits = ["apple", "banana", "mango"];
+fruits.forEach((fruit) => console.log(fruit.toUpperCase()));
 ```
 
 <div class="section-break"></div>
 
-### ✅ Comparison Operators (Check Conditions)
-
-Used to **compare two values** and return `true` or `false`.
+### ⚠️ Common Mistake
 
 ```js
-let num1 = 10;
-let num2 = "10";
-```
+// ❌ Wrong: This executes immediately
+greet(sayHello());
 
-| Operator | Meaning                         | Example         | Result  |
-| -------- | ------------------------------- | --------------- | ------- |
-| `==`     | Equal (values only)             | `num1 == num2`  | `true`  |
-| `===`    | Strict equal (value + type)     | `num1 === num2` | `false` |
-| `!=`     | Not equal (values only)         | `num1 != num2`  | `false` |
-| `!==`    | Strict not equal (value + type) | `num1 !== num2` | `true`  |
-| `>`      | Greater than                    | `num1 > 5`      | `true`  |
-| `<`      | Less than                       | `num1 < 5`      | `false` |
-| `>=`     | Greater or equal                | `num1 >= 10`    | `true`  |
-| `<=`     | Less or equal                   | `num1 <= 9`     | `false` |
-
-#### 🔹 `==` vs `===`
-
-```js
-10 == "10"; // true → only compares value
-10 === "10"; // false → compares value and type
+// ✅ Right: Just pass the function
+greet(sayHello);
 ```
 
 <div class="section-break"></div>
 
-### ✅ Logical Operators (AND, OR, NOT)
+### ✅ Best Practices for Functions
 
-Used when checking **multiple conditions**.
-
-```js
-let age = 20;
-let isStudent = true;
-```
-
-| Operator | Name | Description                                |     |     |
-| -------- | ---- | ------------------------------------------ | --- | --- |
-| `&&`     | AND  | True only if **both** conditions are true  |     |     |
-| `\|\|`   | OR   | True if **at least one** condition is true |
-| `!`      | NOT  | Reverses true to false and false to true   |     |     |
-
-#### 🔹 Examples:
+1. **Do one job only**
+2. **Use clear names** (`getData()`, `showAlert()`)
+3. **Short is sweet** – 5–15 lines
+4. **Use default values**
 
 ```js
-age > 18 && isStudent; // true
-age < 18 || isStudent; // true
-!isStudent; // false
+function greet(name = "Guest") {
+  console.log("Hello " + name);
+}
 ```
+
+5. **Use functions to remove repetition**
 
 <div class="section-break"></div>
 
 <div class="practice">
 
-### 🔸 Practice Time
+### 🧪 Practice Time
 
-Try these in your browser console or VS Code:
-
-1. Create 2 numbers and try all arithmetic operators
-2. Compare a number and a string using `==` and `===`
-3. Use `&&` and `||` in an if condition
+1. Create a function `multiply(a, b)` that returns the product.
+2. `introduce(name, job)` logs: "Hi, I am NAME and I work as a JOB."
+3. `isEven(num)` returns true if number is even
+4. Convert above to arrow functions
+5. BONUS: `formatUser(user)`
 
 ```js
-let age = 16;
-let hasID = true;
-
-if (age >= 18 && hasID) {
-  console.log("You can enter");
-} else {
-  console.log("Access denied");
-}
+let user = { name: "Rajat", age: 25 }; // Output: Rajat is 25 years old.
 ```
+
+6. Function that takes two numbers + a callback
+7. Write a `setTimeout` with a named function
+8. Use `.forEach()` to print array items in uppercase
 
 </div>
 
 <div class="section-break"></div>
 
-✅ **You’ve completed Day 3!**
+### ✅ Summary
 
-You now understand how to:
-
-- Do math with values
-- Compare values
-- Store and update values
-- Use logic in decisions
+- Difference: declarations, expressions, arrow functions
+- Writing clean, reusable functions
+- When to use return vs console.log
+- What is a callback
+- How callbacks are used in events, timeouts, async, React
 
 </article>

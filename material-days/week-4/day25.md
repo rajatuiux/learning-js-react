@@ -91,6 +91,86 @@ console.log(hasMinor); // true
 | `find()`   | First item that matches condition | You want just **one** (like by ID or name) |
 | `filter()` | **All** items that match          | You want **many** (like all adults)        |
 
+### JavaScript: `.filter()`, `.find()`, and `.some()` – Comparison with Examples
+
+<div class="section-break"></div>
+
+#### 🔍 1. `.filter()` – Get **all matching items**
+
+* **Returns:** A **new array** of **all** elements that match the condition
+* **Use case:** You want multiple results that meet a rule
+
+```js
+const numbers = [10, 20, 25, 30, 40];
+
+const result = numbers.filter(num => num > 20);
+console.log(result); // [25, 30, 40]
+```
+
+✅ Returns **ALL** items > 20
+❌ Does **not** stop early — checks entire array
+
+<div class="section-break"></div>
+
+#### 🔎 2. `.find()` – Get the **first matching item**
+
+* **Returns:** The **first** element that matches the condition
+* **Use case:** You want **only one** result, not an array
+
+```js
+const numbers = [10, 20, 25, 30, 40];
+
+const result = numbers.find(num => num > 20);
+console.log(result); // 25
+```
+
+✅ Stops when it finds the **first match**
+✅ Returns the **item itself**, not an array
+❌ If nothing matches → returns `undefined`
+
+<div class="section-break"></div>
+
+#### ❓ 3. `.some()` – Does **any item match**?
+
+* **Returns:** `true` or `false`
+* **Use case:** You just want to check **if at least one item** meets the condition
+
+```js
+const numbers = [10, 20, 25, 30, 40];
+
+const result = numbers.some(num => num > 35);
+console.log(result); // true
+```
+
+✅ Stops as soon as **one match** is found
+✅ Super fast for yes/no checks
+❌ Doesn’t give you the actual item(s)
+
+<div class="section-break"></div>
+
+### 🧠 Comparison Table
+
+| Feature      | `.filter()`        | `.find()`                  | `.some()`              |
+| ------------ | ------------------ | -------------------------- | ---------------------- |
+| Returns      | Array of matches   | First match or `undefined` | Boolean (`true/false`) |
+| How many?    | All matching items | First match only           | Just checks existence  |
+| Output type  | Array              | Value or undefined         | Boolean                |
+| Stops early? | ❌ No               | ✅ Yes                      | ✅ Yes                  |
+| Use case     | Show filtered list | Find detail card           | Check condition exists |
+
+<div class="section-break"></div>
+
+### 🎯 Real-Life Analogy
+
+Imagine a box of chocolates:
+
+* `.filter()` – Take out **all dark chocolates**
+* `.find()` – Grab the **first coconut-filled chocolate**
+* `.some()` – Just check: "Is there **any chocolate with caramel**?"
+
+<div class="section-break"></div>
+
+
 <div class="practice">
 
 ### Practice Times

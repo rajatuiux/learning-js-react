@@ -122,6 +122,7 @@ console.log(greetings);
   { name: "Yash", age: 22 }
 ]
 ```
+</div>
 
 ### You Now Understand:
 
@@ -132,6 +133,5 @@ console.log(greetings);
 
 ➡️ You’ve now covered all 3 core array helpers: `map`, `forEach`, and `filter`
 
-</div>
 
 </article>

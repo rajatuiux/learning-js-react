@@ -18,8 +18,8 @@ let person = {
 };
 ```
 
-* `name`, `age`, and `isStudent` are called **properties**
-* Each has a **key** (name) and a **value**
+- `name`, `age`, and `isStudent` are called **properties**
+- Each has a **key** (name) and a **value**
 
 ### Basic Object Syntax
 
@@ -57,8 +57,8 @@ console.log(car["model"]); // "Camry"
 
 Use bracket notation when:
 
-* You have spaces in the key
-* The key is stored in a variable
+- You have spaces in the key
+- The key is stored in a variable
 
 ### Adding or Updating Properties
 
@@ -93,8 +93,8 @@ let user = {
 };
 ```
 
-* `greet` is called a **method**
-* `this` refers to the current object
+- `greet` is called a **method**
+- `this` refers to the current object
 
 Calling it:
 
@@ -162,9 +162,9 @@ console.log(products[1].name); // "Pencil"
 
 ✅ You now understand:
 
-* How objects store grouped data
-* How to access, update, and delete values
-* How to add functions inside objects
-* Nested objects and array of objects
+- How objects store grouped data
+- How to access, update, and delete values
+- How to add functions inside objects
+- Nested objects and array of objects
 
 </article>

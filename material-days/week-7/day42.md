@@ -4,13 +4,10 @@
 
 Traditional `for` loops can feel repetitive:
 
-```
-js
-CopyEdit
+```js
 for (let i = 0; i < fruits.length; i++) {
   console.log(fruits[i]);
 }
-
 ```
 
 Modern loops **simplify** this. Let’s learn the two most popular ways:
@@ -23,26 +20,20 @@ Loops through **each value** in an array — simple and clean.
 
 ### Syntax:
 
-```
-js
-CopyEdit
+```js
 for (let item of array) {
   // use item
 }
-
 ```
 
 ### Example:
 
-```
-js
-CopyEdit
+```js
 let fruits = ["apple", "banana", "mango"];
 
 for (let fruit of fruits) {
   console.log(fruit);
 }
-
 ```
 
 > You don’t need to worry about indexes or .length.
@@ -57,26 +48,20 @@ Calls a function once for **each element** in the array.
 
 ### Syntax:
 
-```
-js
-CopyEdit
+```js
 array.forEach(function (item, index) {
   // do something
 });
-
 ```
 
 ### Example:
 
-```
-js
-CopyEdit
+```js
 let colors = ["red", "green", "blue"];
 
 colors.forEach(function (color, index) {
   console.log(`Color ${index + 1}: ${color}`);
 });
-
 ```
 
 > .forEach() gives both item and index.
@@ -102,9 +87,7 @@ colors.forEach(function (color, index) {
 
 #### Real-Life Example: User Emails
 
-```
-js
-CopyEdit
+```js
 let users = [
   { name: "John", email: "john@example.com" },
   { name: "Sara", email: "sara@example.com" },
@@ -113,7 +96,6 @@ let users = [
 users.forEach(function (user) {
   console.log(`${user.name}'s email is ${user.email}`);
 });
-
 ```
 
 ## 🔸 Practice Challenge:

@@ -8,17 +8,14 @@ It’s used when you want to **change** or **extract** part of each element.
 
 ### Simple Example:
 
-```
-js
-CopyEdit
+```js
 let numbers = [1, 2, 3];
 
-let doubled = numbers.map(function(num) {
+let doubled = numbers.map(function (num) {
   return num * 2;
 });
 
 console.log(doubled); // [2, 4, 6]
-
 ```
 
 - `numbers` remains unchanged
@@ -26,76 +23,61 @@ console.log(doubled); // [2, 4, 6]
 
 #### Syntax
 
-```
-js
-CopyEdit
+```js
 array.map(function (item, index, array) {
   return transformedItem;
 });
-
 ```
 
 #### Real-Life Example: Extracting Titles
 
-```
-js
-CopyEdit
+```js
 let products = [
   { title: "Laptop", price: 60000 },
   { title: "Phone", price: 25000 },
-  { title: "Tablet", price: 18000 }
+  { title: "Tablet", price: 18000 },
 ];
 
-let titles = products.map(function(product) {
+let titles = products.map(function (product) {
   return product.title;
 });
 
 console.log(titles); // ["Laptop", "Phone", "Tablet"]
-
 ```
 
 #### Example: Change Object Structure
 
-```
-js
-CopyEdit
+```js
 let users = [
   { name: "Rajat", age: 25 },
-  { name: "Sara", age: 30 }
+  { name: "Sara", age: 30 },
 ];
 
-let usernames = users.map(function(user) {
+let usernames = users.map(function (user) {
   return user.name.toLowerCase();
 });
 
 console.log(usernames); // ["rajat", "sara"]
-
 ```
 
 #### You Can Combine `.map()` and `.filter()`
 
-```
-js
-CopyEdit
+```js
 let expensiveTitles = products
-  .filter(p => p.price > 20000)
-  .map(p => p.title);
+  .filter((p) => p.price > 20000)
+  .map((p) => p.title);
 
 console.log(expensiveTitles); // ["Laptop", "Phone"]
-
 ```
 
 ## 🔍 Real Use: Create UI Cards in React
 
 In React, `.map()` is used to render lists dynamically:
 
-```
-js
-CopyEdit
-products.map(product => (
+```js
+products.map((product) => (
   <ProductCard title={product.title} price={product.price} />
 ));
-
 ```
 
 You’ll use this **a lot** when building interfaces.

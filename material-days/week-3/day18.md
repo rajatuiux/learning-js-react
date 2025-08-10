@@ -40,6 +40,7 @@ You can write just **one line in a loop** to repeat it 5 times.
 for (start; condition; step) {
   // code to repeat
 }
+
 ```
 
  ##### Example: Print 1 to 5
@@ -48,6 +49,7 @@ for (start; condition; step) {
 for (let i = 1; i <= 5; i++) {
   console.log("Count:", i);
 }
+
 ```
 
  ##### Explanation:
@@ -69,6 +71,7 @@ while (i <= 5) {
   console.log("Number:", i);
   i++;
 }
+
 ```
 
 Use while when you don’t know exactly how many times you’ll repeat
@@ -102,6 +105,7 @@ let fruits = ["apple", "banana", "mango"];
 for (let fruit of fruits) {
   console.log(fruit);
 }
+
 ```
 
 ##### Example with a string:
@@ -112,6 +116,7 @@ let name = "Rajat";
 for (let letter of name) {
   console.log(letter);
 }
+
 ```
 
 ### Breaking a Loop Early: `break`
@@ -125,6 +130,7 @@ for (let i = 1; i <= 10; i++) {
   }
   console.log(i);
 }
+
 ```
 
  ### Skip Current Loop Turn: `continue`
@@ -138,6 +144,7 @@ for (let i = 1; i <= 5; i++) {
   }
   console.log(i);
 }
+
 ```
 
 <div class="practice">

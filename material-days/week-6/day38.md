@@ -6,13 +6,14 @@
 
 A live checker that:
 
-* Takes input for a **username**
-* Checks instantly if it’s already taken
-* Gives visual feedback like:
+- Takes input for a **username**
+- Checks instantly if it’s already taken
+- Gives visual feedback like:
 
-  * ✅ Available
-  * ❌ Already taken
-* Uses a **mock list of taken usernames**
+  - ✅ Available
+  - ❌ Already taken
+
+- Uses a **mock list of taken usernames**
 
 <div class="section-break"></div>
 
@@ -121,18 +122,18 @@ usernameInput.addEventListener("input", function () {
 
 ### 🔍 Explanation
 
-* `takenUsernames` simulates usernames already registered.
-* `.toLowerCase()` ensures the check is case-insensitive.
-* Checks live while user types using `input` event.
-* Displays colored messages immediately.
+- `takenUsernames` simulates usernames already registered.
+- `.toLowerCase()` ensures the check is case-insensitive.
+- Checks live while user types using `input` event.
+- Displays colored messages immediately.
 
 <div class="section-break"></div>
 
 ### 🔸 Optional Challenges
 
-* Add a delay (`setTimeout`) to simulate server request.
-* Allow only usernames with minimum 4 characters.
-* Add a submit button and disable it if username is taken.
+- Add a delay (`setTimeout`) to simulate server request.
+- Allow only usernames with minimum 4 characters.
+- Add a submit button and disable it if username is taken.
 
 <div class="section-break"></div>
 
@@ -140,9 +141,9 @@ usernameInput.addEventListener("input", function () {
 
 ### Practice
 
-* Build the username checker
-* Simulate server delay
-* Add submit button with logic
+- Build the username checker
+- Simulate server delay
+- Add submit button with logic
 
 </div>
 

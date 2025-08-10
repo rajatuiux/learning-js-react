@@ -4,9 +4,8 @@
 
 An **array** is a special variable that holds **multiple values** (usually of the same type) in **one place**.
 
-```
-js
-CopyEdit
+```js
+
 let colors = ["red", "green", "blue"];
 
 ```
@@ -29,9 +28,8 @@ Arrays let you:
 
 #### Declaring Arrays
 
-```
-js
-CopyEdit
+```js
+
 let fruits = ["apple", "banana", "mango"];
 let numbers = [10, 20, 30, 40];
 let mixed = ["text", 123, true];  // valid, but avoid mixing types unless needed
@@ -40,9 +38,8 @@ let mixed = ["text", 123, true];  // valid, but avoid mixing types unless needed
 
 #### Accessing Values
 
-```
-js
-CopyEdit
+```js
+
 console.log(fruits[0]);  // "apple"
 console.log(fruits[2]);  // "mango"
 
@@ -52,9 +49,8 @@ console.log(fruits[2]);  // "mango"
 
 #### Changing Values
 
-```
-js
-CopyEdit
+```js
+
 fruits[1] = "orange";
 console.log(fruits);  // ["apple", "orange", "mango"]
 
@@ -62,18 +58,16 @@ console.log(fruits);  // ["apple", "orange", "mango"]
 
 #### Array Length
 
-```
-js
-CopyEdit
+```js
+
 console.log(fruits.length);  // 3
 
 ```
 
 #### Adding Elements
 
-```
-js
-CopyEdit
+```js
+
 fruits.push("grape");   // Add to end
 fruits.unshift("kiwi"); // Add to start
 
@@ -84,9 +78,8 @@ console.log(fruits);
 
 #### Removing Elements
 
-```
-js
-CopyEdit
+```js
+
 fruits.pop();      // Removes last element
 fruits.shift();    // Removes first element
 
@@ -94,9 +87,8 @@ fruits.shift();    // Removes first element
 
 #### Looping Through Arrays
 
-```
-js
-CopyEdit
+```js
+
 for (let i = 0; i < fruits.length; i++) {
   console.log(fruits[i]);
 }
@@ -105,9 +97,8 @@ for (let i = 0; i < fruits.length; i++) {
 
 #### Real-Life Example
 
-```
-js
-CopyEdit
+```js
+
 let users = ["john", "maria", "alex"];
 
 console.log(`Total users: ${users.length}`);

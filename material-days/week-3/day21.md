@@ -6,10 +6,10 @@
 
 We will:
 
-* Store **user profiles** in an array of objects
-* Loop through the array
-* Dynamically **create profile cards** in the browser using JavaScript
-* Use basic **HTML + CSS** to style the cards
+- Store **user profiles** in an array of objects
+- Loop through the array
+- Dynamically **create profile cards** in the browser using JavaScript
+- Use basic **HTML + CSS** to style the cards
 
 ### 1. Basic HTML Setup
 
@@ -62,20 +62,20 @@ let users = [
     name: "Rajat Gulati",
     age: 25,
     city: "Delhi",
-    profession: "UX Designer"
+    profession: "UX Designer",
   },
   {
     name: "Anita Verma",
     age: 28,
     city: "Mumbai",
-    profession: "Frontend Developer"
+    profession: "Frontend Developer",
   },
   {
     name: "Rohan Kapoor",
     age: 30,
     city: "Bangalore",
-    profession: "Product Manager"
-  }
+    profession: "Product Manager",
+  },
 ];
 
 // Select the container where cards will go
@@ -106,27 +106,27 @@ for (let user of users) {
 
 ##### 1. Data
 
-* An array called `users`, where each item is an **object** with user details.
+- An array called `users`, where each item is an **object** with user details.
 
 ##### 2. Selection
 
-* We select the `<div id="cardContainer">` from HTML to place our cards in.
+- We select the `<div id="cardContainer">` from HTML to place our cards in.
 
 ##### 3. Loop
 
-* We use a `for...of` loop to go through each object in the array.
+- We use a `for...of` loop to go through each object in the array.
 
 ##### 4. Create Elements
 
-* Create a `<div>` and add the class `card`.
+- Create a `<div>` and add the class `card`.
 
 ##### 5. Insert Content
 
-* Use template literals `...` to fill in the data dynamically using `${}`.
+- Use template literals `...` to fill in the data dynamically using `${}`.
 
 ##### 6. Append
 
-* Finally, we add each card to the page using `appendChild`.
+- Finally, we add each card to the page using `appendChild`.
 
 ### Bonus (Optional Challenges)
 
@@ -146,12 +146,12 @@ for (let user of users) {
 
 #### What You Practiced
 
-* Arrays of objects
-* Loops (`for...of`)
-* DOM selection and manipulation
-* Template literals
-* Element creation and appending
-* Styling and structuring output with CSS
+- Arrays of objects
+- Loops (`for...of`)
+- DOM selection and manipulation
+- Template literals
+- Element creation and appending
+- Styling and structuring output with CSS
 
 </div>
 

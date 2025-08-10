@@ -8,96 +8,75 @@ By default, it sorts values **as strings**, which can lead to surprises.
 
 #### Sorting Strings
 
-```
-js
-CopyEdit
+```js
 let names = ["Sara", "Rajat", "Alex", "Zara"];
 
 names.sort();
 console.log(names); // ["Alex", "Rajat", "Sara", "Zara"]
-
 ```
 
 > This works perfectly for simple alphabetical sorting (A to Z).
 
 #### Sorting Numbers (⚠️ Default Is Wrong!)
 
-```
-js
-CopyEdit
+```js
 let numbers = [5, 100, 20];
 
 numbers.sort();
 console.log(numbers); // [100, 20, 5] ❌ (sorted as strings!)
-
 ```
 
 To sort numbers correctly, you must pass a **compare function**:
 
-```
-js
-CopyEdit
-numbers.sort(function(a, b) {
-  return a - b;  // Ascending: smallest to largest
+```js
+numbers.sort(function (a, b) {
+  return a - b; // Ascending: smallest to largest
 });
 console.log(numbers); // [5, 20, 100]
-
 ```
 
 #### Descending Order (High to Low)
 
-```
-js
-CopyEdit
-numbers.sort(function(a, b) {
+```js
+numbers.sort(function (a, b) {
   return b - a;
 });
 console.log(numbers); // [100, 20, 5]
-
 ```
 
 #### Real-Life Example: Sort Products by Price
 
-```
-js
-CopyEdit
+```js
 let products = [
   { name: "Laptop", price: 60000 },
   { name: "Phone", price: 30000 },
-  { name: "Tablet", price: 20000 }
+  { name: "Tablet", price: 20000 },
 ];
 
-products.sort(function(a, b) {
+products.sort(function (a, b) {
   return a.price - b.price;
 });
 
 console.log(products);
 // Tablet, Phone, Laptop (low to high)
-
 ```
 
 #### Part 2: `.reverse()` – Reverse an Array
 
 `.reverse()` simply **flips the order** of items in an array.
 
-```
-js
-CopyEdit
+```js
 let cities = ["Delhi", "Mumbai", "Chennai"];
 
 cities.reverse();
 console.log(cities); // ["Chennai", "Mumbai", "Delhi"]
-
 ```
 
 You can **combine** it with `.sort()` to sort in reverse order.
 
-```
-js
-CopyEdit
+```js
 let sorted = cities.sort().reverse();
 console.log(sorted); // ["Mumbai", "Delhi", "Chennai"]
-
 ```
 
 ### ⚠️ Warning:
@@ -106,11 +85,8 @@ Both `.sort()` and `.reverse()` **change the original array**!
 
 If you want to keep the original array safe:
 
-```
-js
-CopyEdit
-let sortedCopy = [...cities].sort();   // make a copy first
-
+```js
+let sortedCopy = [...cities].sort(); // make a copy first
 ```
 
 ## 🔸 Practice Challenge

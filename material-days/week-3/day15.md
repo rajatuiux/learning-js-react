@@ -38,6 +38,7 @@ Functions in JavaScript work the same way:
 function functionName() {
   // code to run
 }
+
 ```
 
 **Example:**
@@ -46,6 +47,7 @@ function functionName() {
 function greetUser() {
   console.log("Hello, user!");
 }
+
 ```
 
 This **defines** a function but doesn’t run it yet.
@@ -122,6 +124,7 @@ Arrow functions are a **shorter way** to write functions.
 function sayHi(name) {
   return "Hi " + name;
 }
+
 ```
 
 **Arrow function:**

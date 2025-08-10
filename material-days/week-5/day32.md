@@ -49,9 +49,9 @@ function isValidEmail(email) {
 
 #### 🔍 How It Works:
 
-* `input.addEventListener("input", ...)` fires every time the user **types or deletes** something.
-* `isValidEmail()` checks the format **live** as the user types.
-* Feedback is updated in a `<p>` element immediately.
+- `input.addEventListener("input", ...)` fires every time the user **types or deletes** something.
+- `isValidEmail()` checks the format **live** as the user types.
+- Feedback is updated in a `<p>` element immediately.
 
 ### Example 2: Live Password Length Checker
 
@@ -128,10 +128,11 @@ pass2.addEventListener("input", checkMatch);
 
 1. Create a live validator for:
 
-   * Username: at least 4 characters
-   * Email: valid format
-   * Password: at least 6 characters
-   * Confirm password: must match password
+   - Username: at least 4 characters
+   - Email: valid format
+   - Password: at least 6 characters
+   - Confirm password: must match password
+
 2. Show error messages below each field as the user types
 3. Show a ✅ “Form is ready to submit” only when all inputs are valid
 
@@ -139,9 +140,8 @@ pass2.addEventListener("input", checkMatch);
 
 #### You Now Know:
 
-* How to give instant feedback using `input` events
-* How to check multiple fields live
-* How to make your forms more user-friendly — a UX best practice
-
+- How to give instant feedback using `input` events
+- How to check multiple fields live
+- How to make your forms more user-friendly — a UX best practice
 
 </article>

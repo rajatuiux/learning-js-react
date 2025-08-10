@@ -152,9 +152,9 @@ greet(sayHello); // Output: Hello!
 
 ### 🔍 What’s Happening?
 
-* You have a function `sayHello`
-* You pass it as an argument to `greet`
-* Inside `greet`, it gets called
+- You have a function `sayHello`
+- You pass it as an argument to `greet`
+- Inside `greet`, it gets called
 
 🧠 **Remember:** You're **passing a function as data**.
 
@@ -178,10 +178,10 @@ calculate(5, 3, add); // Output: The sum is: 8
 
 ### 🧸 Explain Like I’m 5:
 
-* `calculate` is a magic calculator machine.
-* It doesn’t know **how** to add, subtract, or multiply.
-* You give it 2 numbers (5 and 3), and a recipe (add).
-* It says: “Okay! I’ll use your recipe with 5 and 3.”
+- `calculate` is a magic calculator machine.
+- It doesn’t know **how** to add, subtract, or multiply.
+- You give it 2 numbers (5 and 3), and a recipe (add).
+- It says: “Okay! I’ll use your recipe with 5 and 3.”
 
 So it runs `add(5, 3)`, which logs: `The sum is: 8`
 
@@ -189,9 +189,9 @@ So it runs `add(5, 3)`, which logs: `The sum is: 8`
 
 ## 🔄 Why Use Callbacks?
 
-* To do something **after** a task is finished
-* To make code **flexible** (you decide what should happen)
-* Common in **asynchronous** code (like waiting for data)
+- To do something **after** a task is finished
+- To make code **flexible** (you decide what should happen)
+- Common in **asynchronous** code (like waiting for data)
 
 ---
 

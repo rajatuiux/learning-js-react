@@ -6,14 +6,15 @@
 
 A form that:
 
-* Lets the user type a password
-* Checks how strong it is:
+- Lets the user type a password
+- Checks how strong it is:
 
-  * Weak: only letters or very short
-  * Medium: letters + numbers
-  * Strong: includes symbols, uppercase, lowercase, and is long
-* Shows strength in color (red/orange/green)
-* Updates in real-time as the user types
+  - Weak: only letters or very short
+  - Medium: letters + numbers
+  - Strong: includes symbols, uppercase, lowercase, and is long
+
+- Shows strength in color (red/orange/green)
+- Updates in real-time as the user types
 
 <div class="section-break"></div>
 
@@ -153,7 +154,8 @@ function getStrength(password) {
   let length = password.length;
 
   if (length < 6) return "weak";
-  if (hasLower && hasUpper && hasNumber && hasSpecial && length >= 8) return "strong";
+  if (hasLower && hasUpper && hasNumber && hasSpecial && length >= 8)
+    return "strong";
   if ((hasLower || hasUpper) && hasNumber && length >= 6) return "medium";
 
   return "weak";
@@ -164,20 +166,21 @@ function getStrength(password) {
 
 ### 🔍 Explanation
 
-* The `getStrength()` function checks:
+- The `getStrength()` function checks:
 
-  * If password has lowercase, uppercase, number, special characters
-  * And how long it is
-* Based on the strength, the **bar changes color** and **text appears**
-* Everything updates live using the `input` event
+  - If password has lowercase, uppercase, number, special characters
+  - And how long it is
+
+- Based on the strength, the **bar changes color** and **text appears**
+- Everything updates live using the `input` event
 
 <div class="section-break"></div>
 
 ### 🔸 Optional Challenges
 
-* Disable a “Submit” button until the password is strong
-* Add tooltips explaining how to make a strong password
-* Let users toggle password visibility
+- Disable a “Submit” button until the password is strong
+- Add tooltips explaining how to make a strong password
+- Let users toggle password visibility
 
 <div class="section-break"></div>
 
@@ -185,9 +188,9 @@ function getStrength(password) {
 
 ### Practice
 
-* Build the password strength meter
-* Customize strength rules
-* Improve design and UX
+- Build the password strength meter
+- Customize strength rules
+- Improve design and UX
 
 </div>
 

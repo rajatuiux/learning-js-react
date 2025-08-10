@@ -95,6 +95,12 @@ const courseModules = [
       "day48.md",
     ],
   },
+  {
+    name: "week-8",
+    weekName: "Week 8: Basics & Setup for React",
+    folderPath: "material-days/week-8/",
+    files: ["day49.md", "day50.md"],
+  },
 ];
 
 let tocItems = [];

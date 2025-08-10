@@ -1,6 +1,6 @@
 ## Day 48 – Sorting & Reversing Arrays
 
-#### Part 1: `.sort()` – Sort an Array
+### Part 1: `.sort()` – Sort an Array
 
 The `.sort()` method **rearranges items in order**.
 
@@ -61,7 +61,7 @@ console.log(products);
 // Tablet, Phone, Laptop (low to high)
 ```
 
-#### Part 2: `.reverse()` – Reverse an Array
+### Part 2: `.reverse()` – Reverse an Array
 
 `.reverse()` simply **flips the order** of items in an array.
 
@@ -89,7 +89,9 @@ If you want to keep the original array safe:
 let sortedCopy = [...cities].sort(); // make a copy first
 ```
 
-## 🔸 Practice Challenge
+### 🔸 Practice Challenge
+
+<div class="practice">
 
 1. Create an array of numbers: `[30, 10, 50, 20]`
 2. Sort them in:
@@ -98,6 +100,8 @@ let sortedCopy = [...cities].sort(); // make a copy first
 3. Create an array of 4 products `{ name, price }`
 4. Sort by price (low to high)
 5. Reverse the order (high to low)
+
+</div>
 
 #### Key Takeaways
 

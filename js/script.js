@@ -99,7 +99,25 @@ const courseModules = [
     name: "week-8",
     weekName: "Week 8: Basics & Setup for React",
     folderPath: "material-days/week-8/",
-    files: ["day49.md", "day50.md"],
+    files: ["day49.md", "day50.md", "day51.md", "day52.md", "day53.md"],
+  },
+  {
+    name: "week-9",
+    weekName: "Week 9: Rendering & Forms",
+    folderPath: "material-days/week-9/",
+    files: ["day54.md", "day55.md", "day56.md", "day57.md", "day58.md"],
+  },
+  {
+    name: "week-10",
+    weekName: "Week 10: State Management & Styling",
+    folderPath: "material-days/week-10/",
+    files: ["day59.md", "day60.md", "day61.md", "day62.md", "day63.md"],
+  },
+  {
+    name: "week-11",
+    weekName: "Week 11: Advanced Features & Deployment",
+    folderPath: "material-days/week-11/",
+    files: ["day64.md", "day65.md", "day66.md", "day67.md", "day68.md"],
   },
 ];
 

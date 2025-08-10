@@ -1,92 +1,103 @@
-## Day 50: JSX Basics & Expressions
+## Day 50: Understanding JSX in React
 
 ### 1. What is JSX?
 
-JSX (**JavaScript XML**) is a syntax extension for JavaScript used in React to describe the UI.
+JSX stands for **JavaScript XML**. It’s a syntax extension that looks like HTML but is written inside JavaScript code.
 
-- Looks like HTML but works inside JavaScript.
-- Makes code **more readable** and **easier to write**.
-- Compiled to `React.createElement()` under the hood.
+React uses JSX to make writing UI easier and more readable.
 
-**Example:**
+For example:
 
-```jsx
+```javascript
 const element = <h1>Hello, JSX!</h1>;
 ```
 
-### 2. Why JSX?
+This code creates a React element that will display an `<h1>` heading with the text "Hello, JSX!".
 
-- Allows mixing **HTML-like syntax** with JavaScript logic.
-- Industry standard for writing React components.
-- Helps with **syntax highlighting** and catching errors early.
+### 2. Why Use JSX?
 
-<div class="section-break"></div>
+- Makes your UI code easier to understand — it looks like HTML.
+- Lets you write HTML-like syntax and embed JavaScript logic together.
+- Under the hood, JSX is converted to `React.createElement()` calls that React understands.
 
-### 3. Embedding Expressions in JSX
+### 3. JSX Rules to Remember
 
-You can write JavaScript expressions inside `{ }`.
+1. **One parent element**: JSX must return a single parent element wrapping all other elements.
 
-```jsx
-const name = "Rajat";
-const element = <h1>Hello, {name}!</h1>;
-```
-
-**Examples of valid expressions:**
-
-```jsx
-<h1>{2 + 2}</h1>
-<p>{new Date().toLocaleDateString()}</p>
-<p>{name.toUpperCase()}</p>
-```
-
-<div class="section-break"></div>
-
-### 4. JSX Rules
-
-1. **One parent element** must wrap everything.
-
-```jsx
-// Correct
+```javascript
 return (
   <div>
-    <h1>Hello</h1>
-    <p>World</p>
+    <h1>Title</h1>
+    <p>Description here</p>
   </div>
 );
 ```
 
-2. **Use `className` instead of `class`**.
-3. **Close all tags** (`<img />`, `<br />`).
-4. JavaScript expressions go inside `{}`.
+2. **Self-closing tags must be closed:**
 
-<div class="section-break"></div>
-
-### 5. JSX and Functions
-
-You can use JSX inside functions to return UI.
-
-```jsx
-function Greeting() {
-  const user = "Rajat";
-  return <h2>Welcome, {user}!</h2>;
-}
+```javascript
+<img src="logo.png" />
 ```
+
+3. **Use `className` instead of `class`:**
+
+```javascript
+<p className="text-bold">This is bold text</p>
+```
+
+4. **Embed JavaScript expressions inside curly braces `{}`:**
+
+```javascript
+const name = "Rajat";
+return <h1>Hello, {name}!</h1>;
+```
+
+### 4. Embedding JavaScript in JSX
+
+Inside JSX, you can use any valid JavaScript expression by wrapping it in `{}`.
+
+Examples:
+
+```javascript
+<p>{2 + 2}</p>               // Displays 4
+<p>{new Date().getFullYear()}</p> // Displays current year
+<p>{user.name.toUpperCase()}</p>   // Displays user’s name in uppercase
+```
+
+### 5. Styling JSX Elements
+
+You can add styles in two ways:
+
+- **Inline styles** using an object with camelCase properties:
+
+```javascript
+<p style={{ color: "blue", fontSize: "20px" }}>Blue Text</p>
+```
+
+- **External CSS files** imported into your component:
+
+```javascript
+import "./App.css";
+```
+
+And then use class names with `className`:
+
+```javascript
+<p className="my-text">Styled text</p>
+```
+
+### 6. Practice
 
 <div class="practice">
 
-#### Practice
-
-1. Create a `Profile.jsx` component that displays your name, age, and today’s date using JSX.
-2. Make a `MathBox.jsx` component that shows results of some calculations in JSX.
-3. Create a `Weather.jsx` component that displays the temperature from a variable.
+1. Create a new component called `ProfileCard.jsx` that shows your name and hobby using JSX.
+2. Use inline styles to make your name blue.
+3. Add a variable for your age and display it inside the JSX.
 
 </div>
 
-<div class="section-break"></div>
+### 7. Interview Tips
 
-### 6. Interview Tips
-
-- JSX is **syntactic sugar** for `React.createElement()`
-- You **must** wrap multiple JSX elements in a single parent.
-- Curly braces `{}` are used for embedding **JavaScript expressions**.
-- JSX helps with **code maintainability** and **readability**.
+- JSX is not mandatory but is the preferred way to write React UI.
+- JSX gets converted to `React.createElement()` calls during compilation.
+- Curly braces `{}` are used to embed JavaScript expressions inside JSX.

@@ -6,40 +6,34 @@ We use `.filter()` to **keep only** the items we want.
 
 ### Example: Remove a user by name
 
-```
-js
-CopyEdit
+```js
 let users = [
   { name: "Rajat", age: 25 },
   { name: "Sara", age: 30 },
-  { name: "Alex", age: 22 }
+  { name: "Alex", age: 22 },
 ];
 
-let updatedUsers = users.filter(function(user) {
+let updatedUsers = users.filter(function (user) {
   return user.name !== "Sara";
 });
 
 console.log(updatedUsers);
 // [Rajat, Alex]
-
 ```
 
 > !== means “not equal”. This removes Sara because we only keep users not named Sara.
 
 #### Delete by ID (more common in real apps)
 
-```
-js
-CopyEdit
+```js
 let products = [
   { id: 1, name: "Phone" },
   { id: 2, name: "Tablet" },
-  { id: 3, name: "Laptop" }
+  { id: 3, name: "Laptop" },
 ];
 
-let remaining = products.filter(p => p.id !== 2);
+let remaining = products.filter((p) => p.id !== 2);
 console.log(remaining); // Phone & Laptop
-
 ```
 
 #### Part 2: Updating Items using `.map()`
@@ -48,42 +42,37 @@ We use `.map()` to return a **new version** of the array, with **changed data**.
 
 ### Example: Update a user's age
 
-```
-js
-CopyEdit
+```js
 let users = [
   { name: "Rajat", age: 25 },
-  { name: "Sara", age: 30 }
+  { name: "Sara", age: 30 },
 ];
 
-let updated = users.map(function(user) {
+let updated = users.map(function (user) {
   if (user.name === "Rajat") {
-    return { ...user, age: 26 };  // update age
+    return { ...user, age: 26 }; // update age
   }
-  return user;  // others stay the same
+  return user; // others stay the same
 });
 
 console.log(updated);
 // [{ name: "Rajat", age: 26 }, { name: "Sara", age: 30 }]
-
 ```
 
 > ...user means: copy all other properties. Then we override age.
 
 #### Explanation of `...user` (spread operator)
 
-```
-js
-CopyEdit
+```js
+
 { ...user, age: 26 }
 
 ```
 
 This is the same as writing:
 
-```
-js
-CopyEdit
+```js
+
 {
   name: user.name,
   age: 26
@@ -100,19 +89,17 @@ You can chain `.filter()` and `.map()` to:
 - Remove some items
 - Update others
 
-```
-js
-CopyEdit
+```js
 let todos = [
   { id: 1, text: "Learn JS", done: false },
   { id: 2, text: "Practice", done: false },
-  { id: 3, text: "Sleep", done: true }
+  { id: 3, text: "Sleep", done: true },
 ];
 
 // Remove completed tasks, and mark task 2 as done
 let result = todos
-  .filter(todo => todo.done === false)
-  .map(todo => {
+  .filter((todo) => todo.done === false)
+  .map((todo) => {
     if (todo.id === 2) {
       return { ...todo, done: true };
     }
@@ -120,7 +107,6 @@ let result = todos
   });
 
 console.log(result);
-
 ```
 
 ## 🔸 Practice Challenge

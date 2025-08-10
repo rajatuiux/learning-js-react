@@ -25,6 +25,7 @@ Basic syntax:
 if (condition) {
   // run this code if condition is true
 }
+
 ```
 
 **Example:**
@@ -35,6 +36,7 @@ let age = 20;
 if (age >= 18) {
   console.log("You can vote.");
 }
+
 ```
 
 <div class="section-break"></div>
@@ -51,6 +53,7 @@ if (age >= 18) {
 } else {
   console.log("You are too young to vote.");
 }
+
 ```
 
 <div class="section-break"></div>
@@ -69,6 +72,7 @@ if (score >= 90) {
 } else {
   console.log("Grade: C");
 }
+
 ```
 
  Only the first condition that is true will run.
@@ -116,6 +120,7 @@ let age = 25;
 if (age > 18 && age < 60) {
   console.log("You can work.");
 }
+
 ```
 
 ```js
@@ -124,6 +129,7 @@ let isLoggedIn = false;
 if (!isLoggedIn) {
   console.log("Please log in.");
 }
+
 ```
 
 <div class="section-break"></div>

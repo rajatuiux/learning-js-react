@@ -6,8 +6,8 @@
 
 Imagine:
 
-* You want to **find** a product by name
-* Or **check** if any product is out of stock
+- You want to **find** a product by name
+- Or **check** if any product is out of stock
 
 These tasks are super common in real apps.
 
@@ -20,7 +20,7 @@ The `.find()` method searches through an array and returns the **first element t
 #### Syntax
 
 ```js
-let result = array.find(function(item) {
+let result = array.find(function (item) {
   return condition; // true or false
 });
 ```
@@ -32,7 +32,7 @@ let result = array.find(function(item) {
 ```js
 let numbers = [5, 8, 12, 20];
 
-let firstEven = numbers.find(num => num % 2 === 0);
+let firstEven = numbers.find((num) => num % 2 === 0);
 console.log(firstEven); // 8
 ```
 
@@ -41,10 +41,10 @@ console.log(firstEven); // 8
 ```js
 let users = [
   { name: "Rajat", age: 25 },
-  { name: "Anita", age: 30 }
+  { name: "Anita", age: 30 },
 ];
 
-let foundUser = users.find(user => user.name === "Anita");
+let foundUser = users.find((user) => user.name === "Anita");
 console.log(foundUser);
 // { name: "Anita", age: 30 }
 ```
@@ -58,7 +58,7 @@ The `.some()` method checks if **any** item in the array satisfies the condition
 #### Syntax
 
 ```js
-let result = array.some(function(item) {
+let result = array.some(function (item) {
   return condition;
 });
 ```
@@ -68,7 +68,7 @@ let result = array.some(function(item) {
 ```js
 let numbers = [1, 2, 3, -5, 6];
 
-let hasNegative = numbers.some(num => num < 0);
+let hasNegative = numbers.some((num) => num < 0);
 console.log(hasNegative); // true
 ```
 
@@ -77,10 +77,10 @@ console.log(hasNegative); // true
 ```js
 let users = [
   { name: "Mini", age: 17 },
-  { name: "Rajat", age: 25 }
+  { name: "Rajat", age: 25 },
 ];
 
-let hasMinor = users.some(user => user.age < 18);
+let hasMinor = users.some((user) => user.age < 18);
 console.log(hasMinor); // true
 ```
 
@@ -97,13 +97,13 @@ console.log(hasMinor); // true
 
 #### 🔍 1. `.filter()` – Get **all matching items**
 
-* **Returns:** A **new array** of **all** elements that match the condition
-* **Use case:** You want multiple results that meet a rule
+- **Returns:** A **new array** of **all** elements that match the condition
+- **Use case:** You want multiple results that meet a rule
 
 ```js
 const numbers = [10, 20, 25, 30, 40];
 
-const result = numbers.filter(num => num > 20);
+const result = numbers.filter((num) => num > 20);
 console.log(result); // [25, 30, 40]
 ```
 
@@ -114,13 +114,13 @@ console.log(result); // [25, 30, 40]
 
 #### 🔎 2. `.find()` – Get the **first matching item**
 
-* **Returns:** The **first** element that matches the condition
-* **Use case:** You want **only one** result, not an array
+- **Returns:** The **first** element that matches the condition
+- **Use case:** You want **only one** result, not an array
 
 ```js
 const numbers = [10, 20, 25, 30, 40];
 
-const result = numbers.find(num => num > 20);
+const result = numbers.find((num) => num > 20);
 console.log(result); // 25
 ```
 
@@ -132,13 +132,13 @@ console.log(result); // 25
 
 #### ❓ 3. `.some()` – Does **any item match**?
 
-* **Returns:** `true` or `false`
-* **Use case:** You just want to check **if at least one item** meets the condition
+- **Returns:** `true` or `false`
+- **Use case:** You just want to check **if at least one item** meets the condition
 
 ```js
 const numbers = [10, 20, 25, 30, 40];
 
-const result = numbers.some(num => num > 35);
+const result = numbers.some((num) => num > 35);
 console.log(result); // true
 ```
 
@@ -155,7 +155,7 @@ console.log(result); // true
 | Returns      | Array of matches   | First match or `undefined` | Boolean (`true/false`) |
 | How many?    | All matching items | First match only           | Just checks existence  |
 | Output type  | Array              | Value or undefined         | Boolean                |
-| Stops early? | ❌ No               | ✅ Yes                      | ✅ Yes                  |
+| Stops early? | ❌ No              | ✅ Yes                     | ✅ Yes                 |
 | Use case     | Show filtered list | Find detail card           | Check condition exists |
 
 <div class="section-break"></div>
@@ -164,12 +164,11 @@ console.log(result); // true
 
 Imagine a box of chocolates:
 
-* `.filter()` – Take out **all dark chocolates**
-* `.find()` – Grab the **first coconut-filled chocolate**
-* `.some()` – Just check: "Is there **any chocolate with caramel**?"
+- `.filter()` – Take out **all dark chocolates**
+- `.find()` – Grab the **first coconut-filled chocolate**
+- `.some()` – Just check: "Is there **any chocolate with caramel**?"
 
 <div class="section-break"></div>
-
 
 <div class="practice">
 
@@ -181,7 +180,7 @@ Imagine a box of chocolates:
 ```js
 let books = [
   { title: "JS Basics", pages: 100 },
-  { title: "React Guide", pages: 300 }
+  { title: "React Guide", pages: 300 },
 ];
 ```
 
@@ -193,7 +192,7 @@ Use `.find()` to get the book with title `"React Guide"`
 ```js
 let items = [
   { name: "Pen", inStock: true },
-  { name: "Pencil", inStock: false }
+  { name: "Pencil", inStock: false },
 ];
 ```
 
@@ -203,9 +202,8 @@ Check if **any item is out of stock**
 
 ### You Now Know
 
-* How to use `.find()` to get a single matching item
-* How to use `.some()` to check if **at least one** item passes a test
-* The difference between `find()`, `filter()`, and `some()`
-
+- How to use `.find()` to get a single matching item
+- How to use `.some()` to check if **at least one** item passes a test
+- The difference between `find()`, `filter()`, and `some()`
 
 </article>

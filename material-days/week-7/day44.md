@@ -6,17 +6,14 @@
 
 ### Simple Example:
 
-```
-js
-CopyEdit
+```js
 let numbers = [1, 2, 3, 4, 5];
 
-let evenNumbers = numbers.filter(function(num) {
+let evenNumbers = numbers.filter(function (num) {
   return num % 2 === 0;
 });
 
 console.log(evenNumbers); // [2, 4]
-
 ```
 
 - It **does not change** the original array.
@@ -24,13 +21,10 @@ console.log(evenNumbers); // [2, 4]
 
 #### Syntax:
 
-```
-js
-CopyEdit
+```js
 array.filter(function (item, index, array) {
   return condition;
 });
-
 ```
 
 - `item`: current value being checked
@@ -39,57 +33,46 @@ array.filter(function (item, index, array) {
 
 #### Real-Life Example: Filtering Users
 
-```
-js
-CopyEdit
+```js
 let users = [
   { name: "Rajat", age: 25 },
   { name: "Sara", age: 32 },
   { name: "John", age: 29 },
-  { name: "Zara", age: 20 }
+  { name: "Zara", age: 20 },
 ];
 
-let adults = users.filter(function(user) {
+let adults = users.filter(function (user) {
   return user.age >= 30;
 });
 
 console.log(adults);
 // [{ name: "Sara", age: 32 }]
-
 ```
 
 #### Real Use Case: Product Filtering
 
-```
-js
-CopyEdit
+```js
 let products = [
   { title: "Laptop", price: 60000 },
   { title: "Phone", price: 25000 },
   { title: "Tablet", price: 18000 },
-  { title: "Monitor", price: 12000 }
+  { title: "Monitor", price: 12000 },
 ];
 
-let expensive = products.filter(function(product) {
+let expensive = products.filter(function (product) {
   return product.price >= 20000;
 });
 
 console.log(expensive);
 // [Laptop, Phone]
-
 ```
 
 #### You Can Store or Chain It
 
-```
-js
-CopyEdit
-let cheapProducts = products
-  .filter(p => p.price < 20000)
-  .map(p => p.title);
+```js
+let cheapProducts = products.filter((p) => p.price < 20000).map((p) => p.title);
 
 console.log(cheapProducts); // ["Tablet", "Monitor"]
-
 ```
 
 ## 🔸 Practice Challenge

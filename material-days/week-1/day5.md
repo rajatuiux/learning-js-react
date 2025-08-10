@@ -71,8 +71,8 @@ if (score >= 90) {
 }
 ```
 
-* Checks each condition in order.
-* As soon as one is true, it runs that block and stops checking.
+- Checks each condition in order.
+- As soon as one is true, it runs that block and stops checking.
 
 <div class="section-break"></div>
 
@@ -100,9 +100,9 @@ switch (day) {
 
 **Explanation:**
 
-* `case` → compares with the given value
-* `break` → stops checking further
-* `default` → runs if no match found
+- `case` → compares with the given value
+- `break` → stops checking further
+- `default` → runs if no match found
 
 <div class="section-break"></div>
 
@@ -129,11 +129,11 @@ Used to **compare values** inside `if` conditions.
 
 Used to **combine multiple conditions**.
 
-| Operator | Name | Example                | Result                |          |   |          |                        |
-| -------- | ---- | ---------------------- | --------------------- | -------- | - | -------- | ---------------------- |
-| `&&`     | AND  | `age > 18 && age < 60` | true if both are true |          |   |          |                        |
-| `\|\|`                     | OR                    | `a > 10 \|\| b < 20\` | true if either is true |
-| `!`      | NOT  | `!isLoggedIn`          | true if false         |          |   |          |                        |
+| Operator | Name | Example                | Result                 |     |     |     |     |
+| -------- | ---- | ---------------------- | ---------------------- | --- | --- | --- | --- |
+| `&&`     | AND  | `age > 18 && age < 60` | true if both are true  |     |     |     |     |
+| `\|\|`   | OR   | `a > 10 \|\| b < 20\`  | true if either is true |
+| `!`      | NOT  | `!isLoggedIn`          | true if false          |     |     |     |     |
 
 <div class="section-break"></div>
 
@@ -161,17 +161,17 @@ if (!isLoggedIn) {
 
 When using `if`, the condition can be:
 
-* **truthy** (acts like `true`)
-* **falsy** (acts like `false`)
+- **truthy** (acts like `true`)
+- **falsy** (acts like `false`)
 
 #### 🔹 Falsy Values (Treated as False):
 
-* `false`
-* `0`
-* `""` (empty string)
-* `null`
-* `undefined`
-* `NaN`
+- `false`
+- `0`
+- `""` (empty string)
+- `null`
+- `undefined`
+- `NaN`
 
 Everything else is **truthy**.
 
@@ -196,14 +196,16 @@ Try these:
 3. Write a `switch` statement to show the name of a weekday from number (1 to 7).
 4. Create a variable `temperature`. Use `if/else` to log:
 
-   * "Hot" if temp > 30
-   * "Warm" if 20–30
-   * "Cold" otherwise
+   - "Hot" if temp > 30
+   - "Warm" if 20–30
+   - "Cold" otherwise
+
 5. Write an `if` statement using `&&` and `||` to check age ranges.
 6. Create a login check:
 
-   * If user is logged in → show "Welcome"
-   * Else → show "Please login"
+   - If user is logged in → show "Welcome"
+   - Else → show "Please login"
+
 7. Try checking `if (""), if (1), if (null)` and see which one runs.
 
 </div>
@@ -214,6 +216,6 @@ Try these:
 
 You now understand how to:
 
-* Make decisions in your code using `if/else`, `else if`, and `switch`
-* Use comparison and logical checks
-* Know which values are treated as true or false
+- Make decisions in your code using `if/else`, `else if`, and `switch`
+- Use comparison and logical checks
+- Know which values are treated as true or false

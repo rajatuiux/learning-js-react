@@ -72,6 +72,7 @@ let fruits = ["Apple", "Banana", "Mango"];
 for (let i = 0; i < fruits.length; i++) {
   console.log(fruits[i]);
 }
+
 ```
 
 #### Using `for...of`:
@@ -80,6 +81,7 @@ for (let i = 0; i < fruits.length; i++) {
 for (let fruit of fruits) {
   console.log(fruit);
 }
+
 ```
 
 ### Common Array Methods

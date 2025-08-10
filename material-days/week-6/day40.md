@@ -4,11 +4,11 @@
 
 ### What You’ll Build
 
-* Checks if the **username is available**
-* Shows a **password strength meter**
-* Validates **email format**
-* Prevents submission if any field is invalid
-* Uses real-time feedback for a smoother UX
+- Checks if the **username is available**
+- Shows a **password strength meter**
+- Validates **email format**
+- Prevents submission if any field is invalid
+- Uses real-time feedback for a smoother UX
 
 <div class="section-break"></div>
 
@@ -220,7 +220,8 @@ function getStrength(pwd) {
   let len = pwd.length;
 
   if (len < 6) return "weak";
-  if (hasLower && hasUpper && hasNumber && hasSpecial && len >= 8) return "strong";
+  if (hasLower && hasUpper && hasNumber && hasSpecial && len >= 8)
+    return "strong";
   if ((hasLower || hasUpper) && hasNumber && len >= 6) return "medium";
   return "weak";
 }
@@ -230,12 +231,12 @@ function getStrength(pwd) {
 
 ### 🔄 What You Practiced
 
-* DOM manipulation & event listeners
-* Username availability logic
-* Email format validation
-* Password strength checker
-* Real-time feedback UX
-* Prevent form submission on failed validation
+- DOM manipulation & event listeners
+- Username availability logic
+- Email format validation
+- Password strength checker
+- Real-time feedback UX
+- Prevent form submission on failed validation
 
 <div class="section-break"></div>
 
@@ -245,10 +246,10 @@ function getStrength(pwd) {
 
 Try these enhancements:
 
-* Store user data using `localStorage`
-* Add a "confirm password" field
-* Toggle password visibility (eye icon)
-* Show animated success message or redirect to login
+- Store user data using `localStorage`
+- Add a "confirm password" field
+- Toggle password visibility (eye icon)
+- Show animated success message or redirect to login
 
 </div>
 

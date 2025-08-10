@@ -6,37 +6,31 @@
 
 ### Example 1: Find a number
 
-```
-js
-CopyEdit
+```js
 let numbers = [5, 10, 15, 20];
 
-let result = numbers.find(function(num) {
+let result = numbers.find(function (num) {
   return num > 10;
 });
 
 console.log(result); // 15 (first number > 10)
-
 ```
 
 ### Example 2: Find a user by name
 
-```
-js
-CopyEdit
+```js
 let users = [
   { name: "Rajat", age: 25 },
   { name: "Sara", age: 30 },
-  { name: "Alex", age: 22 }
+  { name: "Alex", age: 22 },
 ];
 
-let match = users.find(function(user) {
+let match = users.find(function (user) {
   return user.name === "Sara";
 });
 
 console.log(match);
 // { name: "Sara", age: 30 }
-
 ```
 
 #### `.some()` – Check If **Any** Match Exists
@@ -47,32 +41,26 @@ It returns `true` or `false`.
 
 ### Example 1: Is any number > 100?
 
-```
-js
-CopyEdit
+```js
 let prices = [25, 50, 75];
 
-let hasExpensiveItem = prices.some(function(price) {
+let hasExpensiveItem = prices.some(function (price) {
   return price > 100;
 });
 
 console.log(hasExpensiveItem); // false
-
 ```
 
 ### Example 2: Check if a username is taken
 
-```
-js
-CopyEdit
+```js
 let usernames = ["rajat", "alex", "sara"];
 
-let isTaken = usernames.some(function(name) {
+let isTaken = usernames.some(function (name) {
   return name === "alex";
 });
 
 console.log(isTaken); // true
-
 ```
 
 #### Comparison Table
@@ -85,24 +73,21 @@ console.log(isTaken); // true
 
 ## 🔍 Real-World Examples
 
-```
-js
-CopyEdit
+```js
 let products = [
   { id: 1, name: "Phone", inStock: true },
   { id: 2, name: "Laptop", inStock: false },
-  { id: 3, name: "Tablet", inStock: true }
+  { id: 3, name: "Tablet", inStock: true },
 ];
 
 // Find the first product that is out of stock
-let unavailable = products.find(p => p.inStock === false);
+let unavailable = products.find((p) => p.inStock === false);
 
 // Check if any product is in stock
-let available = products.some(p => p.inStock === true);
+let available = products.some((p) => p.inStock === true);
 
 console.log(unavailable.name); // Laptop
-console.log(available);        // true
-
+console.log(available); // true
 ```
 
 ## 🔸 Practice Challenge

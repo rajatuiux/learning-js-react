@@ -6,11 +6,11 @@
 
 A live **word counter** that:
 
-* Lets the user type in a text area
-* Shows how many **words** are typed
-* Shows how many **words are left** (e.g., 50 words max)
-* Gives a warning when the limit is exceeded
-* Optionally: prevents typing more than max words and disables submit
+- Lets the user type in a text area
+- Shows how many **words** are typed
+- Shows how many **words are left** (e.g., 50 words max)
+- Gives a warning when the limit is exceeded
+- Optionally: prevents typing more than max words and disables submit
 
 <div class="section-break"></div>
 
@@ -18,10 +18,10 @@ A live **word counter** that:
 
 When building forms or content editors, users often need to know how long their input is. Counting **words** is more user-friendly than characters in many cases (e.g., comments, bios, summaries). This app helps you practice:
 
-* Reading typed input
-* Breaking text into meaningful units (words)
-* Updating UI live as user types
-* Enforcing limits and giving clear feedback
+- Reading typed input
+- Breaking text into meaningful units (words)
+- Updating UI live as user types
+- Enforcing limits and giving clear feedback
 
 <div class="section-break"></div>
 
@@ -51,10 +51,14 @@ word-counter-app/
   <body>
     <div class="container">
       <h2>Word Counter</h2>
-      <textarea id="textInput" placeholder="Start typing..." rows="6"></textarea>
+      <textarea
+        id="textInput"
+        placeholder="Start typing..."
+        rows="6"
+      ></textarea>
       <p>
-        Words: <span id="wordCount">0</span> / <span id="max">50</span>
-        • Remaining: <span id="remaining">50</span>
+        Words: <span id="wordCount">0</span> / <span id="max">50</span> •
+        Remaining: <span id="remaining">50</span>
       </p>
       <p id="warningMsg" class="warning"></p>
       <button id="submitBtn">Submit</button>
@@ -69,12 +73,47 @@ word-counter-app/
 ### Step 2: CSS – `style.css` (kept simple)
 
 ```css
-body { font-family: Arial, sans-serif; background: #eef2f7; display: flex; justify-content: center; align-items: center; height: 100vh; }
-.container { background: white; padding: 2rem; width: 360px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
-textarea { width: 100%; padding: 12px; font-size: 1rem; border-radius: 5px; border: 1px solid #ccc; resize: none; }
-.warning { color: red; font-size: 0.9rem; margin-top: 5px; }
-button { padding: 10px 15px; margin-top: 10px; background: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer; }
-button:disabled { background: #999; cursor: not-allowed; }
+body {
+  font-family: Arial, sans-serif;
+  background: #eef2f7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.container {
+  background: white;
+  padding: 2rem;
+  width: 360px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+textarea {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  resize: none;
+}
+.warning {
+  color: red;
+  font-size: 0.9rem;
+  margin-top: 5px;
+}
+button {
+  padding: 10px 15px;
+  margin-top: 10px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+button:disabled {
+  background: #999;
+  cursor: not-allowed;
+}
 ```
 
 <div class="section-break"></div>
@@ -94,7 +133,10 @@ const MAX_WORDS = 50;
 function getWords(text) {
   // trim removes extra spaces at start/end
   // \s+ means any whitespace (space, tab, newline) repeated
-  return text.trim().split(/\s+/).filter(word => word.length > 0);
+  return text
+    .trim()
+    .split(/\s+/)
+    .filter((word) => word.length > 0);
 }
 
 function update() {
@@ -122,9 +164,11 @@ textInput.addEventListener("input", update);
 // Optional: prevent typing after limit (hard stop) – advanced
 textInput.addEventListener("keydown", function (e) {
   const words = getWords(textInput.value);
-  if (words.length >= MAX_WORDS &&
-      // allow backspace, arrow keys, delete, etc.
-      !["Backspace", "ArrowLeft", "ArrowRight", "Delete"].includes(e.key)) {
+  if (
+    words.length >= MAX_WORDS &&
+    // allow backspace, arrow keys, delete, etc.
+    !["Backspace", "ArrowLeft", "ArrowRight", "Delete"].includes(e.key)
+  ) {
     e.preventDefault();
   }
 });
@@ -148,10 +192,10 @@ update();
 
 ### 🧪 Extra Practice Ideas
 
-* Show the longest word typed so far.
-* Highlight repeated words (e.g., if the same word appears more than once).
-* Add a "Clear" button that resets everything.
-* Save the text in `localStorage` so it’s still there on refresh.
+- Show the longest word typed so far.
+- Highlight repeated words (e.g., if the same word appears more than once).
+- Add a "Clear" button that resets everything.
+- Save the text in `localStorage` so it’s still there on refresh.
 
 <div class="section-break"></div>
 
@@ -159,9 +203,9 @@ update();
 
 ### Practice
 
-* Build the app exactly as above.
-* Try removing the hard stop and allow typing but keep warning only.
-* Add a minimum word requirement before enabling submit.
+- Build the app exactly as above.
+- Try removing the hard stop and allow typing but keep warning only.
+- Add a minimum word requirement before enabling submit.
 
 </div>
 
@@ -169,9 +213,9 @@ update();
 
 ### ✅ You Now Know
 
-* How to count words correctly from free text input.
-* How to handle extra spaces and avoid counting empty items.
-* How to give live feedback: words used, remaining, limit exceeded.
-* A simple way to stop over-typing and protect UI with disabling.
+- How to count words correctly from free text input.
+- How to handle extra spaces and avoid counting empty items.
+- How to give live feedback: words used, remaining, limit exceeded.
+- A simple way to stop over-typing and protect UI with disabling.
 
 </article>

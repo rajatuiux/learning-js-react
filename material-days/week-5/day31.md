@@ -8,8 +8,8 @@ Format validation checks **how the input looks**, not just whether it’s empty.
 
 For example:
 
-* Is an email **in a valid format** like `user@example.com`?
-* Is a password **at least 6 characters**?
+- Is an email **in a valid format** like `user@example.com`?
+- Is a password **at least 6 characters**?
 
 ### Part 1: Email Format Validation
 
@@ -35,17 +35,17 @@ function isValidEmail(email) {
 
 > It checks that:
 >
-> * There's something before `@`
-> * Then a domain (like gmail)
-> * Then a `.com`, `.in`, etc.
+> - There's something before `@`
+> - Then a domain (like gmail)
+> - Then a `.com`, `.in`, etc.
 
 ### Part 2: Password Rules
 
 You can create simple rules like:
 
-* Password must not be empty
-* Minimum length: 6 characters
-* (Later you can add uppercase, numbers, etc.)
+- Password must not be empty
+- Minimum length: 6 characters
+- (Later you can add uppercase, numbers, etc.)
 
 ### Full Example: Validate Email + Password
 
@@ -104,15 +104,15 @@ function isValidEmail(email) {
 
 ### 🔍 What’s Happening Here:
 
-* **`trim()`**: To remove extra spaces
-* **`isValidEmail()`**: Uses regex to test email
-* **Password check**: `password.length < 6`
-* Uses `return` to stop further checking if any rule fails
+- **`trim()`**: To remove extra spaces
+- **`isValidEmail()`**: Uses regex to test email
+- **Password check**: `password.length < 6`
+- Uses `return` to stop further checking if any rule fails
 
 ### Bonus Tips
 
-* Don't try to memorize the regex — just copy it for now.
-* You can customize the error messages later to be friendlier.
+- Don't try to memorize the regex — just copy it for now.
+- You can customize the error messages later to be friendlier.
 
 <div class="practice">
 
@@ -120,8 +120,9 @@ function isValidEmail(email) {
 
 1. Create a form with:
 
-   * `email`, `password`, `confirm password` inputs
-   * Add a rule: password and confirm password must match
+   - `email`, `password`, `confirm password` inputs
+   - Add a rule: password and confirm password must match
+
 2. Create a form that shows a ✅ or ❌ next to each field **live while typing**
 3. Try removing `type="password"` and see how the input behaves differently
 
@@ -129,9 +130,8 @@ function isValidEmail(email) {
 
 #### You Now Know:
 
-* How to validate if email format is correct
-* How to check password rules like length
-* How to display helpful error or success messages
-
+- How to validate if email format is correct
+- How to check password rules like length
+- How to display helpful error or success messages
 
 </article>

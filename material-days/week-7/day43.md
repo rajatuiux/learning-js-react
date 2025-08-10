@@ -10,25 +10,19 @@ Imagine you have multiple users. Each user has:
 
 You could store them like this:
 
-```
-js
-CopyEdit
+```js
 let user1 = { name: "Rajat", age: 25, email: "rajat@example.com" };
 let user2 = { name: "Sara", age: 30, email: "sara@example.com" };
-
 ```
 
 But when you have many, it’s better to use an **array of objects**:
 
-```
-js
-CopyEdit
+```js
 let users = [
   { name: "Rajat", age: 25, email: "rajat@example.com" },
   { name: "Sara", age: 30, email: "sara@example.com" },
-  { name: "Alex", age: 28, email: "alex@example.com" }
+  { name: "Alex", age: 28, email: "alex@example.com" },
 ];
-
 ```
 
 Now you can loop through the entire list and access each user’s details.
@@ -37,63 +31,48 @@ Now you can loop through the entire list and access each user’s details.
 
 ### Using `for...of`:
 
-```
-js
-CopyEdit
+```js
 for (let user of users) {
   console.log(user.name);
   console.log(user.email);
 }
-
 ```
 
 ### Using `.forEach()`:
 
-```
-js
-CopyEdit
-users.forEach(function(user, index) {
+```js
+users.forEach(function (user, index) {
   console.log(`${index + 1}. ${user.name} - ${user.email}`);
 });
-
 ```
 
 #### Accessing Properties
 
 Use **dot notation** to access a property:
 
-```
-js
-CopyEdit
-user.name      // "Rajat"
-user.email     // "rajat@example.com"
-
+```js
+user.name; // "Rajat"
+user.email; // "rajat@example.com"
 ```
 
 Or **bracket notation** (useful for dynamic keys):
 
-```
-js
-CopyEdit
-user["email"]  // "rajat@example.com"
-
+```js
+user["email"]; // "rajat@example.com"
 ```
 
 #### Realistic Use Case: Product List
 
-```
-js
-CopyEdit
+```js
 let products = [
   { title: "Laptop", price: 50000 },
   { title: "Phone", price: 30000 },
-  { title: "Tablet", price: 20000 }
+  { title: "Tablet", price: 20000 },
 ];
 
-products.forEach(function(product) {
+products.forEach(function (product) {
   console.log(`${product.title} costs ₹${product.price}`);
 });
-
 ```
 
 ## 🔸 Practice Challenge:
@@ -109,15 +88,12 @@ products.forEach(function(product) {
 
 You can combine loops with `if`:
 
-```
-js
-CopyEdit
-users.forEach(function(user) {
+```js
+users.forEach(function (user) {
   if (user.age > 27) {
     console.log(`${user.name} is older than 27`);
   }
 });
-
 ```
 
 #### Key Takeaways:

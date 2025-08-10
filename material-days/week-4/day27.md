@@ -19,7 +19,7 @@ let moreNumbers = [...numbers, 4, 5];
 console.log(moreNumbers); // [1, 2, 3, 4, 5]
 ```
 
-* `...numbers` takes all items from `numbers` and puts them inside the new array.
+- `...numbers` takes all items from `numbers` and puts them inside the new array.
 
 #### Spread in Objects
 
@@ -53,7 +53,7 @@ Destructuring means to **break apart** arrays or objects and **assign values to 
 let colors = ["red", "blue", "green"];
 
 let [first, second] = colors;
-console.log(first);  // "red"
+console.log(first); // "red"
 console.log(second); // "blue"
 ```
 
@@ -71,7 +71,7 @@ let user = { name: "Rajat", age: 25 };
 
 let { name, age } = user;
 console.log(name); // "Rajat"
-console.log(age);  // 25
+console.log(age); // 25
 ```
 
 > You can even rename variables:
@@ -101,7 +101,7 @@ sum(10, 20, 30); // [10, 20, 30]
 
 ```js
 function greet(first, ...others) {
-  console.log(first);  // "Hello"
+  console.log(first); // "Hello"
   console.log(others); // ["Rajat", "Anita"]
 }
 
@@ -121,8 +121,8 @@ greet("Hello", "Rajat", "Anita");
 
 1. Use the spread operator to:
 
-   * Copy `[1, 2, 3]` into a new array with `4, 5` added
-   * Merge two arrays `[a, b]` and `[c, d]`
+   - Copy `[1, 2, 3]` into a new array with `4, 5` added
+   - Merge two arrays `[a, b]` and `[c, d]`
 
 2. Use object destructuring to pull `title` and `price` from:
 
@@ -142,8 +142,8 @@ let names = ["Rajat", "Anita", "Rohan"];
 
 ### ✅ You Now Know
 
-* How to **spread** arrays/objects using `...`
-* How to **destructure** data from arrays/objects
-* How to **use rest parameters** in functions to collect multiple values
+- How to **spread** arrays/objects using `...`
+- How to **destructure** data from arrays/objects
+- How to **use rest parameters** in functions to collect multiple values
 
 </article>

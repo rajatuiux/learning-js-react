@@ -6,9 +6,9 @@
 
 A live character counter that:
 
-* Lets the user type a message
-* Shows the number of characters typed
-* Warns when a limit (like 100) is crossed
+- Lets the user type a message
+- Shows the number of characters typed
+- Warns when a limit (like 100) is crossed
 
 <div class="section-break"></div>
 
@@ -120,26 +120,26 @@ messageBox.addEventListener("input", function () {
 
 ### 🔍 Explanation
 
-* `messageBox.value.length`: counts characters typed
-* The number is updated in `charCount` every time the user types
-* When characters exceed 100, it shows a warning in red
+- `messageBox.value.length`: counts characters typed
+- The number is updated in `charCount` every time the user types
+- When characters exceed 100, it shows a warning in red
 
 <div class="section-break"></div>
 
 ### Concepts Practiced
 
-* DOM element selection
-* Real-time input handling with `input` event
-* Dynamic UI updates
-* Clean JavaScript project setup
+- DOM element selection
+- Real-time input handling with `input` event
+- Dynamic UI updates
+- Clean JavaScript project setup
 
 <div class="section-break"></div>
 
 ### 🔸 Challenge (Optional)
 
-* Add a remaining characters count like `100 - currentLength`
-* Disable form submit if over limit
-* Make limit customizable
+- Add a remaining characters count like `100 - currentLength`
+- Disable form submit if over limit
+- Make limit customizable
 
 <div class="section-break"></div>
 
@@ -147,9 +147,9 @@ messageBox.addEventListener("input", function () {
 
 ### Practice
 
-* Build and test the full character counter app
-* Add the remaining character feature
-* Try making the limit a user input value
+- Build and test the full character counter app
+- Add the remaining character feature
+- Try making the limit a user input value
 
 </div>
 

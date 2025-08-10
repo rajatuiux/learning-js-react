@@ -86,7 +86,7 @@ function Greeting() {
 
 ### 6. Interview Tips
 
-- JSX is **syntactic sugar** for `React.createElement()`.
+- JSX is **syntactic sugar** for `React.createElement()`
 - You **must** wrap multiple JSX elements in a single parent.
 - Curly braces `{}` are used for embedding **JavaScript expressions**.
 - JSX helps with **code maintainability** and **readability**.

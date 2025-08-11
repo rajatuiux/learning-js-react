@@ -22,7 +22,7 @@ Since you already have Node.js and npm installed, let’s use **Vite** — a fas
 Open your terminal and run:
 
 ```bash
-npm create vite@latest my-app -- --template react
+npm create vite@latest my-app --template react
 cd my-app
 npm install
 npm run dev

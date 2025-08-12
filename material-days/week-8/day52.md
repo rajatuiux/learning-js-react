@@ -1,67 +1,91 @@
-## Day 52: State (useState) in React
+## Day 52: Default Props & PropTypes
 
-### 1. What is State?
+### 1. Why Use Default Props?
 
-**State** is data that **changes over time** inside a component.
+Sometimes, a parent component **might forget to pass a prop**.
+Without defaults, your component could show empty or broken UI.
 
-Unlike props, which come from outside, state is managed **within the component** and can be updated.
+**Default props** let you specify fallback values when no prop is given.
 
-State lets your UI respond to user actions, API calls, or time changes.
+---
 
-### 2. Using `useState` Hook
+### 2. Setting Default Props in Function Components
 
-React provides the `useState` hook to add state to functional components.
+You can set default values **directly in the function parameter list**:
 
-Basic syntax:
-
-```javascript
-import { useState } from "react";
-
-function Counter() {
-  const [count, setCount] = useState(0); // count is the state variable, setCount updates it
-
-  return (
-    <div>
-      <p>You clicked {count} times</p>
-      <button onClick={() => setCount(count + 1)}>Click me</button>
-    </div>
-  );
+```jsx
+function Greeting({ name = "Guest" }) {
+  return <h1>Hello, {name}!</h1>;
 }
 ```
 
-- `count` is the current state value (initially 0).
-- `setCount` is a function to update the state.
-- When `setCount` is called, React re-renders the component with new state.
+If `<Greeting />` is rendered without a `name` prop, it shows **Hello, Guest!**
 
-### 3. Rules of `useState`
+---
 
-- Call `useState` **only inside** React functional components or custom hooks.
-- You can use multiple `useState` hooks for different state variables.
-- Don’t modify the state variable directly; always use the setter function.
+### 3. What Are PropTypes?
 
-### 4. Example: Toggle Button
+**PropTypes** help you **check that the props passed to components have the correct type**.
 
-```javascript
-function Toggle() {
-  const [isOn, setIsOn] = useState(false);
+This helps catch bugs during development by giving warnings in the console.
 
-  return <button onClick={() => setIsOn(!isOn)}>{isOn ? "ON" : "OFF"}</button>;
-}
+---
+
+### 4. How to Use PropTypes
+
+First, install the package (if you haven’t):
+
+```bash
+npm install prop-types
 ```
 
-### 5. Practice
+Then import and use it in your component:
+
+```jsx
+import PropTypes from 'prop-types';
+
+function Greeting({ name }) {
+  return <h1>Hello, {name}!</h1>;
+}
+
+Greeting.propTypes = {
+  name: PropTypes.string.isRequired, // name must be a string and is required
+};
+```
+
+---
+
+### 5. Common PropTypes
+
+| Type      | Description              | Example                               |
+| --------- | ------------------------ | ------------------------------------- |
+| `string`  | Text                     | `PropTypes.string`                    |
+| `number`  | Numbers                  | `PropTypes.number`                    |
+| `bool`    | Boolean (`true`/`false`) | `PropTypes.bool`                      |
+| `array`   | Arrays                   | `PropTypes.array`                     |
+| `object`  | Objects                  | `PropTypes.object`                    |
+| `func`    | Functions                | `PropTypes.func`                      |
+| `node`    | React nodes or elements  | `PropTypes.node`                      |
+| `arrayOf` | Array of specific type   | `PropTypes.arrayOf(PropTypes.string)` |
+
+---
+
+### 6. Practice
 
 <div class="practice">
 
-1. Create a `Counter.jsx` component that shows a number starting at 0 and a button to increment it.
-2. Create a `ToggleSwitch.jsx` component that switches between “ON” and “OFF” text when clicked.
-3. Use both components inside `App.jsx`.
+1. Create a `Welcome.jsx` component with a `name` prop. Set a default value `"Friend"` if no `name` is passed.
+2. Add PropTypes to ensure `name` is a required string.
+3. Use `<Welcome />` in `App.jsx` with and without the `name` prop to test default and type checking.
 
 </div>
 
-### 6. Interview Tips
+<div class="section-break"></div>
 
-- State holds **dynamic data** inside components.
-- `useState` returns a pair: the current state and a setter function.
-- React re-renders components automatically when state updates.
-- Never mutate state directly; always use the setter function.
+### 7. Interview Tips
+
+* Default props make components **more reliable** by providing fallback values.
+* PropTypes catch bugs by **validating prop types** at runtime.
+* Knowing PropTypes shows attention to **code quality and robustness**.
+
+<div class="section-break"></div>

@@ -1,83 +1,77 @@
-## Day 53: Handling Events in React
+## Day 53: Introduction to State and useState Hook
 
-### 1. What are Events in React?
+### 1. What is State in React?
 
-Events are actions triggered by the user, like clicking a button, typing in an input, or submitting a form.
+- **State** is data that a component **manages itself** and can change over time.
+- Unlike **props** (which come from parents and are read-only), **state is local and mutable** inside a component.
+- State controls how the UI looks and behaves based on user actions or other factors.
 
-React lets you handle these events using event handlers (functions) attached to JSX elements.
+---
 
-### 2. Adding Event Handlers
+### 2. Why Use State?
 
-In React, you add event handlers as **camelCase** props, e.g., `onClick`, `onChange`.
+- To create **interactive components**.
+- Examples:
 
-Example:
+  - A counter that increases when a button is clicked.
+  - Showing/hiding parts of the UI.
+  - Storing user input in a form.
 
-```javascript
-function Button() {
-  function handleClick() {
-    alert("Button clicked!");
-  }
+---
 
-  return <button onClick={handleClick}>Click Me</button>;
-}
-```
+### 3. Introducing `useState` Hook
 
-### 3. Passing Event Handlers
+React provides the **`useState` hook** to add state to function components.
 
-You can also pass inline functions:
+Syntax:
 
-```javascript
-<button onClick={() => alert("Clicked!")}>Click Me</button>
-```
+```jsx
+import React, { useState } from "react";
 
-### 4. Event Object
-
-Event handlers receive an **event object** containing details about the event.
-
-Example:
-
-```javascript
-function Input() {
-  function handleChange(event) {
-    console.log(event.target.value);
-  }
-
-  return <input type="text" onChange={handleChange} />;
-}
-```
-
-### 5. Preventing Default Behavior
-
-To stop default browser behavior (like form submission), use `event.preventDefault()`.
-
-```javascript
-function Form() {
-  function handleSubmit(event) {
-    event.preventDefault();
-    alert("Form submitted!");
-  }
+function Counter() {
+  const [count, setCount] = useState(0); // Initialize state with 0
 
   return (
-    <form onSubmit={handleSubmit}>
-      <button type="submit">Submit</button>
-    </form>
+    <div>
+      <p>Count: {count}</p>
+      <button onClick={() => setCount(count + 1)}>Increase</button>
+    </div>
   );
 }
 ```
 
-### 6. Practice
+- `count` is the current state value.
+- `setCount` is a function to update the state.
+- Calling `setCount` triggers React to **re-render** the component with the updated value.
+
+---
+
+### 4. Rules for Using `useState`
+
+- Call `useState` **inside** React function components or custom hooks only.
+- You can have multiple `useState` calls for different pieces of state.
+- The initial state can be any data type: number, string, array, object, etc.
+
+---
+
+### 5. Practice
 
 <div class="practice">
 
-1. Create a `ClickLogger.jsx` component that logs “Button clicked” in the console when clicked.
-2. Create a `TextInput.jsx` component that logs the current input value whenever it changes.
-3. Create a simple form component that alerts the user on submit and prevents page reload.
+1. Create a `Counter.jsx` component with a button to increase a number.
+2. Initialize the state to 0 using `useState`.
+3. On button click, increase the count by 1.
+4. Use the `Counter` component inside `App.jsx`.
 
 </div>
 
-### 7. Interview Tips
+<div class="section-break"></div>
 
-- Event handlers in React use camelCase like `onClick`.
-- Always remember to prevent default behavior when needed.
-- Event handlers receive an event object with details.
-- You can pass inline or named functions as handlers.
+### 6. Interview Tips
+
+- `useState` adds **state to functional components**.
+- State updates cause **component re-renders**.
+- The setter function **replaces** the old state.
+- State is **local and isolated** to the component.
+
+<div class="section-break"></div>

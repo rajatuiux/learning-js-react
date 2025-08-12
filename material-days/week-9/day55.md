@@ -1,66 +1,82 @@
-## Day 55: Lists & Keys in React
+## Day 55: Conditional Rendering in React
 
-### 1. Rendering Lists
+### 1. What is Conditional Rendering?
 
-When you want to display multiple items (like an array of data), you use **lists** in React.
+* Conditional rendering means **showing or hiding parts of the UI based on conditions**.
+* Like `if` statements in JavaScript, React lets you display different elements depending on state, props, or any logic.
 
-You typically use JavaScript’s `.map()` method inside JSX to create multiple elements.
+---
 
-Example:
+### 2. Using `if` Statements
 
-```javascript
-function NumberList() {
-  const numbers = [1, 2, 3, 4, 5];
+You can use normal JavaScript `if` statements **inside your component function** to decide what to return.
+
+```jsx
+function Greeting({ isLoggedIn }) {
+  if (isLoggedIn) {
+    return <h1>Welcome back!</h1>;
+  } else {
+    return <h1>Please sign up.</h1>;
+  }
+}
+```
+
+---
+
+### 3. Using the Ternary Operator
+
+Inside JSX, you can use the ternary operator to choose what to render:
+
+```jsx
+function Greeting({ isLoggedIn }) {
   return (
-    <ul>
-      {numbers.map((number) => (
-        <li>{number}</li>
-      ))}
-    </ul>
+    <div>
+      {isLoggedIn ? <h1>Welcome back!</h1> : <h1>Please sign up.</h1>}
+    </div>
   );
 }
 ```
 
-### 2. What Are Keys?
+---
 
-React requires each item in a list to have a unique **key** prop.
+### 4. Using Logical AND (`&&`)
 
-Keys help React identify which items have changed, are added, or removed, improving performance.
+If you want to conditionally render something **or nothing**, use `&&`:
 
-### 3. Adding Keys to List Items
-
-Modify the example to add keys:
-
-```javascript
-function NumberList() {
-  const numbers = [1, 2, 3, 4, 5];
+```jsx
+function Mailbox({ unreadMessages }) {
   return (
-    <ul>
-      {numbers.map((number) => (
-        <li key={number}>{number}</li>
-      ))}
-    </ul>
+    <div>
+      <h1>Hello!</h1>
+      {unreadMessages.length > 0 && (
+        <h2>You have {unreadMessages.length} unread messages.</h2>
+      )}
+    </div>
   );
 }
 ```
 
-### 4. Choosing Keys
+If `unreadMessages.length` is 0, the message won’t show.
 
-- Use **unique and stable** values for keys.
-- Avoid using array index as key unless no better unique value is available.
+---
 
 ### 5. Practice
 
 <div class="practice">
 
-1. Create a `TodoList.jsx` component that displays a list of to-do items from an array.
-2. Assign proper keys to each item.
-3. Modify the list by adding or removing items and observe how React updates efficiently.
+1. Create a `LoginControl.jsx` component with a boolean state `isLoggedIn`.
+2. Render “Welcome back!” if logged in, “Please sign up.” if not.
+3. Add a button to toggle `isLoggedIn` state.
+4. Use `if`, ternary, or `&&` for conditional rendering.
 
 </div>
 
+<div class="section-break"></div>
+
 ### 6. Interview Tips
 
-- Keys are required for list items to help React identify elements.
-- Always use unique, stable keys, never array indexes if possible.
-- Lists are rendered using `.map()` inside JSX.
+* Conditional rendering helps build **dynamic UIs**.
+* Use `if`, ternary (`? :`), or logical `&&` operators based on the case.
+* Return valid JSX or `null` (to render nothing).
+
+<div class="section-break"></div>

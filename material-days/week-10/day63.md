@@ -1,82 +1,86 @@
-## Day 63: Simple Project 1 – To-Do List App
+## Day 63: Creating Reusable Components
 
-### 1. Project Overview
+### 1. What Are Reusable Components?
 
-We will build a simple **To-Do List** app that lets users:
+* Reusable components are **self-contained, modular pieces of UI** that can be used in multiple places.
+* They help **avoid code duplication** and make apps easier to maintain.
 
-- Add tasks
-- View the list of tasks
-- Mark tasks as complete (optional)
+---
 
-This project uses **state**, **events**, **lists**, and **conditional rendering**.
+### 2. Designing Reusable Components
 
-### 2. Step-by-Step Instructions
+* Components should have a **single responsibility** (do one thing well).
+* Use **props** to customize behavior and appearance.
+* Keep them **stateless** if possible, or manage state internally if needed.
 
-#### a. Setup State
+---
 
-```javascript
-import { useState } from "react";
+### 3. Example: Button Component
 
-function TodoApp() {
-  const [tasks, setTasks] = useState([]);
-  const [newTask, setNewTask] = useState("");
-```
-
-#### b. Add New Task Handler
-
-```javascript
-function handleAddTask() {
-  if (newTask.trim() === "") return;
-  setTasks([...tasks, { id: Date.now(), text: newTask, completed: false }]);
-  setNewTask("");
+```jsx
+function Button({ text, onClick, style }) {
+  return (
+    <button style={style} onClick={onClick}>
+      {text}
+    </button>
+  );
 }
 ```
 
-#### c. Render Input and Button
+Usage:
 
-```javascript
-  return (
-    <div>
-      <input
-        type="text"
-        value={newTask}
-        onChange={(e) => setNewTask(e.target.value)}
-        placeholder="Enter a new task"
-      />
-      <button onClick={handleAddTask}>Add Task</button>
+```jsx
+<Button text="Submit" onClick={() => alert("Submitted!")} style={{ backgroundColor: "blue", color: "white" }} />
+<Button text="Cancel" onClick={() => alert("Cancelled!")} style={{ backgroundColor: "gray", color: "black" }} />
 ```
 
-#### d. Display Task List
+---
 
-```javascript
-      <ul>
-        {tasks.map((task) => (
-          <li key={task.id}>
-            {task.text}
-          </li>
-        ))}
-      </ul>
+### 4. Composing Components
+
+* Components can use **other components** inside them.
+* This helps build complex UIs by combining simple reusable parts.
+
+Example:
+
+```jsx
+function Card({ title, content }) {
+  return (
+    <div className="card">
+      <h2>{title}</h2>
+      <p>{content}</p>
     </div>
   );
 }
 
-export default TodoApp;
+function App() {
+  return (
+    <div>
+      <Card title="Card 1" content="This is card 1 content." />
+      <Card title="Card 2" content="This is card 2 content." />
+    </div>
+  );
+}
 ```
 
-### 3. Optional: Mark Tasks Completed
+---
 
-Add a checkbox to mark tasks done, and style completed tasks differently.
-
-### 4. Practice
+### 5. Practice
 
 <div class="practice">
-1. Build the To-Do List app using the code steps above.  
-2. Try adding tasks and see them appear in the list.  
-3. (Optional) Add feature to mark tasks as completed.  
+
+1. Create a reusable `Alert.jsx` component that accepts `message` and `type` (e.g., "success", "error") as props. Style it differently based on `type`.
+2. Use the `Alert` component multiple times in `App.jsx` with different messages and types.
+3. Create a reusable `InputField.jsx` component with `label`, `value`, and `onChange` props.
+
 </div>
 
-### 5. Interview Tips
+<div class="section-break"></div>
 
-- This project uses core React concepts: state, events, and lists.
-- Be able to explain how state updates and renders UI changes.
-- Practice explaining your code clearly.
+### 6. Interview Tips
+
+* Reusability improves code maintainability and consistency.
+* Passing props makes components flexible.
+* Composing components helps build complex UIs from simple parts.
+
+<div class="section-break"></div>

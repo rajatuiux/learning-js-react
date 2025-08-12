@@ -1,48 +1,89 @@
-## Day 60: React Developer Tools
+## Day 60: Lifting State Up
 
-### 1. What are React Developer Tools?
+### 1. What is Lifting State Up?
 
-React Developer Tools is a browser extension that helps you **inspect and debug** React component trees.
+* Sometimes, **two or more components need to share the same data** or state.
+* Instead of duplicating state, React recommends **moving the shared state up** to the closest common parent.
+* This process is called **"lifting state up"**.
 
-It lets you:
+---
 
-- View component hierarchy.
-- See props and state of each component.
-- Edit props/state on the fly.
-- Track component re-renders.
+### 2. Why Lift State Up?
 
-### 2. Installing React Developer Tools
+* Ensures **single source of truth** for shared data.
+* Keeps components **in sync**.
+* Avoids bugs caused by duplicated or inconsistent state.
 
-- For Chrome: [React Developer Tools - Chrome Web Store](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi)
-- For Firefox: [React Developer Tools - Firefox Add-ons](https://addons.mozilla.org/en-US/firefox/addon/react-devtools/)
+---
 
-### 3. Using React Developer Tools
+### 3. Example of Lifting State Up
 
-- Open your React app in the browser.
-- Open browser DevTools (`F12` or right-click → Inspect).
-- Find the **React** tab.
-- Explore component tree, props, state, and hooks.
-- Modify state or props to test changes without code edits.
+Suppose two components need to know if a checkbox is checked.
 
-### 4. Why Use React Developer Tools?
+#### Step 1: Move the state to the parent component
 
-- Debug component issues faster.
-- Understand component structure and data flow.
-- Optimize performance by checking unnecessary re-renders.
+```jsx
+function Parent() {
+  const [isChecked, setIsChecked] = React.useState(false);
+
+  return (
+    <div>
+      <Checkbox isChecked={isChecked} setIsChecked={setIsChecked} />
+      <Display isChecked={isChecked} />
+    </div>
+  );
+}
+```
+
+#### Step 2: Pass state and setter down as props
+
+```jsx
+function Checkbox({ isChecked, setIsChecked }) {
+  return (
+    <input
+      type="checkbox"
+      checked={isChecked}
+      onChange={(e) => setIsChecked(e.target.checked)}
+    />
+  );
+}
+
+function Display({ isChecked }) {
+  return <p>The checkbox is {isChecked ? "checked" : "unchecked"}.</p>;
+}
+```
+
+---
+
+### 4. Key Points
+
+* The parent owns the state.
+* Child components receive **state and setter functions** as props.
+* Children **notify the parent** of changes via setter functions.
+
+---
 
 ### 5. Practice
 
 <div class="practice">
 
-1. Install React Developer Tools in your browser.
-2. Open your React app and explore the component tree.
-3. Select components and inspect their props and state.
-4. Try changing props/state values temporarily to see live updates.
+1. Create a parent component `ToggleApp.jsx` that manages a boolean state `isOn`.
+2. Create two child components:
+
+   * `ToggleSwitch.jsx` — displays a toggle button and changes `isOn` state.
+   * `ToggleStatus.jsx` — shows whether the toggle is ON or OFF.
+3. Pass state and setter to child components via props.
+4. Use `ToggleApp` in `App.jsx`.
 
 </div>
 
+<div class="section-break"></div>
+
 ### 6. Interview Tips
 
-- Be familiar with React Developer Tools for debugging.
-- Know how to inspect props and state of components.
-- Understand how to use it to optimize and debug React apps.
+* Lifting state up helps **share state between sibling components**.
+* State is moved to the **closest common ancestor**.
+* Components communicate via **props and callbacks**.
+
+<div class="section-break"></div>
+

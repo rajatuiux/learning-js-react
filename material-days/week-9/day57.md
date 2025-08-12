@@ -1,61 +1,99 @@
-## Day 57: useEffect Basics
+## Day 57: Forms in React
 
-### 1. What is `useEffect`?
+### 1. What Are Forms in React?
 
-`useEffect` is a React Hook that lets you perform **side effects** in function components.
+* Forms collect user input like text, numbers, and selections.
+* React handles form inputs using **controlled components** — where React state controls the input value.
 
-Side effects include things like:
+---
 
-- Fetching data from an API
-- Setting up a subscription or timer
-- Manually changing the DOM
+### 2. Controlled Components
 
-### 2. Basic Usage of `useEffect`
+* In a controlled component, the form input’s value is stored in **React state**.
+* The input’s value is set via the state, and changes update the state.
 
-```javascript
-import { useState, useEffect } from "react";
+Example:
 
-function Timer() {
-  const [count, setCount] = useState(0);
+```jsx
+import React, { useState } from "react";
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCount((c) => c + 1);
-    }, 1000);
+function NameForm() {
+  const [name, setName] = useState("");
 
-    // Cleanup function to clear interval when component unmounts
-    return () => clearInterval(interval);
-  }, []); // Empty dependency array means run once after initial render
+  function handleChange(event) {
+    setName(event.target.value);
+  }
 
-  return <h1>Count: {count}</h1>;
+  function handleSubmit(event) {
+    event.preventDefault();
+    alert(`Hello, ${name}!`);
+  }
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <label>
+        Name: 
+        <input type="text" value={name} onChange={handleChange} />
+      </label>
+      <button type="submit">Submit</button>
+    </form>
+  );
 }
 ```
 
-- The function passed to `useEffect` runs **after** the component renders.
-- The empty array `[]` means it runs only once (like `componentDidMount`).
-- Returning a function cleans up when the component unmounts or before re-running.
+---
 
-### 3. Dependency Array
+### 3. Why Use Controlled Components?
 
-- You can specify dependencies in the array, so the effect runs when those values change:
+* You can **access input values instantly** in React state.
+* Enables **validation, conditional UI, or formatting** while typing.
+* Keeps React state as the single source of truth.
 
-```javascript
-useEffect(() => {
-  console.log(`Count changed to ${count}`);
-}, [count]);
+---
+
+### 4. Handling Multiple Inputs
+
+For multiple inputs, use a state object:
+
+```jsx
+const [formData, setFormData] = useState({ username: "", email: "" });
+
+function handleChange(event) {
+  const { name, value } = event.target;
+  setFormData(prevData => ({
+    ...prevData,
+    [name]: value
+  }));
+}
 ```
 
-### 4. Practice
+Inputs:
+
+```jsx
+<input name="username" value={formData.username} onChange={handleChange} />
+<input name="email" value={formData.email} onChange={handleChange} />
+```
+
+---
+
+### 5. Practice
 
 <div class="practice">
 
-1. Create a `Clock.jsx` component that shows the current time and updates every second using `useEffect`.
-2. Create a component that fetches and displays user data from a fake API when mounted (you can use `https://jsonplaceholder.typicode.com/users/1`).
+1. Create a `LoginForm.jsx` component with inputs for username and password.
+2. Use controlled components and state to handle input values.
+3. On submit, alert the entered username and password.
+4. Add basic validation: disable submit if any field is empty.
 
 </div>
 
-### 5. Interview Tips
+<div class="section-break"></div>
 
-- `useEffect` handles side effects in functional components.
-- Dependency array controls when the effect runs.
-- Cleanup function prevents memory leaks or unwanted effects.
+### 6. Interview Tips
+
+* Controlled components keep form data in React state.
+* Use `onChange` to update state on input changes.
+* Handle form submission with `onSubmit` and prevent default behavior.
+* Managing multiple inputs often involves an object in state.
+
+<div class="section-break"></div>

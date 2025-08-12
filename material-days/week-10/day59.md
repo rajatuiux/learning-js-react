@@ -1,62 +1,78 @@
-## Day 59: Lifting State Up
+## Day 59: Component Lifecycle in Functional Components
 
-### 1. What is Lifting State Up?
+### 1. What is Component Lifecycle?
 
-Sometimes, multiple components need to share and sync the same state.
+* Lifecycle means **different stages a component goes through** from creation to removal.
+* Class components have lifecycle methods like `componentDidMount`, `componentDidUpdate`, `componentWillUnmount`.
+* Functional components use **Hooks** like `useEffect` to manage lifecycle behavior.
 
-**Lifting state up** means moving the state to the **nearest common parent** component so it can be passed down as props.
+---
 
-### 2. Why Lift State Up?
+### 2. Lifecycle Stages in Functional Components
 
-- To keep components in sync.
-- To avoid duplicating state.
-- To centralize control.
+| Stage      | What Happens                                      | How to Handle in Functional Components                          |
+| ---------- | ------------------------------------------------- | --------------------------------------------------------------- |
+| Mounting   | Component is created and added to the DOM         | `useEffect` with empty dependency array `[]` runs once on mount |
+| Updating   | Component re-renders due to state or props change | `useEffect` with specific dependencies                          |
+| Unmounting | Component is removed from the DOM                 | Cleanup function returned from `useEffect`                      |
 
-### 3. Example: Sharing State Between Siblings
+---
 
-```javascript
-function Parent() {
-  const [temperature, setTemperature] = useState("");
+### 3. Example: Using `useEffect` for Lifecycle
 
-  return (
-    <div>
-      <Input temperature={temperature} onTemperatureChange={setTemperature} />
-      <Display temperature={temperature} />
-    </div>
-  );
-}
+```jsx
+import React, { useState, useEffect } from "react";
 
-function Input({ temperature, onTemperatureChange }) {
-  return (
-    <input
-      value={temperature}
-      onChange={(e) => onTemperatureChange(e.target.value)}
-      placeholder="Enter temperature"
-    />
-  );
-}
+function Timer() {
+  const [count, setCount] = useState(0);
 
-function Display({ temperature }) {
-  return <p>The temperature is: {temperature}°</p>;
+  useEffect(() => {
+    console.log("Component mounted");
+
+    const interval = setInterval(() => {
+      setCount(c => c + 1);
+    }, 1000);
+
+    return () => {
+      clearInterval(interval);
+      console.log("Component will unmount");
+    };
+  }, []); // Runs once on mount, cleans on unmount
+
+  useEffect(() => {
+    console.log("Count updated:", count);
+  }, [count]); // Runs on count updates
+
+  return <div>Count: {count}</div>;
 }
 ```
 
-- The `Parent` holds the `temperature` state.
-- It passes state and setter to `Input`.
-- It passes state to `Display`.
-- Both components stay in sync.
+---
 
-### 4. Practice
+### 4. Key Points
+
+* `useEffect(() => { ... }, [])` → Runs once after first render (mount).
+* Cleanup function inside `useEffect` runs before unmounting or before next effect run.
+* Effects with dependencies run when those dependencies change.
+
+---
+
+### 5. Practice
 
 <div class="practice">
 
-1. Create two sibling components sharing a state lifted to their parent. For example, a text input and a live preview.
-2. Modify the state in the input and see it update in the preview.
+1. Create a component `LifecycleDemo.jsx` that logs messages on mount, update, and unmount using `useEffect`.
+2. Add a button to toggle showing or hiding `LifecycleDemo` in `App.jsx`.
+3. Observe console logs when mounting, updating state, and unmounting.
 
 </div>
 
-### 5. Interview Tips
+<div class="section-break"></div>
 
-- Lifting state up is key for syncing shared data between components.
-- State lives in the common ancestor, passed down as props.
-- Helps maintain a single source of truth.
+### 6. Interview Tips
+
+* Functional components use `useEffect` to mimic class lifecycle methods.
+* Remember to clean up side effects in `useEffect` to avoid memory leaks.
+* Understand when effects run based on dependency arrays.
+
+<div class="section-break"></div>

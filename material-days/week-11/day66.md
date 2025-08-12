@@ -1,63 +1,87 @@
-## Day 66: Fetching Data in React
+## Day 66: React Router Basics
 
-### 1. Why Fetch Data?
+### 1. What is React Router?
 
-Most React apps need to get data from servers or APIs to display dynamic content.
+* React Router is a library for **adding navigation and routing** in React applications.
+* It enables you to create **single-page apps (SPAs)** with multiple views or pages without full page reloads.
 
-### 2. Using `fetch()` in React
+---
 
-You can use the browser’s built-in `fetch()` function to make HTTP requests.
+### 2. Installing React Router
 
-### 3. Fetching Data with `useEffect`
+```bash
+npm install react-router-dom
+```
 
-Example:
+---
 
-```javascript
-import { useState, useEffect } from "react";
+### 3. Basic Concepts
 
-function UserProfile() {
-  const [user, setUser] = useState(null);
-  const [loading, setLoading] = useState(true);
+* **Router**: Wraps your app and manages navigation.
+* **Route**: Defines a path and component to render.
+* **Link**: Used to create navigational links without reloading the page.
+* **Switch (v5) / Routes (v6)**: Renders the first matching route.
 
-  useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/users/1")
-      .then((response) => response.json())
-      .then((data) => {
-        setUser(data);
-        setLoading(false);
-      })
-      .catch((error) => {
-        console.error("Error fetching user:", error);
-        setLoading(false);
-      });
-  }, []);
+---
 
-  if (loading) return <p>Loading...</p>;
+### 4. Simple Example with React Router v6
 
+```jsx
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+
+function Home() {
+  return <h2>Home Page</h2>;
+}
+
+function About() {
+  return <h2>About Page</h2>;
+}
+
+function App() {
   return (
-    <div>
-      <h2>{user.name}</h2>
-      <p>Email: {user.email}</p>
-      <p>Website: {user.website}</p>
-    </div>
+    <Router>
+      <nav>
+        <Link to="/">Home</Link> |{" "}
+        <Link to="/about">About</Link>
+      </nav>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+      </Routes>
+    </Router>
   );
 }
 ```
 
-- Use `useEffect` to fetch data after component mounts.
-- Store data in state.
-- Handle loading and error states.
+---
 
-### 4. Practice
+### 5. Key Points
+
+* Use `<Router>` to enable routing.
+* `<Link>` prevents page reloads, unlike regular `<a>` tags.
+* `<Routes>` matches URLs to render appropriate components.
+* URLs can have dynamic parameters (covered later).
+
+---
+
+### 6. Practice
 
 <div class="practice">
-1. Create a component that fetches and displays a list of posts from `https://jsonplaceholder.typicode.com/posts`.  
-2. Show a loading message while fetching.  
-3. Handle errors and display a message if the fetch fails.  
+
+1. Create a simple app with two pages: Home and Contact.
+2. Use React Router to navigate between these pages without page reloads.
+3. Add navigation links using `<Link>`.
+4. Display the current URL path somewhere in the app.
+
 </div>
 
-### 5. Interview Tips
+<div class="section-break"></div>
 
-- Know how to use `fetch()` or alternatives like Axios.
-- Understand how to use `useEffect` for data fetching.
-- Be able to handle loading and error states gracefully.
+### 7. Interview Tips
+
+* Understand SPA and how React Router enables it.
+* Know difference between `<a>` and `<Link>`.
+* Be familiar with `BrowserRouter`, `Routes`, and `Route`.
+* Routing is essential for multi-page React apps.
+
+<div class="section-break"></div>

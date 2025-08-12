@@ -1,71 +1,96 @@
-## Day 56: Forms in React
+## Day 56: Lists and Keys in React
 
-### 1. Controlled Components
+### 1. What Are Lists in React?
 
-In React, form elements like `<input>`, `<textarea>`, and `<select>` can be **controlled components**. This means React controls their values via state.
+* Lists are used to **display multiple similar items** in the UI, like tasks, users, or products.
+* React lets you render lists by **mapping over arrays** to return JSX elements.
 
-### 2. Handling Input with State
+---
 
-Example of a controlled input:
+### 2. Rendering Lists Using `.map()`
 
-```javascript
-import { useState } from "react";
+Example:
 
-function NameForm() {
-  const [name, setName] = useState("");
-
-  function handleChange(event) {
-    setName(event.target.value);
-  }
-
-  function handleSubmit(event) {
-    event.preventDefault();
-    alert(`Hello, ${name}!`);
-  }
+```jsx
+function GroceryList() {
+  const items = ['Apples', 'Bananas', 'Oranges'];
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label>
-        Name:
-        <input type="text" value={name} onChange={handleChange} />
-      </label>
-      <button type="submit">Submit</button>
-    </form>
+    <ul>
+      {items.map(item => (
+        <li key={item}>{item}</li>
+      ))}
+    </ul>
   );
 }
 ```
 
-- The input’s value comes from the `name` state.
-- When the user types, `handleChange` updates the state.
-- On form submit, `handleSubmit` prevents default behavior and uses the state.
+This renders a `<ul>` with three list items.
 
-### 3. Handling Multiple Inputs
+---
 
-For forms with many inputs, use a single state object:
+### 3. Why Are Keys Important?
 
-```javascript
-const [formData, setFormData] = useState({ username: "", email: "" });
+* Keys help React **identify which items have changed, added, or removed**.
+* They help **optimize rendering** by uniquely identifying list elements.
+* Keys should be **unique and stable** (avoid using array index as keys when possible).
 
-function handleChange(event) {
-  const { name, value } = event.target;
-  setFormData((prev) => ({ ...prev, [name]: value }));
+---
+
+### 4. Adding Keys to List Items
+
+You add a `key` prop inside `.map()` for each element:
+
+```jsx
+{items.map(item => (
+  <li key={item}>{item}</li>
+))}
+```
+
+---
+
+### 5. Using IDs as Keys
+
+If list items have IDs, use those as keys for better stability:
+
+```jsx
+const todos = [
+  { id: 1, task: 'Wash dishes' },
+  { id: 2, task: 'Do laundry' },
+];
+
+function TodoList() {
+  return (
+    <ul>
+      {todos.map(todo => (
+        <li key={todo.id}>{todo.task}</li>
+      ))}
+    </ul>
+  );
 }
 ```
 
-Make sure inputs have `name` attributes matching the keys.
+---
 
-### 4. Practice
+### 6. Practice
 
 <div class="practice">
 
-1. Create a `LoginForm.jsx` component with inputs for username and password, controlled by state.
-2. Add form submission handling that logs the input values.
-3. Add a reset button that clears all inputs.
+1. Create a `TodoList.jsx` component.
+2. Use an array of tasks and render them as list items with `.map()`.
+3. Add unique keys to each `<li>`.
+4. Add a new task to the array and verify it renders.
 
 </div>
 
-### 5. Interview Tips
+<div class="section-break"></div>
 
-- Controlled components use React state to manage form input values.
-- Always prevent default form submission behavior with `event.preventDefault()`.
-- Understand how to handle multiple form inputs with one state object.
+### 7. Interview Tips
+
+* Keys help React **track list elements efficiently**.
+* Always provide a **unique key** prop.
+* Avoid using **array indexes** as keys when possible.
+* `.map()` is the standard way to render lists in React.
+
+<div class="section-break"></div>
+

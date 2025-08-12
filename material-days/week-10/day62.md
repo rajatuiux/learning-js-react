@@ -1,54 +1,97 @@
-## Day 62: Reusable Components
+## Day 62: CSS in React
 
-### 1. What Are Reusable Components?
+### 1. How to Add CSS in React
 
-Reusable components are React components designed to be used multiple times across your app, often with different data.
+React supports multiple ways to style components:
 
-They help avoid code duplication and make your app easier to maintain.
+* **External CSS files**
+* **Inline styles**
+* **CSS Modules**
+* **Styled Components** (third-party library, advanced)
 
-### 2. How to Make Components Reusable?
+---
 
-- Use **props** to pass data dynamically.
-- Avoid hardcoding values inside the component.
-- Keep components focused on a single responsibility.
+### 2. Using External CSS Files
 
-### 3. Example: Reusable Button Component
+* Create a `.css` file (e.g., `App.css`).
+* Import it in your component:
 
-```javascript
-function Button({ text, onClick, style }) {
-  return (
-    <button onClick={onClick} style={style}>
-      {text}
-    </button>
-  );
+```jsx
+import "./App.css";
+
+function App() {
+  return <h1 className="title">Hello, React!</h1>;
 }
 ```
 
-Use the `Button` component with different props:
+* Define styles in `App.css`:
 
-```javascript
-<Button text="Save" onClick={handleSave} style={{ backgroundColor: "green" }} />
-<Button text="Cancel" onClick={handleCancel} style={{ backgroundColor: "red" }} />
+```css
+.title {
+  color: blue;
+  font-size: 24px;
+}
 ```
 
-### 4. Benefits of Reusable Components
+---
 
-- Easier to maintain and update.
-- Consistent UI across the app.
-- Promotes better organization and modularity.
+### 3. Inline Styles
+
+* Use the `style` prop with a JavaScript object.
+* Property names use **camelCase** instead of CSS hyphen-case.
+
+Example:
+
+```jsx
+function StyledText() {
+  return <p style={{ color: "red", fontWeight: "bold" }}>Inline Styled Text</p>;
+}
+```
+
+---
+
+### 4. CSS Modules (Scoped CSS)
+
+* CSS Modules allow CSS to be scoped to a component, avoiding global conflicts.
+* Rename CSS files as `ComponentName.module.css`.
+* Import styles as an object:
+
+```jsx
+import styles from "./Button.module.css";
+
+function Button() {
+  return <button className={styles.primary}>Click me</button>;
+}
+```
+
+* In `Button.module.css`:
+
+```css
+.primary {
+  background-color: green;
+  color: white;
+}
+```
+
+---
 
 ### 5. Practice
 
 <div class="practice">
 
-1. Create a reusable `Card` component that accepts `title`, `content`, and `footer` props.
-2. Use the `Card` component multiple times with different content in `App.jsx`.
-3. Add a reusable `Button` component as shown above and use it in your cards.
+1. Create an `App.css` file and style an `<h1>` with a class. Import and use it in `App.jsx`.
+2. Create a `StyledButton.jsx` component and style it using inline styles.
+3. Create a `Card.module.css` file with scoped styles and use it in a `Card.jsx` component.
 
 </div>
 
+<div class="section-break"></div>
+
 ### 6. Interview Tips
 
-- Understand how props make components reusable.
-- Be able to explain component modularity benefits.
-- Know how to create flexible, customizable components.
+* Know how to apply CSS using external files and inline styles.
+* Understand the benefits of CSS Modules for avoiding style conflicts.
+* Inline styles are useful for dynamic styling but limited in features.
+* Styled Components and other CSS-in-JS libraries exist for advanced use cases.
+
+<div class="section-break"></div>

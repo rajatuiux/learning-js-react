@@ -1,59 +1,125 @@
-## Day 68: Review & Deployment
+## Day 68: Simple Project 2 – Weather App
 
-### 1. Review Key React Concepts
+### 1. Project Overview
 
-Before deploying your React app, make sure you understand:
+* Build a weather app that fetches and displays weather info for a city.
+* Features:
 
-- Components & Props
-- State & Hooks (`useState`, `useEffect`, `useRef`)
-- Event Handling
-- Conditional Rendering
-- Lists & Keys
-- Forms
-- React Router
-- Fetching Data
-- Lifting State Up
-- Reusable Components
+  * Input field to enter city name.
+  * Fetch weather data from a public API.
+  * Show temperature, weather condition, and other details.
+  * Handle loading and error states.
 
-### 2. Preparing for Deployment
+---
 
-- Ensure your app works as expected locally.
-- Build the production-ready version of your app.
+### 2. Choosing an API
 
-In your project folder, run:
+* Use [OpenWeatherMap](https://openweathermap.org/api) (free tier available).
+* Sign up and get an API key (for real app).
+* For practice, you can use this sample endpoint without API key:
 
-```bash
-npm run build
+  ```
+  https://api.openweathermap.org/data/2.5/weather?q=London&appid=YOUR_API_KEY&units=metric
+  ```
+
+---
+
+### 3. Basic Structure
+
+* `App.jsx` — Manages state for city input and weather data.
+* Use `fetch` inside `useEffect` or on form submit to get weather.
+* Display results or error messages.
+
+---
+
+### 4. Sample Code Snippet
+
+```jsx
+import React, { useState } from "react";
+
+function WeatherApp() {
+  const [city, setCity] = useState("");
+  const [weather, setWeather] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+
+  const API_KEY = "YOUR_API_KEY";
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    setLoading(true);
+    setError(null);
+
+    fetch(
+      `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`
+    )
+      .then(res => {
+        if (!res.ok) {
+          throw new Error("City not found");
+        }
+        return res.json();
+      })
+      .then(data => {
+        setWeather(data);
+        setLoading(false);
+      })
+      .catch(err => {
+        setError(err.message);
+        setLoading(false);
+      });
+  }
+
+  return (
+    <div>
+      <h1>Weather App</h1>
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          value={city}
+          placeholder="Enter city"
+          onChange={e => setCity(e.target.value)}
+          required
+        />
+        <button type="submit">Get Weather</button>
+      </form>
+
+      {loading && <p>Loading...</p>}
+      {error && <p style={{ color: "red" }}>{error}</p>}
+
+      {weather && (
+        <div>
+          <h2>{weather.name}, {weather.sys.country}</h2>
+          <p>Temperature: {weather.main.temp} °C</p>
+          <p>Condition: {weather.weather[0].description}</p>
+        </div>
+      )}
+    </div>
+  );
+}
+
+export default WeatherApp;
 ```
 
-This creates a `build` folder with optimized static files.
-
-### 3. Deployment Options
-
-- **Netlify:** Free and easy for React apps. Drag-and-drop your `build` folder or connect your GitHub repo.
-- **Vercel:** Another popular choice, supports React with simple setup.
-- **GitHub Pages:** Can host React apps for free via your repo’s settings.
-- **Firebase Hosting:** Google’s hosting with easy CLI tools.
-
-### 4. Deploying to Netlify (Example)
-
-1. Create a free account on [Netlify](https://www.netlify.com).
-2. Click “New site from Git” and connect your GitHub repo.
-3. Set build command to `npm run build` and publish directory to `build`.
-4. Deploy your site!
+---
 
 ### 5. Practice
 
 <div class="practice">
 
-1. Build your React app for production using `npm run build`.
-2. Deploy it on Netlify or Vercel using GitHub integration or manual upload.
-3. Share your deployed app URL with friends or for interviews.
+1. Build the Weather App as shown above.
+2. Style it nicely using CSS or inline styles.
+3. Handle empty input and API errors gracefully.
+4. Try adding more info like humidity, wind speed, etc.
 
 </div>
 
+<div class="section-break"></div>
+
 ### 6. Interview Tips
 
-- Understand the build and deployment process.
-- Be able to explain how React apps run in production.
-- Know popular hosting services and their basics.
+* Understand how to fetch data based on user input.
+* Know how to handle async operations and errors.
+* Practice building real-world projects to demonstrate skills.
+* Explain state management for loading, data, and errors.
+
+<div class="section-break"></div>

@@ -1,103 +1,150 @@
-## Day 50: Understanding JSX in React
+## Day 50: Components in React (Complete Introduction)
 
-### 1. What is JSX?
+### 1. What Are Components?
 
-JSX stands for **JavaScript XML**. It’s a syntax extension that looks like HTML but is written inside JavaScript code.
+In React, **components** are the fundamental building blocks of your application’s UI.
+Think of components as **small, reusable pieces of a webpage** — for example, a button, a header, or a user profile card.
 
-React uses JSX to make writing UI easier and more readable.
+In JavaScript, you might write functions that do some calculation and return a value.
+In React, components are like functions that return **UI elements** (using JSX).
 
-For example:
+---
 
-```javascript
-const element = <h1>Hello, JSX!</h1>;
+### 2. Why Use Components?
+
+* **Reusability**: Write code once and reuse it in many places.
+* **Organization**: Break complex UI into smaller, manageable parts.
+* **Maintainability**: When you change one component, it updates everywhere it’s used.
+* **Separation of Concerns**: Components isolate their own logic and UI, making code cleaner.
+
+---
+
+### 3. How to Create a Component?
+
+Components can be written as **JavaScript functions**. The function returns JSX — a syntax that looks like HTML but works inside JavaScript.
+
+Example of a basic component:
+
+```jsx
+function Welcome() {
+  return <h1>Welcome to React!</h1>;
+}
 ```
 
-This code creates a React element that will display an `<h1>` heading with the text "Hello, JSX!".
+This component will render the heading when used in the app.
 
-### 2. Why Use JSX?
+---
 
-- Makes your UI code easier to understand — it looks like HTML.
-- Lets you write HTML-like syntax and embed JavaScript logic together.
-- Under the hood, JSX is converted to `React.createElement()` calls that React understands.
+### 4. Using Components in React
 
-### 3. JSX Rules to Remember
+To use a component, simply write it as a custom HTML tag inside another component:
 
-1. **One parent element**: JSX must return a single parent element wrapping all other elements.
-
-```javascript
-return (
-  <div>
-    <h1>Title</h1>
-    <p>Description here</p>
-  </div>
-);
+```jsx
+function App() {
+  return (
+    <div>
+      <Welcome />
+    </div>
+  );
+}
 ```
 
-2. **Self-closing tags must be closed:**
+Here, `<Welcome />` inserts the `Welcome` component’s UI.
 
-```javascript
-<img src="logo.png" />
+---
+
+### 5. Function vs Arrow Function Components
+
+You can create components in two common ways:
+
+#### Function Declaration:
+
+```jsx
+function Header() {
+  return <h1>My Website</h1>;
+}
 ```
 
-3. **Use `className` instead of `class`:**
+#### Arrow Function Expression:
 
-```javascript
-<p className="text-bold">This is bold text</p>
+```jsx
+const Footer = () => {
+  return <footer>© 2025 My Website</footer>;
+};
 ```
 
-4. **Embed JavaScript expressions inside curly braces `{}`:**
+Both work the same way. Choose what feels comfortable.
 
-```javascript
-const name = "Rajat";
-return <h1>Hello, {name}!</h1>;
+---
+
+### 6. Component Naming Rules
+
+* **Start with a capital letter**: React treats components starting with uppercase as custom components.
+* **Match file names with component names** for clarity (`Header.jsx` exports `Header`).
+* **Components must return a single parent element** — if you return multiple sibling elements, wrap them in a `<div>` or React Fragment `<>...</>`.
+
+---
+
+### 7. Example of Multiple Components
+
+```jsx
+function Header() {
+  return <header><h1>Welcome!</h1></header>;
+}
+
+function Footer() {
+  return <footer>© 2025 My Website</footer>;
+}
+
+function App() {
+  return (
+    <div>
+      <Header />
+      <main>
+        <p>This is the main content.</p>
+      </main>
+      <Footer />
+    </div>
+  );
+}
 ```
 
-### 4. Embedding JavaScript in JSX
+---
 
-Inside JSX, you can use any valid JavaScript expression by wrapping it in `{}`.
+### 8. Organizing Components in Folders
 
-Examples:
+A good folder structure helps maintain the project:
 
-```javascript
-<p>{2 + 2}</p>               // Displays 4
-<p>{new Date().getFullYear()}</p> // Displays current year
-<p>{user.name.toUpperCase()}</p>   // Displays user’s name in uppercase
-```
+<div class="small-grey-block">
+src/  
+│── App.jsx          # Main app  
+│── components/      # Folder for all components  
+│   ├── Header.jsx  
+│   ├── Footer.jsx  
+│   ├── Welcome.jsx  
+│── index.css        # Styles  
+│── main.jsx         # React app entry point  
+</div>
 
-### 5. Styling JSX Elements
+---
 
-You can add styles in two ways:
-
-- **Inline styles** using an object with camelCase properties:
-
-```javascript
-<p style={{ color: "blue", fontSize: "20px" }}>Blue Text</p>
-```
-
-- **External CSS files** imported into your component:
-
-```javascript
-import "./App.css";
-```
-
-And then use class names with `className`:
-
-```javascript
-<p className="my-text">Styled text</p>
-```
-
-### 6. Practice
+### 9. Practice
 
 <div class="practice">
 
-1. Create a new component called `ProfileCard.jsx` that shows your name and hobby using JSX.
-2. Use inline styles to make your name blue.
-3. Add a variable for your age and display it inside the JSX.
+1. Create three components: `Header.jsx`, `Content.jsx`, and `Footer.jsx`.
+2. `Header.jsx` should display a website title.
+3. `Content.jsx` should display a welcome message.
+4. `Footer.jsx` should display copyright info.
+5. Import and use these components inside `App.jsx`.
 
 </div>
 
-### 7. Interview Tips
+---
 
-- JSX is not mandatory but is the preferred way to write React UI.
-- JSX gets converted to `React.createElement()` calls during compilation.
-- Curly braces `{}` are used to embed JavaScript expressions inside JSX.
+### 10. Interview Tips
+
+* Components are **like JavaScript functions** but return UI (JSX).
+* Always **capitalize component names**.
+* Keep components **small and focused**.
+* Organize components in folders for maintainability.

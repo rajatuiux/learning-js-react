@@ -2,51 +2,61 @@
 
 ### 1. What Are Props?
 
-**Props** (short for “properties”) are a way to pass data **from a parent component to a child component** in React.
+**Props** (short for “properties”) let you **pass data from a parent component to a child component** in React.
 
-Think of props as function arguments but for components.
+Think of props like **function arguments** — when you call a function, you give it inputs; similarly, you give components inputs via props.
 
-They let components be dynamic and reusable by accepting different data.
+This allows components to be **dynamic and reusable** because you can send different data each time.
+
+---
 
 ### 2. How Props Work
 
-If you have a component like this:
+Example:
 
-```javascript
+```jsx
 function Greeting(props) {
   return <h1>Hello, {props.name}!</h1>;
 }
 ```
 
-You can pass the `name` prop when you use `<Greeting />`:
+Using the component:
 
-```javascript
+```jsx
 <Greeting name="Rajat" />
 ```
 
-The `Greeting` component receives `{name: "Rajat"}` as `props` and displays “Hello, Rajat!”.
+Here, `name="Rajat"` is passed as a prop, and inside the component, you access it via `props.name`.
 
-### 3. Props are Read-Only
+The component will render: **Hello, Rajat!**
 
-Inside the child component, you **cannot modify** the props.
+---
 
-They are **read-only** — used only to display or control what the component renders.
+### 3. Props Are Read-Only
+
+Props are **immutable** inside the component — you cannot change them.
+
+If you need data that changes, you use **state** (which we will learn soon).
+
+---
 
 ### 4. Destructuring Props
 
-To make code cleaner, you can use JavaScript **destructuring**:
+To write cleaner code, you can use **destructuring** in the function parameter:
 
-```javascript
+```jsx
 function Greeting({ name }) {
   return <h1>Hello, {name}!</h1>;
 }
 ```
 
+---
+
 ### 5. Passing Multiple Props
 
-You can pass many props to a component:
+You can send many props:
 
-```javascript
+```jsx
 function UserCard({ name, age, hobby }) {
   return (
     <div>
@@ -60,23 +70,56 @@ function UserCard({ name, age, hobby }) {
 
 Usage:
 
-```javascript
+```jsx
 <UserCard name="Rajat" age={27} hobby="Reading" />
 ```
 
-### 6. Practice
+---
+
+### 6. Props Can Be Any Data Type
+
+Props can be:
+
+* Strings
+* Numbers
+* Booleans
+* Arrays
+* Objects
+* Functions
+
+Example passing an array prop:
+
+```jsx
+function ItemList({ items }) {
+  return (
+    <ul>
+      {items.map((item) => (
+        <li key={item}>{item}</li>
+      ))}
+    </ul>
+  );
+}
+
+<ItemList items={['Apple', 'Banana', 'Cherry']} />
+```
+
+---
+
+### 7. Practice
 
 <div class="practice">
 
 1. Create a component `Welcome.jsx` that accepts a `name` prop and displays “Welcome, {name}!”
-2. Create a `UserProfile.jsx` component that takes `name`, `age`, and `city` as props and displays them.
+2. Create a component `UserProfile.jsx` that takes `name`, `age`, and `city` props and displays them.
 3. Use these components inside `App.jsx` and pass different values for props.
 
 </div>
 
-### 7. Interview Tips
+---
 
-- Props pass data **down** from parent to child components.
-- Props are **immutable** inside the child component.
-- Understand how to use destructuring for props.
-- Passing props is how React apps communicate between components.
+### 8. Interview Tips
+
+* Props are how **parent components pass data** to children.
+* Props are **read-only** inside child components.
+* Destructuring props makes your code cleaner.
+* Props can be any valid JavaScript type.

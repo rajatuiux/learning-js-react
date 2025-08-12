@@ -1,85 +1,91 @@
-## Day 67: Simple Project 2 – Weather App
+## Day 67: Fetching Data in React
 
-### 1. Project Overview
+### 1. Why Fetch Data?
 
-Build a simple weather app that:
+* Most React apps need to **get data from APIs** (servers) to display dynamic content.
+* Fetching data means making HTTP requests to get information like user details, posts, etc.
 
-- Lets users enter a city name.
-- Fetches current weather data for that city.
-- Displays temperature and weather conditions.
+---
 
-### 2. Setup
+### 2. Fetch API in React
 
-You can use the free [OpenWeatherMap API](https://openweathermap.org/api). Get your free API key after signing up.
+* The browser's built-in `fetch()` function is used to make requests.
+* It returns a **promise** which resolves to a response object.
+* You usually convert the response to JSON.
 
-### 3. Basic Code Structure
+---
 
-```javascript
-import { useState } from "react";
+### 3. Using `fetch` with `useEffect`
 
-function WeatherApp() {
-  const [city, setCity] = useState("");
-  const [weather, setWeather] = useState(null);
+Example to fetch user data on component mount:
+
+```jsx
+import React, { useState, useEffect } from "react";
+
+function UserList() {
+  const [users, setUsers] = useState([]);
+  const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  async function fetchWeather() {
-    if (!city) return;
+  useEffect(() => {
+    fetch("https://jsonplaceholder.typicode.com/users")
+      .then(response => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return response.json();
+      })
+      .then(data => {
+        setUsers(data);
+        setLoading(false);
+      })
+      .catch(err => {
+        setError(err.message);
+        setLoading(false);
+      });
+  }, []);
 
-    try {
-      const response = await fetch(
-        `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=YOUR_API_KEY&units=metric`
-      );
-      const data = await response.json();
-
-      if (response.ok) {
-        setWeather(data);
-        setError(null);
-      } else {
-        setError(data.message);
-        setWeather(null);
-      }
-    } catch {
-      setError("Failed to fetch data");
-      setWeather(null);
-    }
-  }
+  if (loading) return <p>Loading users...</p>;
+  if (error) return <p>Error: {error}</p>;
 
   return (
-    <div>
-      <input
-        type="text"
-        value={city}
-        onChange={(e) => setCity(e.target.value)}
-        placeholder="Enter city"
-      />
-      <button onClick={fetchWeather}>Get Weather</button>
-
-      {error && <p style={{ color: "red" }}>{error}</p>}
-
-      {weather && (
-        <div>
-          <h2>{weather.name}</h2>
-          <p>Temperature: {weather.main.temp}°C</p>
-          <p>Condition: {weather.weather[0].description}</p>
-        </div>
-      )}
-    </div>
+    <ul>
+      {users.map(user => (
+        <li key={user.id}>{user.name} ({user.email})</li>
+      ))}
+    </ul>
   );
 }
 ```
 
-### 4. Practice
+---
+
+### 4. Key Points
+
+* Use `useEffect` to fetch data on mount (`[]` dependency).
+* Always handle loading and error states.
+* Remember to add unique keys when rendering lists.
+
+---
+
+### 5. Practice
 
 <div class="practice">
 
-1. Build the weather app as shown above.
-2. Test with valid and invalid city names to see error handling.
-3. Style the app to improve user experience.
+1. Create a `PostList.jsx` component that fetches posts from `https://jsonplaceholder.typicode.com/posts`.
+2. Display post titles in a list.
+3. Show “Loading...” while fetching.
+4. Handle and display any errors.
 
 </div>
 
-### 5. Interview Tips
+<div class="section-break"></div>
 
-- Understand API fetching and error handling.
-- Be able to explain async/await usage in React.
-- Show ability to work with real-world APIs.
+### 6. Interview Tips
+
+* Understand promises and async data fetching.
+* Know how to manage loading and error states in UI.
+* Fetching data on mount using `useEffect` is standard.
+* Be familiar with `.then()` and `.catch()` for handling fetch.
+
+<div class="section-break"></div>

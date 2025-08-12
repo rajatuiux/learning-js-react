@@ -1,70 +1,89 @@
-## Day 54: Conditional Rendering in React
+## Day 54: Handling Events in React
 
-### 1. What is Conditional Rendering?
+### 1. What Are Events in React?
 
-Conditional rendering means showing different UI elements depending on certain conditions or state.
+- Events are **user interactions** like clicks, typing, submitting forms.
+- React allows you to handle these events to make your UI interactive.
 
-React lets you control what gets rendered using JavaScript’s conditions.
+---
 
-### 2. Using `if` Statements
+### 2. Handling Events Syntax
 
-You can use `if` statements inside your component to decide what to render.
+- React uses **camelCase** event names: `onClick`, `onChange`, etc.
+- You pass a **function** as the event handler, **not a function call**.
 
 Example:
 
-```javascript
-function Greeting({ isLoggedIn }) {
-  if (isLoggedIn) {
-    return <h1>Welcome back!</h1>;
-  } else {
-    return <h1>Please sign in.</h1>;
+```jsx
+function Button() {
+  function handleClick() {
+    alert("Button clicked!");
   }
+
+  return <button onClick={handleClick}>Click Me</button>;
 }
 ```
 
-### 3. Using Ternary Operator
+---
 
-For inline conditional rendering, use the ternary operator `condition ? true : false`.
+### 3. Inline Event Handlers
+
+You can also define handlers inline:
+
+```jsx
+<button onClick={() => alert("Clicked!")}>Click Me</button>
+```
+
+---
+
+### 4. The Event Object
+
+- Event handlers receive an **event object** that contains info about the event.
+- For example, in inputs, you can get the current value with `event.target.value`.
 
 Example:
 
-```javascript
-function Greeting({ isLoggedIn }) {
-  return <h1>{isLoggedIn ? "Welcome back!" : "Please sign in."}</h1>;
+```jsx
+function Input() {
+  function handleChange(event) {
+    console.log(event.target.value);
+  }
+
+  return <input onChange={handleChange} />;
 }
 ```
 
-### 4. Logical AND (`&&`) Operator
+---
 
-To render something only when a condition is true, use `&&`.
+### 5. Common React Events
 
-Example:
+| Event          | Description                  |
+| -------------- | ---------------------------- |
+| `onClick`      | When an element is clicked   |
+| `onChange`     | When input value changes     |
+| `onSubmit`     | When a form is submitted     |
+| `onMouseEnter` | Mouse pointer enters element |
+| `onKeyDown`    | When a key is pressed        |
 
-```javascript
-function Mailbox({ unreadMessages }) {
-  return (
-    <div>
-      <h1>Hello!</h1>
-      {unreadMessages.length > 0 && (
-        <p>You have {unreadMessages.length} unread messages.</p>
-      )}
-    </div>
-  );
-}
-```
+---
 
-### 5. Practice
+### 6. Practice
 
 <div class="practice">
 
-1. Create a `LoginControl.jsx` component that shows “Logout” button if logged in, otherwise shows “Login” button.
-2. Create a `Message.jsx` component that displays a message only if the `show` prop is true.
-3. Use ternary operators and `&&` in your components for conditional rendering.
+1. Create `ClickLogger.jsx` with a button logging “Button was clicked” on click.
+2. Create `InputLogger.jsx` with an input logging its value on every change.
+3. Use both inside `App.jsx`.
 
 </div>
 
-### 6. Interview Tips
+<div class="section-break"></div>
 
-- Conditional rendering is done with JavaScript expressions inside JSX.
-- Use `if`, ternary (`? :`), or logical AND (`&&`) to conditionally show UI.
-- Understand how to render different components or elements based on props or state.
+### 7. Interview Tips
+
+- Event handlers in React use **camelCase**.
+- Always pass a **function reference**, not a call.
+- Use the event object to get info about the event.
+- Event handling makes UIs interactive and dynamic.
+
+<div class="section-break"></div>

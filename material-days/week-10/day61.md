@@ -1,84 +1,82 @@
-## Day 61: CSS in React
+## Day 61: React Developer Tools & Debugging
 
-### 1. How to Add CSS in React?
+### 1. What Are React Developer Tools?
 
-You can style React components in several ways:
+* React Developer Tools is a **browser extension** available for Chrome and Firefox.
+* It helps you **inspect React component trees**, **view props and state**, and **debug** React apps easily.
 
-- **External CSS files**
-- **Inline styles**
-- **CSS Modules**
-- **Styled Components** (advanced)
+---
 
-### 2. Using External CSS Files
+### 2. Installing React Developer Tools
 
-Create a CSS file (e.g., `App.css`), write styles, and import it into your component:
+* Visit the browser’s extension store:
 
-```css
-/* App.css */
-.title {
-  color: blue;
-  font-size: 24px;
+  * [Chrome Web Store](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi)
+  * [Firefox Add-ons](https://addons.mozilla.org/en-US/firefox/addon/react-devtools/)
+* Install and enable it.
+* Open DevTools and you will see a **React tab** when inspecting React apps.
+
+---
+
+### 3. Features of React Developer Tools
+
+* **Component Tree:** Explore your React component hierarchy.
+* **Props & State:** View and edit component props and state in real-time.
+* **Hooks:** Inspect current hook values.
+* **Profiler:** Analyze performance and rendering behavior.
+* **Highlight Updates:** See which components re-render.
+
+---
+
+### 4. Debugging Tips with React DevTools
+
+* Check if props and state have the expected values.
+* Identify unnecessary re-renders causing performance issues.
+* Trace data flow from parent to child components.
+* Use the Profiler to optimize slow components.
+
+---
+
+### 5. Console Debugging in React
+
+* Use `console.log()` to print variables, props, or state.
+* You can debug event handlers or lifecycle hooks by logging messages.
+* Example:
+
+```jsx
+function Counter() {
+  const [count, setCount] = React.useState(0);
+
+  React.useEffect(() => {
+    console.log("Count updated:", count);
+  }, [count]);
+
+  return (
+    <button onClick={() => setCount(count + 1)}>Count: {count}</button>
+  );
 }
 ```
 
-Import and use it in your component:
+---
 
-```javascript
-import "./App.css";
-
-function App() {
-  return <h1 className="title">Hello, styled with CSS!</h1>;
-}
-```
-
-### 3. Inline Styles
-
-Add styles directly in JSX as an object:
-
-```javascript
-function App() {
-  return <h1 style={{ color: "red", fontSize: "20px" }}>Inline Styled</h1>;
-}
-```
-
-Note: Style properties use **camelCase** instead of kebab-case.
-
-### 4. CSS Modules (Scoped CSS)
-
-CSS Modules scope styles to components, preventing conflicts.
-
-Create a CSS module file like `Button.module.css`:
-
-```css
-/* Button.module.css */
-.button {
-  background-color: green;
-  color: white;
-}
-```
-
-Import it in your component:
-
-```javascript
-import styles from "./Button.module.css";
-
-function Button() {
-  return <button className={styles.button}>Click me</button>;
-}
-```
-
-### 5. Practice
+### 6. Practice
 
 <div class="practice">
 
-1. Create an external CSS file and style your `App.jsx` heading.
-2. Add inline styles to a paragraph element in your component.
-3. Create a CSS Module for a button component and style it.
+1. Install React Developer Tools in your browser.
+2. Open your React app and explore the component tree.
+3. Select a component and view its props and state.
+4. Add `console.log` statements in a component to log state changes.
+5. Use React DevTools Profiler to analyze performance.
 
 </div>
 
-### 6. Interview Tips
+<div class="section-break"></div>
 
-- Know different ways to add CSS in React.
-- Understand how CSS Modules help scope styles.
-- Remember to use camelCase for inline style properties.
+### 7. Interview Tips
+
+* Familiarity with React DevTools is important for real-world debugging.
+* Understanding how to inspect props, state, and hooks helps troubleshoot issues.
+* Profiling helps improve app performance by spotting unnecessary renders.
+
+<div class="section-break"></div>

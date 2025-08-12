@@ -1,69 +1,93 @@
-## Day 65: React Router Basics
+## Day 65: useRef Hook
 
-### 1. What is React Router?
+### 1. What is `useRef`?
 
-React Router is a library that helps you create **single-page applications (SPA)** with navigation.
+* `useRef` is a React Hook that lets you **create a mutable object** that persists across renders.
+* It can hold any value in its `.current` property.
+* Common uses:
 
-It allows you to change the URL and render different components **without reloading the page**.
+  * Accessing DOM elements directly.
+  * Storing mutable values without causing re-renders.
 
-### 2. Installing React Router
+---
 
-In your project, run:
+### 2. Using `useRef` to Access DOM Elements
 
-```bash
-npm install react-router-dom
-```
+Example:
 
-### 3. Basic Setup
+```jsx
+import React, { useRef } from "react";
 
-Import necessary components and wrap your app with `<BrowserRouter>`:
+function TextInputFocus() {
+  const inputRef = useRef(null);
 
-```javascript
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+  function focusInput() {
+    inputRef.current.focus();
+  }
 
-function App() {
   return (
-    <BrowserRouter>
-      <nav>
-        <Link to="/">Home</Link> | <Link to="/about">About</Link>
-      </nav>
-
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-      </Routes>
-    </BrowserRouter>
+    <>
+      <input ref={inputRef} type="text" />
+      <button onClick={focusInput}>Focus Input</button>
+    </>
   );
 }
+```
 
-function Home() {
-  return <h2>Home Page</h2>;
-}
+---
 
-function About() {
-  return <h2>About Page</h2>;
+### 3. Using `useRef` to Store Mutable Values
+
+* Unlike state, changing `.current` **does not trigger a re-render**.
+* Useful for storing values that need to persist but don’t affect UI.
+
+Example:
+
+```jsx
+function Timer() {
+  const countRef = useRef(0);
+
+  React.useEffect(() => {
+    const interval = setInterval(() => {
+      countRef.current += 1;
+      console.log("Count:", countRef.current);
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  return <div>Open console to see count</div>;
 }
 ```
 
-### 4. How it Works
+---
 
-- `<BrowserRouter>` enables routing.
-- `<Routes>` contains all possible routes.
-- `<Route>` defines a URL path and the component to render.
-- `<Link>` creates navigation links that update the URL without reload.
+### 4. Key Points
+
+* `useRef` is different from `useState` because it does **not cause re-renders**.
+* Mostly used for:
+
+  * Accessing/manipulating DOM nodes.
+  * Storing mutable values.
+
+---
 
 ### 5. Practice
 
 <div class="practice">
 
-1. Set up a basic React Router in your app with two pages: Home and About.
-2. Add navigation links to switch between pages.
-3. Add a third page (e.g., Contact) and route it accordingly.
+1. Create a `FocusInput.jsx` component that focuses an input field when a button is clicked using `useRef`.
+2. Create a component that counts seconds using `useRef` without re-rendering.
+3. Compare behavior with using `useState` for the same count.
 
 </div>
 
+<div class="section-break"></div>
+
 ### 6. Interview Tips
 
-- Understand the role of `BrowserRouter`, `Routes`, `Route`, and `Link`.
-- Know how SPA routing differs from traditional multi-page apps.
-- Be familiar with URL parameters and nested routes (advanced topics).
+* Know the difference between `useState` and `useRef`.
+* Understand how to use refs to access DOM elements safely.
+* `useRef` is useful for preserving mutable values without causing re-renders.
+
+<div class="section-break"></div>

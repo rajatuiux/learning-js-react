@@ -1,68 +1,99 @@
-## Day 64: `useRef` Hook
+## Day 64: Simple Project 1 – To-Do List App
 
-### 1. What is `useRef`?
+### 1. Project Overview
 
-`useRef` is a React Hook that lets you **create a mutable reference** that persists across renders.
+* Build a simple **To-Do List** app to practice React basics.
+* Features:
 
-Common uses:
+  * Add new tasks
+  * Display tasks in a list
+  * Mark tasks as completed
+  * Delete tasks
 
-- Accessing DOM elements directly.
-- Storing mutable values that don’t cause re-renders when changed.
+---
 
-### 2. Accessing DOM Elements
+### 2. Components Needed
 
-Example: Focus an input when a button is clicked.
+* `App.jsx` — Main component managing state and rendering others
+* `TodoInput.jsx` — Input field to add new tasks
+* `TodoList.jsx` — Displays the list of tasks
+* `TodoItem.jsx` — Represents a single task with complete/delete options
 
-```javascript
-import { useRef } from "react";
+---
 
-function TextInput() {
-  const inputRef = useRef(null);
+### 3. Managing State
 
-  function handleFocus() {
-    inputRef.current.focus();
+* Use `useState` in `App.jsx` to hold an array of tasks.
+* Each task is an object with:
+
+  * `id` (unique)
+  * `text` (task description)
+  * `completed` (boolean)
+
+---
+
+### 4. Basic Code Structure Example
+
+```jsx
+// App.jsx
+import React, { useState } from "react";
+import TodoInput from "./TodoInput";
+import TodoList from "./TodoList";
+
+function App() {
+  const [tasks, setTasks] = useState([]);
+
+  function addTask(taskText) {
+    const newTask = {
+      id: Date.now(),
+      text: taskText,
+      completed: false,
+    };
+    setTasks([...tasks, newTask]);
+  }
+
+  function toggleComplete(id) {
+    setTasks(tasks.map(task =>
+      task.id === id ? { ...task, completed: !task.completed } : task
+    ));
+  }
+
+  function deleteTask(id) {
+    setTasks(tasks.filter(task => task.id !== id));
   }
 
   return (
-    <>
-      <input ref={inputRef} type="text" />
-      <button onClick={handleFocus}>Focus Input</button>
-    </>
+    <div>
+      <h1>To-Do List</h1>
+      <TodoInput addTask={addTask} />
+      <TodoList tasks={tasks} toggleComplete={toggleComplete} deleteTask={deleteTask} />
+    </div>
   );
 }
+
+export default App;
 ```
 
-- `inputRef` points to the DOM node of the input.
-- Calling `inputRef.current.focus()` sets focus to the input.
+---
 
-### 3. Storing Mutable Values
-
-You can store values that persist without causing re-renders.
-
-```javascript
-function Timer() {
-  const countRef = useRef(0);
-
-  function handleClick() {
-    countRef.current++;
-    console.log("Count:", countRef.current);
-  }
-
-  return <button onClick={handleClick}>Increase Count</button>;
-}
-```
-
-### 4. Practice
+### 5. Practice
 
 <div class="practice">
 
-1. Create a component with an input and a button to focus the input using `useRef`.
-2. Create a timer component that uses `useRef` to keep track of count without re-rendering.
+1. Build the `TodoInput.jsx` component with an input and button to add tasks.
+2. Build the `TodoList.jsx` component that maps over tasks and renders `TodoItem`s.
+3. Build the `TodoItem.jsx` component to show task text with a checkbox and delete button.
+4. Implement toggling and deleting tasks via props functions.
 
 </div>
 
-### 5. Interview Tips
+<div class="section-break"></div>
 
-- `useRef` gives you a way to access DOM nodes in functional components.
-- Useful for storing mutable values without triggering re-renders.
-- Know difference between `useRef` and `useState`.
+### 6. Interview Tips
+
+* Managing lists and state updates is common in React projects.
+* Practice breaking UI into small reusable components.
+* Use unique keys when rendering lists.
+* Understand how to update arrays immutably.
+
+<div class="section-break"></div>

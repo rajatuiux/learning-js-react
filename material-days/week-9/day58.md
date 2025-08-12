@@ -1,56 +1,91 @@
-## Day 58: Component Lifecycle in Functional Components
+## Day 58: useEffect Basics
 
-### 1. What is Component Lifecycle?
+### 1. What is `useEffect`?
 
-The **component lifecycle** refers to the different stages a React component goes through:
+* `useEffect` is a React Hook that lets you perform **side effects** in function components.
+* Side effects include things like:
 
-- Mounting: When the component is created and added to the DOM.
-- Updating: When the component’s props or state change.
-- Unmounting: When the component is removed from the DOM.
+  * Fetching data from an API
+  * Setting up subscriptions or timers
+  * Manually changing the DOM
+* It runs **after the component renders**.
 
-### 2. Lifecycle in Functional Components
+---
 
-In functional components, **React Hooks** like `useEffect` help manage lifecycle events.
+### 2. Basic Syntax of `useEffect`
 
-### 3. Using `useEffect` to Mimic Lifecycle Methods
+```jsx
+import React, { useEffect } from "react";
 
-| Lifecycle Phase                | `useEffect` Usage                                   |
-| ------------------------------ | --------------------------------------------------- |
-| Mount (componentDidMount)      | `useEffect(() => { /* run once */ }, [])`           |
-| Update (componentDidUpdate)    | `useEffect(() => { /* run on changes */ }, [deps])` |
-| Unmount (componentWillUnmount) | Return a cleanup function inside `useEffect`        |
-
-Example:
-
-```javascript
-import { useEffect } from "react";
-
-function MyComponent({ prop }) {
+function Example() {
   useEffect(() => {
-    console.log("Component mounted or prop changed:", prop);
+    // Code here runs after every render
+    console.log("Component rendered or updated");
+  });
 
-    return () => {
-      console.log("Component will unmount or prop changed cleanup");
-    };
-  }, [prop]);
-
-  return <div>{prop}</div>;
+  return <div>Check the console</div>;
 }
 ```
 
-- The effect runs after first render and whenever `prop` changes.
-- The cleanup runs before unmount or before the next effect.
+---
 
-### 4. Practice
+### 3. Controlling When `useEffect` Runs (Dependency Array)
+
+You can pass a second argument — an array of dependencies — to control when the effect runs.
+
+* Empty array `[]`: effect runs **only once**, after the first render (like `componentDidMount`).
+
+```jsx
+useEffect(() => {
+  console.log("Runs once on mount");
+}, []);
+```
+
+* If you put variables in the array, effect runs when those variables **change**.
+
+```jsx
+useEffect(() => {
+  console.log("Runs when count changes:", count);
+}, [count]);
+```
+
+* No array: effect runs **after every render**.
+
+---
+
+### 4. Cleaning Up Effects
+
+If your effect creates a subscription or timer, you can **clean it up** by returning a function.
+
+```jsx
+useEffect(() => {
+  const timer = setInterval(() => {
+    console.log("Tick");
+  }, 1000);
+
+  return () => clearInterval(timer); // Cleanup on unmount or before next effect
+}, []);
+```
+
+---
+
+### 5. Practice
 
 <div class="practice">
 
-1. Create a component that logs messages to the console when it mounts and unmounts.
-2. Create a component that watches a prop and logs whenever it changes using `useEffect`.
+1. Create a component `Timer.jsx` that logs “Tick” every second using `setInterval` inside `useEffect`.
+2. Clean up the timer when the component unmounts.
+3. Create a counter state and update it every second. Display the count.
 
 </div>
 
-### 5. Interview Tips
+<div class="section-break"></div>
 
-- Understand how `useEffect` replaces lifecycle methods in functional components.
-- Know the significance of the dependency array and cleanup function.
+### 6. Interview Tips
+
+* `useEffect` manages side effects in functional components.
+* Dependency array controls when effects run.
+* Always clean up subscriptions or timers to avoid memory leaks.
+* Think of it as combination of lifecycle methods like `componentDidMount`, `componentDidUpdate`, and `componentWillUnmount`.
+
+<div class="section-break"></div>

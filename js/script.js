@@ -117,7 +117,14 @@ const courseModules = [
     name: "week-11",
     weekName: "Week 11: Advanced Features & Deployment",
     folderPath: "material-days/week-11/",
-    files: ["day64.md", "day65.md", "day66.md", "day67.md", "day68.md"],
+    files: [
+      "day64.md",
+      "day65.md",
+      "day66.md",
+      "day67.md",
+      "day68.md",
+      "day69.md",
+    ],
   },
 ];
 

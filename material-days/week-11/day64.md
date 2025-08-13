@@ -10,7 +10,7 @@
   * Mark tasks as completed
   * Delete tasks
 
----
+<div class="section-break"></div>
 
 ### 2. Components Needed
 
@@ -19,7 +19,7 @@
 * `TodoList.jsx` — Displays the list of tasks
 * `TodoItem.jsx` — Represents a single task with complete/delete options
 
----
+<div class="section-break"></div>
 
 ### 3. Managing State
 
@@ -30,11 +30,11 @@
   * `text` (task description)
   * `completed` (boolean)
 
----
+<div class="section-break"></div>
 
 ### 4. Basic Code Structure Example
 
-```jsx
+```js
 // App.jsx
 import React, { useState } from "react";
 import TodoInput from "./TodoInput";
@@ -74,7 +74,7 @@ function App() {
 export default App;
 ```
 
----
+<div class="section-break"></div>
 
 ### 5. Practice
 

@@ -5,7 +5,7 @@
 * Most React apps need to **get data from APIs** (servers) to display dynamic content.
 * Fetching data means making HTTP requests to get information like user details, posts, etc.
 
----
+<div class="section-break"></div>
 
 ### 2. Fetch API in React
 
@@ -13,13 +13,13 @@
 * It returns a **promise** which resolves to a response object.
 * You usually convert the response to JSON.
 
----
+<div class="section-break"></div>
 
 ### 3. Using `fetch` with `useEffect`
 
 Example to fetch user data on component mount:
 
-```jsx
+```js
 import React, { useState, useEffect } from "react";
 
 function UserList() {
@@ -58,7 +58,7 @@ function UserList() {
 }
 ```
 
----
+<div class="section-break"></div>
 
 ### 4. Key Points
 
@@ -66,7 +66,7 @@ function UserList() {
 * Always handle loading and error states.
 * Remember to add unique keys when rendering lists.
 
----
+<div class="section-break"></div>
 
 ### 5. Practice
 

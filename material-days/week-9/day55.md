@@ -5,13 +5,13 @@
 * Conditional rendering means **showing or hiding parts of the UI based on conditions**.
 * Like `if` statements in JavaScript, React lets you display different elements depending on state, props, or any logic.
 
----
+<div class="section-break"></div>
 
 ### 2. Using `if` Statements
 
 You can use normal JavaScript `if` statements **inside your component function** to decide what to return.
 
-```jsx
+```js
 function Greeting({ isLoggedIn }) {
   if (isLoggedIn) {
     return <h1>Welcome back!</h1>;
@@ -21,13 +21,13 @@ function Greeting({ isLoggedIn }) {
 }
 ```
 
----
+<div class="section-break"></div>
 
 ### 3. Using the Ternary Operator
 
 Inside JSX, you can use the ternary operator to choose what to render:
 
-```jsx
+```js
 function Greeting({ isLoggedIn }) {
   return (
     <div>
@@ -37,13 +37,13 @@ function Greeting({ isLoggedIn }) {
 }
 ```
 
----
+<div class="section-break"></div>
 
 ### 4. Using Logical AND (`&&`)
 
 If you want to conditionally render something **or nothing**, use `&&`:
 
-```jsx
+```js
 function Mailbox({ unreadMessages }) {
   return (
     <div>
@@ -58,7 +58,7 @@ function Mailbox({ unreadMessages }) {
 
 If `unreadMessages.length` is 0, the message won’t show.
 
----
+<div class="section-break"></div>
 
 ### 5. Practice
 

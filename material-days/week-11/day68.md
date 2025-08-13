@@ -10,7 +10,7 @@
   * Show temperature, weather condition, and other details.
   * Handle loading and error states.
 
----
+<div class="section-break"></div>
 
 ### 2. Choosing an API
 
@@ -18,11 +18,11 @@
 * Sign up and get an API key (for real app).
 * For practice, you can use this sample endpoint without API key:
 
-  ```
+  ```jsx
   https://api.openweathermap.org/data/2.5/weather?q=London&appid=YOUR_API_KEY&units=metric
   ```
 
----
+<div class="section-break"></div>
 
 ### 3. Basic Structure
 
@@ -30,11 +30,11 @@
 * Use `fetch` inside `useEffect` or on form submit to get weather.
 * Display results or error messages.
 
----
+<div class="section-break"></div>
 
 ### 4. Sample Code Snippet
 
-```jsx
+```js
 import React, { useState } from "react";
 
 function WeatherApp() {
@@ -100,7 +100,7 @@ function WeatherApp() {
 export default WeatherApp;
 ```
 
----
+<div class="section-break"></div>
 
 ### 5. Practice
 

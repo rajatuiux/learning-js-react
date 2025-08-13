@@ -6,7 +6,7 @@
 - Unlike **props** (which come from parents and are read-only), **state is local and mutable** inside a component.
 - State controls how the UI looks and behaves based on user actions or other factors.
 
----
+<div class="section-break"></div>
 
 ### 2. Why Use State?
 
@@ -17,7 +17,7 @@
   - Showing/hiding parts of the UI.
   - Storing user input in a form.
 
----
+<div class="section-break"></div>
 
 ### 3. Introducing `useState` Hook
 
@@ -25,7 +25,7 @@ React provides the **`useState` hook** to add state to function components.
 
 Syntax:
 
-```jsx
+```js
 import React, { useState } from "react";
 
 function Counter() {
@@ -44,7 +44,7 @@ function Counter() {
 - `setCount` is a function to update the state.
 - Calling `setCount` triggers React to **re-render** the component with the updated value.
 
----
+<div class="section-break"></div>
 
 ### 4. Rules for Using `useState`
 
@@ -52,7 +52,7 @@ function Counter() {
 - You can have multiple `useState` calls for different pieces of state.
 - The initial state can be any data type: number, string, array, object, etc.
 
----
+<div class="section-break"></div>
 
 ### 5. Practice
 

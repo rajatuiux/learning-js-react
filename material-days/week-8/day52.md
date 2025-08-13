@@ -7,7 +7,7 @@ Without defaults, your component could show empty or broken UI.
 
 **Default props** let you specify fallback values when no prop is given.
 
----
+<div class="section-break"></div>
 
 ### 2. Setting Default Props in Function Components
 
@@ -21,7 +21,7 @@ function Greeting({ name = "Guest" }) {
 
 If `<Greeting />` is rendered without a `name` prop, it shows **Hello, Guest!**
 
----
+<div class="section-break"></div>
 
 ### 3. What Are PropTypes?
 
@@ -29,7 +29,7 @@ If `<Greeting />` is rendered without a `name` prop, it shows **Hello, Guest!**
 
 This helps catch bugs during development by giving warnings in the console.
 
----
+<div class="section-break"></div>
 
 ### 4. How to Use PropTypes
 
@@ -53,7 +53,7 @@ Greeting.propTypes = {
 };
 ```
 
----
+<div class="section-break"></div>
 
 ### 5. Common PropTypes
 
@@ -68,7 +68,7 @@ Greeting.propTypes = {
 | `node`    | React nodes or elements  | `PropTypes.node`                      |
 | `arrayOf` | Array of specific type   | `PropTypes.arrayOf(PropTypes.string)` |
 
----
+<div class="section-break"></div>
 
 ### 6. Practice
 

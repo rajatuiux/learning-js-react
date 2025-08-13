@@ -5,7 +5,7 @@
 * React Router is a library for **adding navigation and routing** in React applications.
 * It enables you to create **single-page apps (SPAs)** with multiple views or pages without full page reloads.
 
----
+<div class="section-break"></div>
 
 ### 2. Installing React Router
 
@@ -13,7 +13,7 @@
 npm install react-router-dom
 ```
 
----
+<div class="section-break"></div>
 
 ### 3. Basic Concepts
 
@@ -22,11 +22,11 @@ npm install react-router-dom
 * **Link**: Used to create navigational links without reloading the page.
 * **Switch (v5) / Routes (v6)**: Renders the first matching route.
 
----
+<div class="section-break"></div>
 
 ### 4. Simple Example with React Router v6
 
-```jsx
+```js
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 function Home() {
@@ -53,7 +53,7 @@ function App() {
 }
 ```
 
----
+<div class="section-break"></div>
 
 ### 5. Key Points
 
@@ -62,7 +62,7 @@ function App() {
 * `<Routes>` matches URLs to render appropriate components.
 * URLs can have dynamic parameters (covered later).
 
----
+<div class="section-break"></div>
 
 ### 6. Practice
 

@@ -15,7 +15,7 @@
   * Creating reusable components
   * Building simple projects (To-Do List & Weather App)
 
----
+<div class="section-break"></div>
 
 ### 2. Preparing for Deployment
 
@@ -23,14 +23,14 @@
 * Test on different browsers and devices if possible.
 * Optimize performance by minimizing unnecessary re-renders.
 
----
+<div class="section-break"></div>
 
 ### 3. Deployment Options
 
 * **Vercel** and **Netlify** are popular platforms to deploy React apps for free.
 * **GitHub Pages** can also host React apps for free.
 
----
+<div class="section-break"></div>
 
 ### 4. Deploying with Vercel (Basic Steps)
 
@@ -40,7 +40,7 @@
 4. Your app will be live on a generated URL.
 5. Every push to GitHub triggers an automatic redeploy.
 
----
+<div class="section-break"></div>
 
 ### 5. Deploying with Netlify (Basic Steps)
 
@@ -49,7 +49,7 @@
 3. Netlify builds and deploys your app automatically.
 4. You get a live URL with custom domain options.
 
----
+<div class="section-break"></div>
 
 ### 6. Building React App for Production
 
@@ -62,7 +62,7 @@ npm run build
 * Creates a `build/` folder with optimized files.
 * This folder is what you deploy.
 
----
+<div class="section-break"></div>
 
 ### 7. Practice
 

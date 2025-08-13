@@ -5,7 +5,7 @@
 * Forms collect user input like text, numbers, and selections.
 * React handles form inputs using **controlled components** — where React state controls the input value.
 
----
+<div class="section-break"></div>
 
 ### 2. Controlled Components
 
@@ -14,7 +14,7 @@
 
 Example:
 
-```jsx
+```js
 import React, { useState } from "react";
 
 function NameForm() {
@@ -41,7 +41,7 @@ function NameForm() {
 }
 ```
 
----
+<div class="section-break"></div>
 
 ### 3. Why Use Controlled Components?
 
@@ -49,13 +49,13 @@ function NameForm() {
 * Enables **validation, conditional UI, or formatting** while typing.
 * Keeps React state as the single source of truth.
 
----
+<div class="section-break"></div>
 
 ### 4. Handling Multiple Inputs
 
 For multiple inputs, use a state object:
 
-```jsx
+```js
 const [formData, setFormData] = useState({ username: "", email: "" });
 
 function handleChange(event) {
@@ -69,12 +69,12 @@ function handleChange(event) {
 
 Inputs:
 
-```jsx
+```js
 <input name="username" value={formData.username} onChange={handleChange} />
 <input name="email" value={formData.email} onChange={handleChange} />
 ```
 
----
+<div class="section-break"></div>
 
 ### 5. Practice
 

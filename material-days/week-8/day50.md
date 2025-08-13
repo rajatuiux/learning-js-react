@@ -8,7 +8,7 @@ Think of components as **small, reusable pieces of a webpage** — for example, 
 In JavaScript, you might write functions that do some calculation and return a value.
 In React, components are like functions that return **UI elements** (using JSX).
 
----
+<div class="section-break"></div>
 
 ### 2. Why Use Components?
 
@@ -17,7 +17,7 @@ In React, components are like functions that return **UI elements** (using JSX).
 * **Maintainability**: When you change one component, it updates everywhere it’s used.
 * **Separation of Concerns**: Components isolate their own logic and UI, making code cleaner.
 
----
+<div class="section-break"></div>
 
 ### 3. How to Create a Component?
 
@@ -25,7 +25,7 @@ Components can be written as **JavaScript functions**. The function returns JSX 
 
 Example of a basic component:
 
-```jsx
+```js
 function Welcome() {
   return <h1>Welcome to React!</h1>;
 }
@@ -33,13 +33,13 @@ function Welcome() {
 
 This component will render the heading when used in the app.
 
----
+<div class="section-break"></div>
 
 ### 4. Using Components in React
 
 To use a component, simply write it as a custom HTML tag inside another component:
 
-```jsx
+```js
 function App() {
   return (
     <div>
@@ -51,7 +51,7 @@ function App() {
 
 Here, `<Welcome />` inserts the `Welcome` component’s UI.
 
----
+<div class="section-break"></div>
 
 ### 5. Function vs Arrow Function Components
 
@@ -59,7 +59,7 @@ You can create components in two common ways:
 
 #### Function Declaration:
 
-```jsx
+```js
 function Header() {
   return <h1>My Website</h1>;
 }
@@ -67,7 +67,7 @@ function Header() {
 
 #### Arrow Function Expression:
 
-```jsx
+```js
 const Footer = () => {
   return <footer>© 2025 My Website</footer>;
 };
@@ -75,7 +75,7 @@ const Footer = () => {
 
 Both work the same way. Choose what feels comfortable.
 
----
+<div class="section-break"></div>
 
 ### 6. Component Naming Rules
 
@@ -83,11 +83,11 @@ Both work the same way. Choose what feels comfortable.
 * **Match file names with component names** for clarity (`Header.jsx` exports `Header`).
 * **Components must return a single parent element** — if you return multiple sibling elements, wrap them in a `<div>` or React Fragment `<>...</>`.
 
----
+<div class="section-break"></div>
 
 ### 7. Example of Multiple Components
 
-```jsx
+```js
 function Header() {
   return <header><h1>Welcome!</h1></header>;
 }
@@ -109,13 +109,13 @@ function App() {
 }
 ```
 
----
+<div class="section-break"></div>
 
 ### 8. Organizing Components in Folders
 
 A good folder structure helps maintain the project:
 
-<div class="small-grey-block">
+```bash
 src/  
 │── App.jsx          # Main app  
 │── components/      # Folder for all components  
@@ -124,9 +124,10 @@ src/
 │   ├── Welcome.jsx  
 │── index.css        # Styles  
 │── main.jsx         # React app entry point  
-</div>
 
----
+```
+
+<div class="section-break"></div>
 
 ### 9. Practice
 
@@ -140,7 +141,7 @@ src/
 
 </div>
 
----
+<div class="section-break"></div>
 
 ### 10. Interview Tips
 

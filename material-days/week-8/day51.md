@@ -8,13 +8,13 @@ Think of props like **function arguments** — when you call a function, you giv
 
 This allows components to be **dynamic and reusable** because you can send different data each time.
 
----
+<div class="section-break"></div>
 
 ### 2. How Props Work
 
 Example:
 
-```jsx
+```js
 function Greeting(props) {
   return <h1>Hello, {props.name}!</h1>;
 }
@@ -22,7 +22,7 @@ function Greeting(props) {
 
 Using the component:
 
-```jsx
+```js
 <Greeting name="Rajat" />
 ```
 
@@ -30,7 +30,7 @@ Here, `name="Rajat"` is passed as a prop, and inside the component, you access i
 
 The component will render: **Hello, Rajat!**
 
----
+<div class="section-break"></div>
 
 ### 3. Props Are Read-Only
 
@@ -38,25 +38,25 @@ Props are **immutable** inside the component — you cannot change them.
 
 If you need data that changes, you use **state** (which we will learn soon).
 
----
+<div class="section-break"></div>
 
 ### 4. Destructuring Props
 
 To write cleaner code, you can use **destructuring** in the function parameter:
 
-```jsx
+```js
 function Greeting({ name }) {
   return <h1>Hello, {name}!</h1>;
 }
 ```
 
----
+<div class="section-break"></div>
 
 ### 5. Passing Multiple Props
 
 You can send many props:
 
-```jsx
+```js
 function UserCard({ name, age, hobby }) {
   return (
     <div>
@@ -70,11 +70,11 @@ function UserCard({ name, age, hobby }) {
 
 Usage:
 
-```jsx
+```js
 <UserCard name="Rajat" age={27} hobby="Reading" />
 ```
 
----
+<div class="section-break"></div>
 
 ### 6. Props Can Be Any Data Type
 
@@ -89,7 +89,7 @@ Props can be:
 
 Example passing an array prop:
 
-```jsx
+```js
 function ItemList({ items }) {
   return (
     <ul>
@@ -103,7 +103,7 @@ function ItemList({ items }) {
 <ItemList items={['Apple', 'Banana', 'Cherry']} />
 ```
 
----
+<div class="section-break"></div>
 
 ### 7. Practice
 
@@ -115,7 +115,7 @@ function ItemList({ items }) {
 
 </div>
 
----
+<div class="section-break"></div>
 
 ### 8. Interview Tips
 

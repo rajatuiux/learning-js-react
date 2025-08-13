@@ -10,11 +10,11 @@
   * Manually changing the DOM
 * It runs **after the component renders**.
 
----
+<div class="section-break"></div>
 
 ### 2. Basic Syntax of `useEffect`
 
-```jsx
+```js
 import React, { useEffect } from "react";
 
 function Example() {
@@ -27,7 +27,7 @@ function Example() {
 }
 ```
 
----
+<div class="section-break"></div>
 
 ### 3. Controlling When `useEffect` Runs (Dependency Array)
 
@@ -35,7 +35,7 @@ You can pass a second argument — an array of dependencies — to control when 
 
 * Empty array `[]`: effect runs **only once**, after the first render (like `componentDidMount`).
 
-```jsx
+```js
 useEffect(() => {
   console.log("Runs once on mount");
 }, []);
@@ -43,7 +43,7 @@ useEffect(() => {
 
 * If you put variables in the array, effect runs when those variables **change**.
 
-```jsx
+```js
 useEffect(() => {
   console.log("Runs when count changes:", count);
 }, [count]);
@@ -51,13 +51,13 @@ useEffect(() => {
 
 * No array: effect runs **after every render**.
 
----
+<div class="section-break"></div>
 
 ### 4. Cleaning Up Effects
 
 If your effect creates a subscription or timer, you can **clean it up** by returning a function.
 
-```jsx
+```js
 useEffect(() => {
   const timer = setInterval(() => {
     console.log("Tick");
@@ -67,7 +67,7 @@ useEffect(() => {
 }, []);
 ```
 
----
+<div class="section-break"></div>
 
 ### 5. Practice
 

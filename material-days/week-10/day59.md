@@ -6,7 +6,7 @@
 * Class components have lifecycle methods like `componentDidMount`, `componentDidUpdate`, `componentWillUnmount`.
 * Functional components use **Hooks** like `useEffect` to manage lifecycle behavior.
 
----
+<div class="section-break"></div>
 
 ### 2. Lifecycle Stages in Functional Components
 
@@ -16,11 +16,11 @@
 | Updating   | Component re-renders due to state or props change | `useEffect` with specific dependencies                          |
 | Unmounting | Component is removed from the DOM                 | Cleanup function returned from `useEffect`                      |
 
----
+<div class="section-break"></div>
 
 ### 3. Example: Using `useEffect` for Lifecycle
 
-```jsx
+```js
 import React, { useState, useEffect } from "react";
 
 function Timer() {
@@ -47,7 +47,7 @@ function Timer() {
 }
 ```
 
----
+<div class="section-break"></div>
 
 ### 4. Key Points
 
@@ -55,7 +55,7 @@ function Timer() {
 * Cleanup function inside `useEffect` runs before unmounting or before next effect run.
 * Effects with dependencies run when those dependencies change.
 
----
+<div class="section-break"></div>
 
 ### 5. Practice
 

@@ -5,7 +5,7 @@
 * Reusable components are **self-contained, modular pieces of UI** that can be used in multiple places.
 * They help **avoid code duplication** and make apps easier to maintain.
 
----
+<div class="section-break"></div>
 
 ### 2. Designing Reusable Components
 
@@ -13,11 +13,11 @@
 * Use **props** to customize behavior and appearance.
 * Keep them **stateless** if possible, or manage state internally if needed.
 
----
+<div class="section-break"></div>
 
 ### 3. Example: Button Component
 
-```jsx
+```js
 function Button({ text, onClick, style }) {
   return (
     <button style={style} onClick={onClick}>
@@ -29,12 +29,12 @@ function Button({ text, onClick, style }) {
 
 Usage:
 
-```jsx
+```js
 <Button text="Submit" onClick={() => alert("Submitted!")} style={{ backgroundColor: "blue", color: "white" }} />
 <Button text="Cancel" onClick={() => alert("Cancelled!")} style={{ backgroundColor: "gray", color: "black" }} />
 ```
 
----
+<div class="section-break"></div>
 
 ### 4. Composing Components
 
@@ -43,7 +43,7 @@ Usage:
 
 Example:
 
-```jsx
+```js
 function Card({ title, content }) {
   return (
     <div className="card">
@@ -63,7 +63,7 @@ function App() {
 }
 ```
 
----
+<div class="section-break"></div>
 
 ### 5. Practice
 

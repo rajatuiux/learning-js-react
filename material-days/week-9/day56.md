@@ -5,13 +5,13 @@
 * Lists are used to **display multiple similar items** in the UI, like tasks, users, or products.
 * React lets you render lists by **mapping over arrays** to return JSX elements.
 
----
+<div class="section-break"></div>
 
 ### 2. Rendering Lists Using `.map()`
 
 Example:
 
-```jsx
+```js
 function GroceryList() {
   const items = ['Apples', 'Bananas', 'Oranges'];
 
@@ -27,7 +27,7 @@ function GroceryList() {
 
 This renders a `<ul>` with three list items.
 
----
+<div class="section-break"></div>
 
 ### 3. Why Are Keys Important?
 
@@ -35,25 +35,25 @@ This renders a `<ul>` with three list items.
 * They help **optimize rendering** by uniquely identifying list elements.
 * Keys should be **unique and stable** (avoid using array index as keys when possible).
 
----
+<div class="section-break"></div>
 
 ### 4. Adding Keys to List Items
 
 You add a `key` prop inside `.map()` for each element:
 
-```jsx
+```js
 {items.map(item => (
   <li key={item}>{item}</li>
 ))}
 ```
 
----
+<div class="section-break"></div>
 
 ### 5. Using IDs as Keys
 
 If list items have IDs, use those as keys for better stability:
 
-```jsx
+```js
 const todos = [
   { id: 1, task: 'Wash dishes' },
   { id: 2, task: 'Do laundry' },
@@ -70,7 +70,7 @@ function TodoList() {
 }
 ```
 
----
+<div class="section-break"></div>
 
 ### 6. Practice
 

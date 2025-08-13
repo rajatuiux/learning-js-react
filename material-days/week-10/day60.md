@@ -6,7 +6,7 @@
 * Instead of duplicating state, React recommends **moving the shared state up** to the closest common parent.
 * This process is called **"lifting state up"**.
 
----
+<div class="section-break"></div>
 
 ### 2. Why Lift State Up?
 
@@ -14,7 +14,7 @@
 * Keeps components **in sync**.
 * Avoids bugs caused by duplicated or inconsistent state.
 
----
+<div class="section-break"></div>
 
 ### 3. Example of Lifting State Up
 
@@ -22,7 +22,7 @@ Suppose two components need to know if a checkbox is checked.
 
 #### Step 1: Move the state to the parent component
 
-```jsx
+```js
 function Parent() {
   const [isChecked, setIsChecked] = React.useState(false);
 
@@ -37,7 +37,7 @@ function Parent() {
 
 #### Step 2: Pass state and setter down as props
 
-```jsx
+```js
 function Checkbox({ isChecked, setIsChecked }) {
   return (
     <input
@@ -53,7 +53,7 @@ function Display({ isChecked }) {
 }
 ```
 
----
+<div class="section-break"></div>
 
 ### 4. Key Points
 
@@ -61,7 +61,7 @@ function Display({ isChecked }) {
 * Child components receive **state and setter functions** as props.
 * Children **notify the parent** of changes via setter functions.
 
----
+<div class="section-break"></div>
 
 ### 5. Practice
 

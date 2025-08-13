@@ -5,7 +5,7 @@
 - Events are **user interactions** like clicks, typing, submitting forms.
 - React allows you to handle these events to make your UI interactive.
 
----
+<div class="section-break"></div>
 
 ### 2. Handling Events Syntax
 
@@ -14,7 +14,7 @@
 
 Example:
 
-```jsx
+```js
 function Button() {
   function handleClick() {
     alert("Button clicked!");
@@ -24,17 +24,17 @@ function Button() {
 }
 ```
 
----
+<div class="section-break"></div>
 
 ### 3. Inline Event Handlers
 
 You can also define handlers inline:
 
-```jsx
+```js
 <button onClick={() => alert("Clicked!")}>Click Me</button>
 ```
 
----
+<div class="section-break"></div>
 
 ### 4. The Event Object
 
@@ -43,7 +43,7 @@ You can also define handlers inline:
 
 Example:
 
-```jsx
+```js
 function Input() {
   function handleChange(event) {
     console.log(event.target.value);
@@ -53,7 +53,7 @@ function Input() {
 }
 ```
 
----
+<div class="section-break"></div>
 
 ### 5. Common React Events
 
@@ -65,7 +65,7 @@ function Input() {
 | `onMouseEnter` | Mouse pointer enters element |
 | `onKeyDown`    | When a key is pressed        |
 
----
+<div class="section-break"></div>
 
 ### 6. Practice
 

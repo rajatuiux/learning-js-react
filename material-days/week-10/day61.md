@@ -5,7 +5,7 @@
 * React Developer Tools is a **browser extension** available for Chrome and Firefox.
 * It helps you **inspect React component trees**, **view props and state**, and **debug** React apps easily.
 
----
+<div class="section-break"></div>
 
 ### 2. Installing React Developer Tools
 
@@ -16,7 +16,7 @@
 * Install and enable it.
 * Open DevTools and you will see a **React tab** when inspecting React apps.
 
----
+<div class="section-break"></div>
 
 ### 3. Features of React Developer Tools
 
@@ -26,7 +26,7 @@
 * **Profiler:** Analyze performance and rendering behavior.
 * **Highlight Updates:** See which components re-render.
 
----
+<div class="section-break"></div>
 
 ### 4. Debugging Tips with React DevTools
 
@@ -35,7 +35,7 @@
 * Trace data flow from parent to child components.
 * Use the Profiler to optimize slow components.
 
----
+<div class="section-break"></div>
 
 ### 5. Console Debugging in React
 
@@ -43,7 +43,7 @@
 * You can debug event handlers or lifecycle hooks by logging messages.
 * Example:
 
-```jsx
+```js
 function Counter() {
   const [count, setCount] = React.useState(0);
 
@@ -57,7 +57,7 @@ function Counter() {
 }
 ```
 
----
+<div class="section-break"></div>
 
 ### 6. Practice
 

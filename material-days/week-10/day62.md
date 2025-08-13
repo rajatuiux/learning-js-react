@@ -9,14 +9,14 @@ React supports multiple ways to style components:
 * **CSS Modules**
 * **Styled Components** (third-party library, advanced)
 
----
+<div class="section-break"></div>
 
 ### 2. Using External CSS Files
 
 * Create a `.css` file (e.g., `App.css`).
 * Import it in your component:
 
-```jsx
+```js
 import "./App.css";
 
 function App() {
@@ -33,7 +33,7 @@ function App() {
 }
 ```
 
----
+<div class="section-break"></div>
 
 ### 3. Inline Styles
 
@@ -42,13 +42,13 @@ function App() {
 
 Example:
 
-```jsx
+```js
 function StyledText() {
   return <p style={{ color: "red", fontWeight: "bold" }}>Inline Styled Text</p>;
 }
 ```
 
----
+<div class="section-break"></div>
 
 ### 4. CSS Modules (Scoped CSS)
 
@@ -56,7 +56,7 @@ function StyledText() {
 * Rename CSS files as `ComponentName.module.css`.
 * Import styles as an object:
 
-```jsx
+```js
 import styles from "./Button.module.css";
 
 function Button() {
@@ -73,7 +73,7 @@ function Button() {
 }
 ```
 
----
+<div class="section-break"></div>
 
 ### 5. Practice
 

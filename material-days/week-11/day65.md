@@ -9,13 +9,13 @@
   * Accessing DOM elements directly.
   * Storing mutable values without causing re-renders.
 
----
+<div class="section-break"></div>
 
 ### 2. Using `useRef` to Access DOM Elements
 
 Example:
 
-```jsx
+```js
 import React, { useRef } from "react";
 
 function TextInputFocus() {
@@ -34,7 +34,7 @@ function TextInputFocus() {
 }
 ```
 
----
+<div class="section-break"></div>
 
 ### 3. Using `useRef` to Store Mutable Values
 
@@ -43,7 +43,7 @@ function TextInputFocus() {
 
 Example:
 
-```jsx
+```js
 function Timer() {
   const countRef = useRef(0);
 
@@ -60,7 +60,7 @@ function Timer() {
 }
 ```
 
----
+<div class="section-break"></div>
 
 ### 4. Key Points
 
@@ -70,7 +70,7 @@ function Timer() {
   * Accessing/manipulating DOM nodes.
   * Storing mutable values.
 
----
+<div class="section-break"></div>
 
 ### 5. Practice
 
